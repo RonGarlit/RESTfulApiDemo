@@ -1,0 +1,2118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<!DOCTYPE html>
+<html lang='en-us' xmlns='http://www.w3.org/1999/xhtml' >
+<head>
+<title>DVDStore&#45;Documentation</title>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" crossorigin="anonymous" />
+<link rel="shortcut icon" href="https://www.dbschema.com/images/favicon.ico">
+<style type='text/css'>
+body {
+    font-family: 'Segoe UI', 'Lucida sans', Dialog;
+    font-size: 13px;
+    background-color:#f5f5f5;
+    margin: 10px;
+}
+</style>
+</head>
+
+<body>
+<div class='svg-container'>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'   width='1392' height='1246' viewBox='0 0 1392 1246' >
+  <script type='text/ecmascript'>
+  <![CDATA[
+  function hghl(el) { for ( var i in el ){ var elem = document.getElementById(el[i]); if ( elem != null ) elem.setAttribute('class','highlight');  }  }
+  function uhghl(el) { for ( var i in el ){ var elem = document.getElementById(el[i]); if ( elem != null ) elem.setAttribute('class','scene'); }  } 
+  ]]>
+  </script> 
+
+<style type='text/css'>
+  text                { fill:#000000; font-family: Candara, 'Trebuchet MS', Dialog; font-size:12px; }
+  a text:hover        { fill:#94025f; text-shadow: 0px 0px 6px #d0ce00; font-size:13px; }
+  text.highlight      { fill:#94025f; text-shadow: 0px 0px 4px #eac533; font-size:13px; }
+  text.colType        { fill:#b3b3b3; }
+  text.relName        { fill:#b09c7c; }
+  path                { stroke:#5c554f; stroke-width:1.15; fill:none; stroke-dasharray: 1000px; stroke-dashoffset: 1000px; animation: dash 5s linear forwards;}
+  path                { stroke:#5c554f; stroke-width:1.15; fill:none; stroke-dasharray: 720px; stroke-dashoffset: 720px; animation: dash 5s linear forwards; }@keyframes dash { to { stroke-dashoffset: 0px; } }
+  path.virtual        { stroke:#b7642d; }
+  path.logo           { fill:#fbeac0;fill-opacity:1;stroke-width:0.3;stroke:#222222; }
+  path.dotted         { stroke-dasharray:4,2; }
+  path.scene          { stroke-width:10; opacity:0;}
+  path.highlight      { stroke-width:5; stroke:#c1a662; opacity:0.6;}
+  rect.entity         { fill:#ffffff; stroke:#aaa; stroke-width:1;shape-rendering:crispEdges; }
+  line.delim          { stroke-width:1; shape-rendering:crispEdges; }
+  text.callout        { fill:#000000; font-family: Candara, 'Trebuchet MS', Dialog; font-size:12px; }
+  rect.callout        { fill:url(#calloutGradient); stroke:#bebdbd; stroke-width:0.5; }
+  rect.grp            { stroke:#b1b1b1; stroke-width:1.7; opacity:0.8; }
+  path.st0            { fill:#ececec;fill-opacity:1;stroke-width:0.6;stroke:#d0d0d0; }
+</style>
+<defs>
+  <pattern id='layoutBgA' patternUnits='userSpaceOnUse'  width='10' height='20' x='0' y='0' viewBox='0 0 5 10'>  
+     <line x1='-2' y1='1' x2='7' y2='10' stroke='#f3f3f3' stroke-width='.5'/>  
+     <line x1='-2' y1='6' x2='7' y2='15' stroke='#f3f3f3' stroke-width='.5'/>  
+     <line x1='-2' y1='-4' x2='7' y2='5' stroke='#f3f3f3' stroke-width='.5'/>  
+  </pattern>  
+  <radialGradient id='layoutBgB' gradientUnits='userSpaceOnUse' cx='50%' cy='50%' r='75%' fx='46%' fy='22%'>
+     <stop offset='0%' stop-opacity='.2' stop-color='#f5f5f5' />  
+     <stop offset='100%' stop-color='#efefef' />  
+  </radialGradient>
+  <pattern id='layoutBgTr' patternUnits='userSpaceOnUse'  width='300' height='300' x='0' y='0' viewBox='0 0 300 300'>  
+  <path class='st0' d='m 62.011835,91.267143 c 3.536475,3.175214 2.262669,8.705999 -1.637711,11.015197 -3.594697,5.8423 -6.34682,-2.892623 -9.715478,-4.653898 -5.609222,-2.838926 2.050802,-6.680123 4.77004,-8.319046 2.334696,-0.724067 4.935143,0.312302 6.583149,1.957747 z m -2.720492,2.538595 c -2.698397,-3.517732 -9.282815,1.269287 -3.69635,3.568637 2.765331,5.605665 7.052809,-0.56184 3.69635,-3.568637 z' />
+  <path class='st0' d='m 72.25864,84.624638 c 4.108046,3.143003 -0.737059,6.895259 -1.994918,8.323564 -3.586718,5.561143 -6.495079,-4.197379 -10.07759,-5.582178 -4.443422,-1.088878 1.349298,-7.249213 2.503526,-2.503449 2.464639,4.517161 2.304019,-3.70697 6.291113,-1.995914 1.280083,0.137865 2.410691,0.864819 3.277869,1.757977 z m -2.646109,2.323242 c -4.797162,-3.078383 -2.810517,6.305507 0.515161,1.990646 0.296432,-0.688582 0.01209,-1.493412 -0.515161,-1.990646 z' />
+  <path class='st0' d='m 78.230641,79.436735 c 4.142121,3.027466 -2.020102,10.435276 -3.450543,5.477315 3.306312,-5.248112 -9.186019,-2.220094 -5.805994,-8.77679 -0.544141,-3.93011 6.797826,-2.102227 3.386015,0.245477 -0.181085,2.915838 4.637371,1.019311 5.870522,3.053982 z' />
+  <path class='st0' d='m 82.744502,72.597397 c -4.901605,1.926521 1.146497,6.285555 2.559694,2.225783 6.21817,3.539297 -6.640186,8.416664 -7.590325,1.997457 -2.24365,-2.914883 4.026676,-10.148618 5.030631,-4.22324 z' />
+  <path class='st0' d='m 90.727458,64.259158 c 1.583987,1.690029 3.321317,3.2696 4.81267,5.026353 -2.535706,6.849794 -6.445583,-5.918773 -8.388458,-0.167017 0.782768,2.03426 5.877405,3.752079 2.670979,5.711199 -3.315119,1.519161 -5.782422,-5.157931 -8.858893,-6.780537 -4.229842,-1.139816 1.510134,-7.074128 2.586227,-2.385939 3.141198,5.495193 1.840537,-5.598295 7.177489,-1.404062 z' />
+  <path class='st0' d='m 99.622027,58.374253 c 1.493293,1.9548 -6.281936,7.024659 -0.885258,4.740447 0.386238,-4.434477 6.131941,-1.133173 2.175851,1.618005 -4.421491,6.12739 -13.666659,-3.151506 -7.058299,-7.136537 1.785129,-1.119329 4.348209,-0.743179 5.767706,0.778085 z m -2.900824,1.89746 c -3.608188,-2.208543 -2.280489,5.00803 -0.12563,0.329531 z' />
+  <path class='st0' d='m 115.18023,50.570441 c -1.61703,5.201678 -4.6204,-0.364502 -7.01598,-1.749619 -4.40977,2.122562 4.89641,4.913939 1.89606,7.018157 -2.48061,3.877635 -4.11404,-4.060614 -7.01192,-2.6391 -1.76318,3.107252 7.28394,6.252304 0.87346,7.876177 -1.74515,-2.956649 -9.055498,-5.610518 -3.950378,-8.66062 1.696478,1.897023 1.770418,-5.43503 5.347308,-3.072411 -0.44014,-5.474701 6.11995,-4.950882 7.7846,-0.815355 0.69076,0.682329 1.39587,1.351469 2.07685,2.042771 z' />
+  <path class='st0' d='m 120.54891,39.417125 c 2.50681,1.334124 4.80466,4.941837 0.75044,5.297362 -0.46414,1.89865 -5.25369,5.602652 -8.01742,1.815475 -3.87345,-2.809139 -0.0676,-7.603869 2.3036,-8.133924 1.6795,-3.853018 3.16703,-1.199465 4.96338,1.021087 z m -2.2464,2.175828 c -4.8049,-2.992167 -3.08987,6.380358 0.42374,2.036159 0.33052,-0.677508 0.12099,-1.525836 -0.42374,-2.036159 z' />
+  <path class='st0' d='m 128.50836,24.06821 c -5.10403,3.035506 3.20535,6.383175 5.05938,9.450276 -0.91853,2.95886 -4.06493,3.650723 -5.34691,0.265618 -2.25715,-2.089033 -4.65672,-6.948595 -7.07024,-2.584686 -4.71758,-3.764394 3.81217,-5.812054 5.12382,-9.226328 0.75738,0.677487 1.38637,1.498638 2.23389,2.095175 z' />
+  <path class='st0' d='m 137.14366,22.299812 c -3.09615,2.259885 0.71537,4.412454 1.99042,6.435866 -3.08975,5.080354 -5.91384,-2.98648 -8.92144,-4.094939 1.44369,-3.219573 3.3497,-1.335928 4.27156,-4.41058 0.97822,-0.894325 1.75044,1.871047 2.65946,2.069653 z' />
+  <path class='st0' d='m 136.85093,14.890174 c 2.31562,5.283511 -7.17975,1.771993 -1.29675,-0.475107 l 0.7108,0.08973 z m 4.867,5.317354 c 2.56912,1.439678 4.26517,4.725219 0.30678,5.233637 -1.56592,-3.098864 -9.51683,-5.749448 -3.64502,-8.633714 1.17746,0.325095 2.15375,2.591149 3.33824,3.400077 z' />
+  <path class='st0' d='m 149.95578,11.976423 c 2.50679,1.334142 4.80455,4.94192 0.75041,5.297394 -0.4641,1.898604 -5.25368,5.602645 -8.0174,1.81545 -3.87347,-2.80918 -0.0676,-7.603844 2.30366,-8.133968 1.67949,-3.8530525 3.16695,-1.1993573 4.96333,1.021124 z m -2.24641,2.175828 c -4.80489,-2.992177 -3.08986,6.380343 0.42374,2.036167 0.33055,-0.677518 0.121,-1.52585 -0.42374,-2.036167 z' />
+  <path class='st0' d='m 153.26135,7.538431 c 2.60497,1.5799548 6.03999,5.944272 1.08117,6.050232 -2.53319,-3.231828 -7.20316,-6.4304525 -8.84748,-9.4582682 1.89121,-2.8664883 3.78452,-2.247699 5.38514,0.8929426 0.78017,0.8503859 1.57195,1.6911437 2.38118,2.5150667 z' />
+  </pattern>  
+  <linearGradient id='groupUnderTitleLine' x1='0%' y1='0%' x2='100%' y2='0%' >
+          <stop offset='0%' stop-color='#999999' stop-opacity='0.7'/> 
+          <stop offset='100%' stop-color='#999999' stop-opacity='0' /> 
+   </linearGradient>
+  <radialGradient id='calloutGradient' cx='25%' cy='20%' r='80%' fx='10%' fy='10%'>
+	   <stop offset='0%' stop-color='#ffffff' />
+    <stop offset='100%' stop-color='#f8f6d1' />
+  </radialGradient>
+  <filter id='shadow' width='120%' height='120%'> 
+      <feOffset result='offOut' in='SourceGraphic' dx='1' dy='1' /> 
+      <feColorMatrix result='matrixOut' in='offOut' type='matrix' 
+      values='0.1 0 0 0 0 0 0.4 0 0 0 0 0 0.6 0 0 0 0 0 0.3 0' /> 
+      <feGaussianBlur result='blurOut' in='matrixOut' stdDeviation='3' /> 
+      <feBlend in='SourceGraphic' in2='blurOut' mode='normal' /> 
+    </filter> 
+  <filter id='fkShadow' height='130%'> 
+    <feGaussianBlur in='SourceAlpha' stdDeviation='1.5'/> <!-- stdDeviation is how much to blur -->
+    <feOffset dx='1.2' dy='1.2' result='offsetblur'/> <!-- how much to offset -->
+    <feMerge>
+    <feMergeNode/> <!-- this contains the offset blurred image -->
+    <feMergeNode in='SourceGraphic'/> <!-- this contains the element that the filter is applied to -->
+    </feMerge>
+  </filter>
+  <radialGradient id='legendGradient' fx='5%' fy='5%' r='75%' spreadMethod='pad'>
+          <stop offset='0%' stop-color='#eefbf2' stop-opacity='1'/> 
+          <stop offset='100%' stop-color='#cff9cb' stop-opacity='1' /> 
+   </radialGradient>
+  <symbol id='calloutArrowDown' overflow='visible' >
+      <path d='M 0,0 L 8,12 L 16,0 z' style='fill:#f8f6d1;stroke:none; filter: url(#shadow);' />
+      <path d='M 0,0 L 8,12 L 16,0' style='stroke:#bebdbd; stroke-width:0.5;' />
+  </symbol>
+  <symbol id='calloutArrowUp' overflow='visible' >
+      <path d='M 0,16 L 8,4 L 16,16 z' style='fill:#ffffff; stroke:none; filter: url(#shadow);' />
+      <path d='M 0,16 L 8,4 L 16,16' style='stroke:#bebdbd; stroke-width:0.5;' />
+  </symbol>
+  <symbol id='pk' overflow='visible' >
+    <g transform='scale(0.99)'>
+     <path style='fill:#fffa7d;stroke:#765f03;stroke-width:0.6;stroke-linecap:round;stroke-linejoin:round;'
+        d='M 9.3678877,3.5695485 C 9.1030218,3.2729386 9.0796382,2.7628519 9.3396185,2.4517097 9.5449651,2.1956495 9.9040386,2.0980533 10.199638,2.2169415 10.533525,2.3415459 10.775153,2.706942 10.750675,3.0842709 10.737029,3.3980003 10.541153,3.699122 10.258248,3.8066067 9.966649,3.9250429 9.6169668,3.8418805 9.4008073,3.6062324 9.3894892,3.5943518 9.3785264,3.582104 9.3678886,3.5695487 z M 11.226617,6.9916004 C 11.888137,6.3548946 12.293488,5.4172188 12.311087,4.442353 12.378144,2.7379364 11.248678,1.0541269 9.7322318,0.44767357 8.3887112,-0.1280313 6.7865012,0.26822889 5.8918395,1.4007929 5.080823,2.3839145 4.9336815,3.8452096 5.3635544,5.101615 L 4.3670905,5.315913 C 4.0664984,5.3682645 4.0967703,5.6316724 4.2574957,5.8208829 L 4.9124,6.5655244 4.1543436,7.2512357 3.2136002,7.2163506 3.1674775,8.5586827 2.0406832,8.5086512 1.5965306,8.9299953 1.5471661,10.179833 0.75616674,10.195223 0.2112857,10.758575 0.15354288,11.735988 0.07199052,12.765553 c 0.36440953,0.238225 0.79006967,0.195492 1.44938278,-0.02675 L 6.3033562,8.1282037 6.8217102,8.6765688 C 6.9985465,8.8799427 7.3003699,8.7497574 7.358381,8.5016252 L 7.4938877,7.5084164 c 0.8537488,0.3985387 1.8303125,0.4711541 2.6851793,0.1427713 0.393927,-0.1407258 0.746858,-0.3701772 1.04755,-0.6595873 z'/>
+     <path d='M 6.8014948,6.3102123 0.15369063,13.024481 0.21560535,12.141962 6.0062342,6.2683782 z'
+        style='fill:#ffe5a5;fill-opacity:1;stroke:#854e31;stroke-width:0.06912433;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:3.00300009'/>
+    </g>
+  </symbol>
+  <symbol id='dist' overflow='visible' >
+    <g transform='scale(0.99)'>
+      <path style='fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;' d='M 0.177,11.431 12.28,11.449'/>
+      <path style='fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;' d='m 6.124,3.954 0.066,7.154 v 0'/>
+      <rect width='11.78' height='3.40' x='0.40' y='0.44' style='fill:#fffa7d;stroke:#765f03;stroke-width:0.6;' ry='0.83'/>
+      <rect width='11.78' height='3.40' x='0.40' y='5.609' style='fill:#fffa7d;stroke:#765f03;stroke-width:0.6;' ry='0.832'/>
+    </g>
+  </symbol>
+  <symbol id='unq' overflow='visible' >
+    <g transform='scale(0.99)'>
+      <rect style='fill:#fbea8e;stroke:#7e4d31;stroke-width:0.71934468;stroke-linecap:round;stroke-linejoin:round;'
+         width='2.29' height='8.43' x='7.48' y='-0.76' ry='1.14' transform='matrix(0.701,0.713,-0.727,0.685,0,0)' />
+      <path style='fill:white;stroke:#858585;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;'
+         d='m 26.04,8.64 a 4.13,4.13 0 1 1 -8.26,0 4.13,4.13 0 1 1 8.26,0 z'
+         transform='matrix(1.025,0,0,0.987,-14.690,-3.862)' />
+      <text x='5.8' y='7.4' style='font-size:7px;fill:#8a8a8a;'>1</text>
+    </g>
+  </symbol>
+  <symbol id='idx' overflow='visible' >
+    <g transform='scale(0.99)'>
+      <rect style='fill:#fbea8e;stroke:#7e4d31;stroke-width:0.71934468;stroke-linecap:round;stroke-linejoin:round;'
+         width='2.29' height='8.43' x='7.48' y='-0.76' ry='1.14' transform='matrix(0.701,0.713,-0.727,0.685,0,0)' />
+      <path style='fill:white;stroke:#858585;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;'
+         d='m 26.04,8.64 a 4.13,4.13 0 1 1 -8.26,0 4.13,4.13 0 1 1 8.26,0 z'
+         transform='matrix(1.025,0,0,0.987,-14.690,-3.862)' />
+    </g>
+  </symbol>
+  <symbol id='fk' overflow='visible' >
+    <g transform='scale(0.87)'>
+      <path style='fill:#f3e1b7;stroke:#7e471f;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+      d='M 12.48,0.33 7.07,0.89 9.067,2.974 0.329,11.731 1.073,12.597 9.811,3.841 11.77,5.78 z' />
+    </g>
+  </symbol>
+  <symbol id='ref' overflow='visible' >
+    <g transform='scale(0.87)'>
+      <path style='fill:#f3e1b7;stroke:#7e471f;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+          d='M 0.10,12.70 5.31,12.15 3.40,10.06 11.82,1.32 11.11,0.45 2.68,9.19 0.80,7.24 z'/>
+    </g>
+  </symbol>
+  <symbol id='flag0' overflow='visible' >
+    <g transform='scale(0.92)'>
+      <path style='fill:#b7d0f6;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+          d='M 0.12,12.67 0.16,7.22 C 2.59,7.22 4.13,8.78 9.22,4.22 5.68,4.98 2.53,4.50 0.09,1.80 z'/>
+    </g>
+  </symbol>
+  <symbol id='flag1' overflow='visible' >
+    <g transform='scale(0.92)'>
+      <path style='fill:#f4a393;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+          d='M 0.12,12.67 0.16,7.22 C 2.59,7.22 4.13,8.78 9.22,4.22 5.68,4.98 2.53,4.50 0.09,1.80 z'/>
+    </g>
+  </symbol>
+  <symbol id='flag2' overflow='visible' >
+    <g transform='scale(0.92)'>
+      <path style='fill:#77ec8b;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+          d='M 0.12,12.67 0.16,7.22 C 2.59,7.22 4.13,8.78 9.22,4.22 5.68,4.98 2.53,4.50 0.09,1.80 z'/>
+    </g>
+  </symbol>
+  <symbol id='nn' overflow='visible' >
+  <path style='stroke:#9b3e50;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+          d='M 0,0 3,3 M 0,3 3,0 z'/>
+  </symbol>
+  <symbol id='view' overflow='visible' >
+    <g transform='scale(0.99)'>
+     <line x1='12' y1='6' x2='19' y2='0' stroke='black' stroke-width='0.5' />
+     <line x1='0' y1='6' x2='7' y2='0' stroke='black' stroke-width='0.5' />
+     <circle cx='3' cy='6' r='3' fill='#f9ebbc' stroke='black' stroke-width='0.5'/>
+     <circle cx='10' cy='6' r='3' fill='#f9ebbc' stroke='black' stroke-width='0.5'/>
+    </g>
+  </symbol>
+  <marker id='arrow01' viewBox='0 0 16.00 8.00' refX='8.00' refY='4.00' markerUnits='strokeWidth' markerWidth='16.00' markerHeight='8.00' orient='auto'>
+    <path d='M 0.00,4.00 L 16.00,4.00 z' />
+  </marker>
+  <marker id='arrow1' viewBox='0 0 16.00 8.00' refX='8.00' refY='4.00' markerUnits='strokeWidth' markerWidth='16.00' markerHeight='8.00' orient='auto'>
+    <path d='M 0.00,4.00 L 16.00,4.00 z' />
+  </marker>
+  <marker id='foot01' viewBox='0 0 16.00 8.00' refX='8.00' refY='4.00' markerUnits='strokeWidth' markerWidth='16.00' markerHeight='8.00' orient='auto'>
+    <path d='M 1.60,4.00 L 3.20,4.00 L 4.80,4.00 L 6.40,4.00 z' />
+  </marker>
+  <marker id='foot0p' viewBox='0 0 16.00 8.00' refX='8.00' refY='4.00' markerUnits='strokeWidth' markerWidth='16.00' markerHeight='8.00' orient='auto'>
+    <path d='M 1.60,4.00 L 3.20,4.00 L 4.80,4.00 L 6.40,4.00 z' />
+    <path d='M 0.00,0.00 L 8.00,4.00 L 0.00,8.00' />
+  </marker>
+  <marker id='foot1' viewBox='0 0 16.00 8.00' refX='8.00' refY='4.00' markerUnits='strokeWidth' markerWidth='16.00' markerHeight='8.00' orient='auto'>
+    <path d='M 0.00,4.00 L 16.00,4.00 z' />
+  </marker>
+  <marker id='foot1p' viewBox='0 0 16.00 8.00' refX='8.00' refY='4.00' markerUnits='strokeWidth' markerWidth='16.00' markerHeight='8.00' orient='auto'>
+    <path d='M 0.00,4.00 L 16.00,4.00 z' />
+    <path d='M 0.00,0.00 L 8.00,4.00 L 0.00,8.00' />
+  </marker>
+  <linearGradient id='tbg_BED3F4' x1='0%' y1='0%' x2='0%' y2='100%' >
+     <stop offset='0%' stop-color='#E0E9F8' /> 
+     <stop offset='60%' stop-color='#C1D2EE' /> 
+     <stop offset='100%' stop-color='#E0E9F8' /> 
+  </linearGradient>
+  <linearGradient id='tbg_C7F4BE' x1='0%' y1='0%' x2='0%' y2='100%' >
+     <stop offset='0%' stop-color='#E4F8E0' /> 
+     <stop offset='60%' stop-color='#C8EEC1' /> 
+     <stop offset='100%' stop-color='#E4F8E0' /> 
+  </linearGradient>
+  <linearGradient id='tbg_F4DDBE' x1='0%' y1='0%' x2='0%' y2='100%' >
+     <stop offset='0%' stop-color='#F8EDE0' /> 
+     <stop offset='60%' stop-color='#EEDAC1' /> 
+     <stop offset='100%' stop-color='#F8EDE0' /> 
+  </linearGradient>
+</defs>
+
+<!-- == Desktop == -->
+<rect x='1' y='1' width='1390' height='1244' rx='8' ry='8' style='fill:url(#layoutBgB); stroke:#777777; stroke-width:0.5;' />
+<rect x='1' y='1' width='1390' height='1244' rx='8' ry='8' style='fill:url(#layoutBgA); stroke:#777777; stroke-width:0.5;' />
+
+<!-- == Legend == -->
+<g transform='translate(10,10)'>
+  <rect x='10' y='10' width='330' height='56' rx='6' ry='6' style='fill:url(#legendGradient);filter:url(#shadow);'/> 
+  <text x='20' y='43'>DVDStore-Documentation</text> 
+  <text x='20' y='57' style='fill:#aaaaaa; font-size:11px;'><tspan>Move the mouse over tables &amp; columns to read the comments.</tspan></text> 
+<a xlink:href='https://www.dbschema.com'> <path class='logo' d='m 32.309685,20.963194 c 0.411708,4.732616 -4.298055,7.925636 -8.723583,6.970196 -6.616967,1.8448 -2.656457,-6.434594 -3.911969,-10.01566 -2.15469,-5.89407 6.06247,-3.508505 9.167655,-2.863689 2.199228,1.054873 3.389343,3.582089 3.467897,5.909153 z m -3.720955,0.01451 c 0.434195,-4.414565 -7.644142,-5.37533 -5.137307,0.107342 -1.812268,5.992146 5.532698,4.379388 5.137307,-0.107342 z' /> <path class='logo' d='m 44.329732,23.050637 c 0.850982,5.097305 -5.250434,4.558924 -7.144836,4.752415 -6.418993,1.64391 -1.872992,-7.49274 -3.541914,-10.942842 -2.499646,-3.817859 5.939283,-4.402698 3.538545,-0.13612 -1.287874,4.989123 4.215411,-1.154796 5.956717,2.809584 0.840273,0.970849 1.168829,2.272413 1.191488,3.516963 z m -3.519477,-0.09299 c -1.398216,-5.518069 -6.361061,2.717467 -0.984368,1.810718 0.686994,-0.30388 1.029454,-1.087638 0.984368,-1.810718 z' /> <path class='logo' d='m 52.234961,23.301163 c 0.954818,5.035675 -8.606408,6.284861 -6.262292,1.674914 6.000358,-1.604717 -5.188764,-7.870044 1.75972,-10.384908 2.288682,-3.253567 6.399287,3.075831 2.304111,2.48058 -2.124941,2.016587 2.688777,3.89858 2.198472,6.229403 z' /> <path class='logo' d='m 60.204336,21.349224 c -4.894917,-1.916474 -3.458707,5.391212 0.347494,3.37231 2.120589,6.821713 -10.599623,1.664746 -6.906229,-3.691132 0.354172,-3.663246 9.875349,-4.711252 6.558735,0.318822 z' /> <path class='logo' d='m 71.730617,20.654299 c 0.0013,2.316285 0.190131,4.655698 0.07825,6.958009 -6.532419,3.303565 -0.660423,-8.722256 -6.009639,-5.821653 -0.818815,2.024533 1.726403,6.746337 -1.95327,6.005484 -3.458346,-1.137537 -0.696275,-7.713407 -1.833252,-10.994208 -2.308916,-3.710131 5.93704,-4.164951 3.518609,0.0063 -1.462376,6.166445 5.169629,-2.857523 6.19931,3.846079 z' /> <path class='logo' d='m 82.245738,22.378957 c -0.24581,2.448954 -9.386766,0.8867 -3.885979,2.877055 3.312576,-2.99157 5.250902,3.334514 0.482647,2.665545 -7.415384,1.492275 -7.823196,-11.597641 -0.275476,-10.032117 2.068161,0.391458 3.682204,2.408824 3.678808,4.489517 z m -3.414436,-0.578473 c -1.124703,-4.072004 -5.087405,2.125488 -0.316922,0.156453 z' /> <path class='logo' d='m 98.936899,27.222794 c -4.73541,2.718339 -3.1239,-3.406557 -3.92611,-6.050494 -4.66985,-1.438471 0.21621,6.932413 -3.41219,6.438039 -4.46096,1.160054 -0.22824,-5.774711 -3.31526,-6.700429 -3.410722,1.082173 1.04451,9.536575 -4.745091,6.372895 0.746632,-3.355214 -2.776394,-10.269232 3.034971,-9.038963 -0.058,2.544602 5.00686,-2.785359 6.00342,1.37844 3.42021,-4.316316 7.851251,0.524966 6.24018,4.690538 0.0379,0.969988 0.0954,1.940046 0.12008,2.909974 z' /> <path class='logo' d='m 110.47859,22.686058 c 0.91826,2.682088 0.13016,6.890551 -3.0725,4.397004 -1.63641,1.077877 -7.664291,0.541832 -7.09365,-4.114836 -0.907891,-4.692933 5.14729,-5.625578 7.24058,-4.40354 3.85932,-1.686263 3.13176,1.271515 2.92557,4.121372 z m -3.12695,0.0704 c -1.46278,-5.460062 -6.61615,2.5826 -1.08221,1.782003 0.70431,-0.272594 1.13111,-1.037444 1.08221,-1.782003 z' /> </a>
+</g>
+
+<g transform='translate(0,110)'>
+<!-- == Group 'staff' == -->
+<rect class='grp' style='fill:#EEF7EC;stroke:#D1E0CE' x='32' y='45' width='624' height='898' />
+<text x='44' y='61'>staff</text>
+<rect style='fill:url(#groupUnderTitleLine); stroke-width:2;' x='44' y='65' width='600' height='2' />
+
+<!-- == Group 'film' == -->
+<rect class='grp' style='fill:#ECF0F7;stroke:#CED5E0' x='720' y='45' width='640' height='626' />
+<text x='732' y='61'>film</text>
+<rect style='fill:url(#groupUnderTitleLine); stroke-width:2;' x='732' y='65' width='616' height='2' />
+
+<!-- == Group 'salesbyfilmcategory' == -->
+<rect class='grp' style='fill:#F7F2EC;stroke:#E0D8CE' x='832' y='701' width='464' height='370' />
+<text x='844' y='717'>salesbyfilmcategory</text>
+<rect style='fill:url(#groupUnderTitleLine); stroke-width:2;' x='844' y='721' width='440' height='2' />
+
+<!-- == Fk 'address_fkaddresscity' == -->
+<path id='address_fkaddresscity'  onmouseover="hghl(['address_fkaddresscity','dbo.address.cityid','dbo.city.cityid'])" onmouseout="uhghl(['address_fkaddresscity','dbo.address.cityid','dbo.city.cityid'])" transform='translate(8,0)' class='scene' d='M 320 560 L 368,560' >
+	<title>Fk fkaddresscity
+address ref city ( cityid )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 320 560 L 368,560' ></path>
+<text x='329' y='555' transform='rotate(0 329,555)' title='Fk fkaddresscity
+address ref city ( cityid )' class='relName' style='fill:#748EA7'>cityid</text>
+<!-- == Fk 'city_fkcitycountry' == -->
+<path id='city_fkcitycountry'  onmouseover="hghl(['city_fkcitycountry','dbo.city.countryid','dbo.country.countryid'])" onmouseout="uhghl(['city_fkcitycountry','dbo.city.countryid','dbo.country.countryid'])" transform='translate(8,0)' class='scene' d='M 480 560 L 528,560' >
+	<title>Fk fkcitycountry
+city ref country ( countryid )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 480 560 L 528,560' ></path>
+<text x='489' y='555' transform='rotate(0 489,555)' title='Fk fkcitycountry
+city ref country ( countryid )' class='relName' style='fill:#748EA7'>countryid</text>
+<!-- == Fk 'customer_fkcustomeraddress' == -->
+<path id='customer_fkcustomeraddress'  onmouseover="hghl(['customer_fkcustomeraddress','dbo.customer.addressid','dbo.address.addressid'])" onmouseout="uhghl(['customer_fkcustomeraddress','dbo.customer.addressid','dbo.address.addressid'])" transform='translate(8,0)' class='scene' d='M 384 416 L 312,416 Q 304,416 304,424 L 304,528' >
+	<title>Fk fkcustomeraddress
+customer ref address ( addressid )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 384 416 L 312,416 Q 304,416 304,424 L 304,528' ></path>
+<text x='345' y='411' transform='rotate(0 345,411)' title='Fk fkcustomeraddress
+customer ref address ( addressid )' class='relName' style='fill:#748EA7'>addressid</text>
+<!-- == Fk 'customer_fkcustomerstore' == -->
+<path id='customer_fkcustomerstore'  onmouseover="hghl(['customer_fkcustomerstore','dbo.customer.storeid','dbo.store.storeid'])" onmouseout="uhghl(['customer_fkcustomerstore','dbo.customer.storeid','dbo.store.storeid'])" transform='translate(8,0)' class='scene' d='M 384 272 L 336,272' >
+	<title>Fk fkcustomerstore
+customer ref store ( storeid )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 384 272 L 336,272' ></path>
+<text x='358' y='267' transform='rotate(0 358,267)' title='Fk fkcustomerstore
+customer ref store ( storeid )' class='relName' style='fill:#748EA7'>storeid</text>
+<!-- == Fk 'film_fkfilmlanguage' == -->
+<path id='film_fkfilmlanguage'  onmouseover="hghl(['film_fkfilmlanguage','dbo.film.languageid','dbo.language.languageid'])" onmouseout="uhghl(['film_fkfilmlanguage','dbo.film.languageid','dbo.language.languageid'])" transform='translate(8,0)' class='scene' d='M 1024 96 L 1072,96' >
+	<title>Fk fkfilmlanguage
+film ref language ( languageid )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 1024 96 L 1072,96' ></path>
+<text x='1033' y='91' transform='rotate(0 1033,91)' title='Fk fkfilmlanguage
+film ref language ( languageid )' class='relName' style='fill:#748EA7'>languageid</text>
+<!-- == Fk 'film_fkfilmlanguageoriginal' == -->
+<path id='film_fkfilmlanguageoriginal'  onmouseover="hghl(['film_fkfilmlanguageoriginal','dbo.film.originallanguageid','dbo.language.languageid'])" onmouseout="uhghl(['film_fkfilmlanguageoriginal','dbo.film.originallanguageid','dbo.language.languageid'])" transform='translate(8,0)' class='scene' d='M 1024 112 L 1072,112' >
+	<title>Fk fkfilmlanguageoriginal
+film ref language ( originallanguageid -&gt; languageid )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'  class='dotted '  d='M 1024 112 L 1072,112' ></path>
+<text x='1033' y='107' transform='rotate(0 1033,107)' title='Fk fkfilmlanguageoriginal
+film ref language ( originallanguageid -&gt; languageid )' class='relName' style='fill:#748EA7'>originallanguageid</text>
+<!-- == Fk 'filmactor_fkfilmactoractor' == -->
+<path id='filmactor_fkfilmactoractor'  onmouseover="hghl(['filmactor_fkfilmactoractor','dbo.filmactor.actorid','dbo.actor.actorid'])" onmouseout="uhghl(['filmactor_fkfilmactoractor','dbo.filmactor.actorid','dbo.actor.actorid'])" transform='translate(8,0)' class='scene' d='M 1184 256 L 1232,256' >
+	<title>Fk fkfilmactoractor
+filmactor ref actor ( actorid )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 1184 256 L 1232,256' ></path>
+<text x='1193' y='251' transform='rotate(0 1193,251)' title='Fk fkfilmactoractor
+filmactor ref actor ( actorid )' class='relName' style='fill:#748EA7'>actorid</text>
+<!-- == Fk 'filmactor_fkfilmactorfilm' == -->
+<path id='filmactor_fkfilmactorfilm'  onmouseover="hghl(['filmactor_fkfilmactorfilm','dbo.filmactor.filmid','dbo.film.filmid'])" onmouseout="uhghl(['filmactor_fkfilmactorfilm','dbo.filmactor.filmid','dbo.film.filmid'])" transform='translate(8,0)' class='scene' d='M 1072 240 L 1024,240' >
+	<title>Fk fkfilmactorfilm
+filmactor ref film ( filmid )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 1072 240 L 1024,240' ></path>
+<text x='1053' y='235' transform='rotate(0 1053,235)' title='Fk fkfilmactorfilm
+filmactor ref film ( filmid )' class='relName' style='fill:#748EA7'>filmid</text>
+<!-- == Fk 'filmcategory_fkfilmcategorycategory' == -->
+<path id='filmcategory_fkfilmcategorycategory'  onmouseover="hghl(['filmcategory_fkfilmcategorycategory','dbo.filmcategory.categoryid','dbo.category.categoryid'])" onmouseout="uhghl(['filmcategory_fkfilmcategorycategory','dbo.filmcategory.categoryid','dbo.category.categoryid'])" transform='translate(8,0)' class='scene' d='M 1168 496 L 1168,552 Q 1168,560 1176,560 L 1232,560' >
+	<title>Fk fkfilmcategorycategory
+filmcategory ref category ( categoryid )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 1168 496 L 1168,552 Q 1168,560 1176,560 L 1232,560' ></path>
+<text x='1183' y='497' transform='rotate(90 1183,497)' title='Fk fkfilmcategorycategory
+filmcategory ref category ( categoryid )' class='relName' style='fill:#748EA7'>categoryid</text>
+<!-- == Fk 'filmcategory_fkfilmcategoryfilm' == -->
+<path id='filmcategory_fkfilmcategoryfilm'  onmouseover="hghl(['filmcategory_fkfilmcategoryfilm','dbo.filmcategory.filmid','dbo.film.filmid'])" onmouseout="uhghl(['filmcategory_fkfilmcategoryfilm','dbo.filmcategory.filmid','dbo.film.filmid'])" transform='translate(8,0)' class='scene' d='M 1072 400 L 1048,400 Q 1040,400 1040,392 L 1040,328 Q 1040,320 1032,320 L 1024,320' >
+	<title>Fk fkfilmcategoryfilm
+filmcategory ref film ( filmid )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 1072 400 L 1048,400 Q 1040,400 1040,392 L 1040,328 Q 1040,320 1032,320 L 1024,320' ></path>
+<text x='1053' y='395' transform='rotate(0 1053,395)' title='Fk fkfilmcategoryfilm
+filmcategory ref film ( filmid )' class='relName' style='fill:#748EA7'>filmid</text>
+<!-- == Fk 'inventory_fkinventoryfilm' == -->
+<path id='inventory_fkinventoryfilm'  onmouseover="hghl(['inventory_fkinventoryfilm','dbo.inventory.filmid','dbo.film.filmid'])" onmouseout="uhghl(['inventory_fkinventoryfilm','dbo.inventory.filmid','dbo.film.filmid'])" transform='translate(8,0)' class='scene' d='M 160 96 L 880,96' >
+	<title>Fk fkinventoryfilm
+inventory ref film ( filmid )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 160 96 L 880,96' ></path>
+<text x='169' y='91' transform='rotate(0 169,91)' title='Fk fkinventoryfilm
+inventory ref film ( filmid )' class='relName' style='fill:#748EA7'>filmid</text>
+<!-- == Fk 'inventory_fkinventorystore' == -->
+<path id='inventory_fkinventorystore'  onmouseover="hghl(['inventory_fkinventorystore','dbo.inventory.storeid','dbo.store.storeid'])" onmouseout="uhghl(['inventory_fkinventorystore','dbo.inventory.storeid','dbo.store.storeid'])" transform='translate(8,0)' class='scene' d='M 144 192 L 144,216 Q 144,224 152,224 L 232,224 Q 240,224 240,232 L 240,240' >
+	<title>Fk fkinventorystore
+inventory ref store ( storeid )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 144 192 L 144,216 Q 144,224 152,224 L 232,224 Q 240,224 240,232 L 240,240' ></path>
+<text x='159' y='193' transform='rotate(90 159,193)' title='Fk fkinventorystore
+inventory ref store ( storeid )' class='relName' style='fill:#748EA7'>storeid</text>
+<!-- == Fk 'payment_fkpaymentcustomer' == -->
+<path id='payment_fkpaymentcustomer'  onmouseover="hghl(['payment_fkpaymentcustomer','dbo.payment.customerid','dbo.customer.customerid'])" onmouseout="uhghl(['payment_fkpaymentcustomer','dbo.payment.customerid','dbo.customer.customerid'])" transform='translate(8,0)' class='scene' d='M 144 752 L 144,744 Q 144,736 152,736 L 504,736 Q 512,736 512,728 L 512,440 Q 512,432 504,432 L 496,432' >
+	<title>Fk fkpaymentcustomer
+payment ref customer ( customerid )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 144 752 L 144,744 Q 144,736 152,736 L 504,736 Q 512,736 512,728 L 512,440 Q 512,432 504,432 L 496,432' ></path>
+<text x='147' y='747' transform='rotate(270 147,747)' title='Fk fkpaymentcustomer
+payment ref customer ( customerid )' class='relName' style='fill:#748EA7'>customerid</text>
+<!-- == Fk 'payment_fkpaymentrental' == -->
+<path id='payment_fkpaymentrental'  onmouseover="hghl(['payment_fkpaymentrental','dbo.payment.rentalid','dbo.rental.rentalid'])" onmouseout="uhghl(['payment_fkpaymentrental','dbo.payment.rentalid','dbo.rental.rentalid'])" transform='translate(8,0)' class='scene' d='M 80 752 L 80,704' >
+	<title>Fk fkpaymentrental
+payment ref rental ( rentalid )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'  class='dotted '  d='M 80 752 L 80,704' ></path>
+<text x='83' y='747' transform='rotate(270 83,747)' title='Fk fkpaymentrental
+payment ref rental ( rentalid )' class='relName' style='fill:#748EA7'>rentalid</text>
+<!-- == Fk 'payment_fkpaymentstaff' == -->
+<path id='payment_fkpaymentstaff'  onmouseover="hghl(['payment_fkpaymentstaff','dbo.payment.staffid','dbo.staff.staffid'])" onmouseout="uhghl(['payment_fkpaymentstaff','dbo.payment.staffid','dbo.staff.staffid'])" transform='translate(8,0)' class='scene' d='M 160 784 L 168,784 Q 176,784 176,776 L 176,472 Q 176,464 168,464 L 160,464' >
+	<title>Fk fkpaymentstaff
+payment ref staff ( staffid )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 160 784 L 168,784 Q 176,784 176,776 L 176,472 Q 176,464 168,464 L 160,464' ></path>
+<text x='169' y='779' transform='rotate(0 169,779)' title='Fk fkpaymentstaff
+payment ref staff ( staffid )' class='relName' style='fill:#748EA7'>staffid</text>
+<!-- == Fk 'rental_fkrentalcustomer' == -->
+<path id='rental_fkrentalcustomer'  onmouseover="hghl(['rental_fkrentalcustomer','dbo.rental.customerid','dbo.customer.customerid'])" onmouseout="uhghl(['rental_fkrentalcustomer','dbo.rental.customerid','dbo.customer.customerid'])" transform='translate(8,0)' class='scene' d='M 144 528 L 144,504 Q 144,496 152,496 L 408,496 Q 416,496 416,488 L 416,448' >
+	<title>Fk fkrentalcustomer
+rental ref customer ( customerid )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 144 528 L 144,504 Q 144,496 152,496 L 408,496 Q 416,496 416,488 L 416,448' ></path>
+<text x='147' y='523' transform='rotate(270 147,523)' title='Fk fkrentalcustomer
+rental ref customer ( customerid )' class='relName' style='fill:#748EA7'>customerid</text>
+<!-- == Fk 'rental_fkrentalinventory' == -->
+<path id='rental_fkrentalinventory'  onmouseover="hghl(['rental_fkrentalinventory','dbo.rental.inventoryid','dbo.inventory.inventoryid'])" onmouseout="uhghl(['rental_fkrentalinventory','dbo.rental.inventoryid','dbo.inventory.inventoryid'])" transform='translate(8,0)' class='scene' d='M 48 544 L 40,544 Q 32,544 32,536 L 32,168 Q 32,160 40,160 L 48,160' >
+	<title>Fk fkrentalinventory
+rental ref inventory ( inventoryid )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 48 544 L 40,544 Q 32,544 32,536 L 32,168 Q 32,160 40,160 L 48,160' ></path>
+<text x='0' y='539' transform='rotate(0 0,539)' title='Fk fkrentalinventory
+rental ref inventory ( inventoryid )' class='relName' style='fill:#748EA7'>inventoryid</text>
+<!-- == Fk 'rental_fkrentalstaff' == -->
+<path id='rental_fkrentalstaff'  onmouseover="hghl(['rental_fkrentalstaff','dbo.rental.staffid','dbo.staff.staffid'])" onmouseout="uhghl(['rental_fkrentalstaff','dbo.rental.staffid','dbo.staff.staffid'])" transform='translate(8,0)' class='scene' d='M 80 528 L 80,480' >
+	<title>Fk fkrentalstaff
+rental ref staff ( staffid )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 80 528 L 80,480' ></path>
+<text x='83' y='523' transform='rotate(270 83,523)' title='Fk fkrentalstaff
+rental ref staff ( staffid )' class='relName' style='fill:#748EA7'>staffid</text>
+<!-- == Fk 'staff_fkstaffaddress' == -->
+<path id='staff_fkstaffaddress'  onmouseover="hghl(['staff_fkstaffaddress','dbo.staff.addressid','dbo.address.addressid'])" onmouseout="uhghl(['staff_fkstaffaddress','dbo.staff.addressid','dbo.address.addressid'])" transform='translate(8,0)' class='scene' d='M 160 448 L 232,448 Q 240,448 240,456 L 240,528' >
+	<title>Fk fkstaffaddress
+staff ref address ( addressid )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 160 448 L 232,448 Q 240,448 240,456 L 240,528' ></path>
+<text x='169' y='443' transform='rotate(0 169,443)' title='Fk fkstaffaddress
+staff ref address ( addressid )' class='relName' style='fill:#748EA7'>addressid</text>
+<!-- == Fk 'staff_fkstaffstore' == -->
+<path id='staff_fkstaffstore'  onmouseover="hghl(['staff_fkstaffstore','dbo.staff.storeid','dbo.store.storeid'])" onmouseout="uhghl(['staff_fkstaffstore','dbo.staff.storeid','dbo.store.storeid'])" transform='translate(8,0)' class='scene' d='M 160 272 L 208,272' >
+	<title>Fk fkstaffstore
+staff ref store ( storeid )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 160 272 L 208,272' ></path>
+<text x='169' y='267' transform='rotate(0 169,267)' title='Fk fkstaffstore
+staff ref store ( storeid )' class='relName' style='fill:#748EA7'>storeid</text>
+<!-- == Fk 'store_fkstoreaddress' == -->
+<path id='store_fkstoreaddress'  onmouseover="hghl(['store_fkstoreaddress','dbo.store.addressid','dbo.address.addressid'])" onmouseout="uhghl(['store_fkstoreaddress','dbo.store.addressid','dbo.address.addressid'])" transform='translate(8,0)' class='scene' d='M 256 368 L 256,528' >
+	<title>Fk fkstoreaddress
+store ref address ( addressid )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 256 368 L 256,528' ></path>
+<text x='271' y='369' transform='rotate(90 271,369)' title='Fk fkstoreaddress
+store ref address ( addressid )' class='relName' style='fill:#748EA7'>addressid</text>
+<!-- == Fk 'store_fkstorestaff' == -->
+<path id='store_fkstorestaff'  onmouseover="hghl(['store_fkstorestaff','dbo.store.managerstaffid','dbo.staff.staffid'])" onmouseout="uhghl(['store_fkstorestaff','dbo.store.managerstaffid','dbo.staff.staffid'])" transform='translate(8,0)' class='scene' d='M 208 288 L 160,288' >
+	<title>Fk fkstorestaff
+store ref staff ( managerstaffid -&gt; staffid )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1)' marker-end='url(#arrow1)'    d='M 208 288 L 160,288' ></path>
+<text x='140' y='283' transform='rotate(0 140,283)' title='Fk fkstorestaff
+store ref staff ( managerstaffid -&gt; staffid )' class='relName' style='fill:#748EA7'>managerstaffid</text>
+<!-- == Table 'actor' == -->
+<rect class='entity' x='1248' y='232' width='96' height='112' rx='8' ry='8' style='stroke:none'/>
+<path d='M 1248 260 L 1248 240 Q 1248 232 1256 232 L 1336 232 Q 1344 232 1344 240 L 1344 260 L1248 260 ' style='fill:url(#tbg_BED3F4);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='1248' y='232' width='96' height='112' rx='8' ry='8' style='fill:none;stroke:#BED3F4'/>
+<a xlink:href='#actor'><text x='1279' y='252'>actor</text><title>Table dbo.actor</title></a>
+  <use id='nn' x='1250' y='269' xlink:href='#nn'/><a xlink:href='#actor.actorid'><use id='pk' x='1250' y='268' xlink:href='#pk'/><title>Pk PK__actor__83335D3308D5FF1D ( actorid ) </title></a>
+<a xlink:href='#actor.actorid'><text id='dbo.actor.actorid' x='1267' y='279' onmouseover="hghl(['filmactor_fkfilmactoractor','dbo.filmactor.actorid'])" onmouseout="uhghl(['filmactor_fkfilmactoractor','dbo.filmactor.actorid'])">actorid</text><title>actorid
+* int</title></a>
+<a xlink:href='#actor.actorid'><use id='ref' x='1332' y='268' xlink:href='#ref'/><title>Referred by filmactor ( actorid ) </title></a>
+  <use id='nn' x='1250' y='285' xlink:href='#nn'/><a xlink:href='#actor.firstname'><text id='dbo.actor.firstname' x='1267' y='295'>firstname</text><title>firstname
+* varchar(45)</title></a>
+<text x='1341' y='292' text-anchor='end' class='colType'>t</text>  <use id='nn' x='1250' y='301' xlink:href='#nn'/><a xlink:href='#actor.lastname'><use id='idx' x='1250' y='300' xlink:href='#idx'/><title>idxactorlastname ( lastname ) </title></a>
+<a xlink:href='#actor.lastname'><text id='dbo.actor.lastname' x='1267' y='311'>lastname</text><title>lastname
+* varchar(45)</title></a>
+<text x='1341' y='308' text-anchor='end' class='colType'>t</text>  <use id='nn' x='1250' y='317' xlink:href='#nn'/><a xlink:href='#actor.lastupdate'><text id='dbo.actor.lastupdate' x='1267' y='327'>lastupdate</text><title>lastupdate
+* datetime default getdate()</title></a>
+<text x='1341' y='324' text-anchor='end' class='colType'>d</text>
+<!-- == Table 'address' == -->
+<rect class='entity' x='224' y='536' width='96' height='176' rx='8' ry='8' style='stroke:none'/>
+<path d='M 224 564 L 224 544 Q 224 536 232 536 L 312 536 Q 320 536 320 544 L 320 564 L224 564 ' style='fill:url(#tbg_C7F4BE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='224' y='536' width='96' height='176' rx='8' ry='8' style='fill:none;stroke:#C7F4BE'/>
+<a xlink:href='#address'><text x='248' y='556'>address</text><title>Table dbo.address</title></a>
+  <use id='nn' x='226' y='573' xlink:href='#nn'/><a xlink:href='#address.addressid'><use id='pk' x='226' y='572' xlink:href='#pk'/><title>Pk PK__address__26A0158537CA7AC3 ( addressid ) </title></a>
+<a xlink:href='#address.addressid'><text id='dbo.address.addressid' x='243' y='583' onmouseover="hghl(['customer_fkcustomeraddress','dbo.customer.addressid','staff_fkstaffaddress','dbo.staff.addressid','store_fkstoreaddress','dbo.store.addressid'])" onmouseout="uhghl(['customer_fkcustomeraddress','dbo.customer.addressid','staff_fkstaffaddress','dbo.staff.addressid','store_fkstoreaddress','dbo.store.addressid'])">addressid</text><title>addressid
+* int</title></a>
+<a xlink:href='#address.addressid'><use id='ref' x='308' y='572' xlink:href='#ref'/><title>Referred by customer ( addressid ) 
+Referred by staff ( addressid ) 
+Referred by store ( addressid ) </title></a>
+  <use id='nn' x='226' y='589' xlink:href='#nn'/><a xlink:href='#address.address'><text id='dbo.address.address' x='243' y='599'>address</text><title>address
+* varchar(50)</title></a>
+<text x='317' y='596' text-anchor='end' class='colType'>t</text>  <a xlink:href='#address.address2'><text id='dbo.address.address2' x='243' y='615'>address2</text><title>address2
+varchar(50)</title></a>
+<text x='317' y='612' text-anchor='end' class='colType'>t</text>  <use id='nn' x='226' y='621' xlink:href='#nn'/><a xlink:href='#address.district'><text id='dbo.address.district' x='243' y='631'>district</text><title>district
+* varchar(20)</title></a>
+<text x='317' y='628' text-anchor='end' class='colType'>t</text>  <use id='nn' x='226' y='637' xlink:href='#nn'/><a xlink:href='#address.cityid'><use id='idx' x='226' y='636' xlink:href='#idx'/><title>idxfkcityid ( cityid ) </title></a>
+<a xlink:href='#address.cityid'><text id='dbo.address.cityid' x='243' y='647' onmouseover="hghl(['address_fkaddresscity','dbo.city.cityid'])" onmouseout="uhghl(['address_fkaddresscity','dbo.city.cityid'])">cityid</text><title>cityid
+* int</title></a>
+<a xlink:href='#address.cityid'><use id='fk' x='308' y='636' xlink:href='#fk'/><title>References city ( cityid ) </title></a>
+  <a xlink:href='#address.postalcode'><text id='dbo.address.postalcode' x='243' y='663'>postalcode</text><title>postalcode
+varchar(10)</title></a>
+<text x='317' y='660' text-anchor='end' class='colType'>t</text>  <use id='nn' x='226' y='669' xlink:href='#nn'/><a xlink:href='#address.phone'><text id='dbo.address.phone' x='243' y='679'>phone</text><title>phone
+* varchar(20)</title></a>
+<text x='317' y='676' text-anchor='end' class='colType'>t</text>  <use id='nn' x='226' y='685' xlink:href='#nn'/><a xlink:href='#address.lastupdate'><text id='dbo.address.lastupdate' x='243' y='695'>lastupdate</text><title>lastupdate
+* datetime default getdate()</title></a>
+<text x='317' y='692' text-anchor='end' class='colType'>d</text>
+<!-- == Table 'category' == -->
+<rect class='entity' x='1248' y='552' width='96' height='96' rx='8' ry='8' style='stroke:none'/>
+<path d='M 1248 580 L 1248 560 Q 1248 552 1256 552 L 1336 552 Q 1344 552 1344 560 L 1344 580 L1248 580 ' style='fill:url(#tbg_BED3F4);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='1248' y='552' width='96' height='96' rx='8' ry='8' style='fill:none;stroke:#BED3F4'/>
+<a xlink:href='#category'><text x='1270' y='572'>category</text><title>Table dbo.category</title></a>
+  <use id='nn' x='1250' y='589' xlink:href='#nn'/><a xlink:href='#category.categoryid'><use id='pk' x='1250' y='588' xlink:href='#pk'/><title>Pk PK__category__23CDE5903EA6F76C ( categoryid ) </title></a>
+<a xlink:href='#category.categoryid'><text id='dbo.category.categoryid' x='1267' y='599' onmouseover="hghl(['filmcategory_fkfilmcategorycategory','dbo.filmcategory.categoryid'])" onmouseout="uhghl(['filmcategory_fkfilmcategorycategory','dbo.filmcategory.categoryid'])">categoryid</text><title>categoryid
+* tinyint</title></a>
+<a xlink:href='#category.categoryid'><use id='ref' x='1332' y='588' xlink:href='#ref'/><title>Referred by filmcategory ( categoryid ) </title></a>
+  <use id='nn' x='1250' y='605' xlink:href='#nn'/><a xlink:href='#category.name'><text id='dbo.category.name' x='1267' y='615'>name</text><title>name
+* varchar(25)</title></a>
+<text x='1341' y='612' text-anchor='end' class='colType'>t</text>  <use id='nn' x='1250' y='621' xlink:href='#nn'/><a xlink:href='#category.lastupdate'><text id='dbo.category.lastupdate' x='1267' y='631'>lastupdate</text><title>lastupdate
+* datetime default getdate()</title></a>
+<text x='1341' y='628' text-anchor='end' class='colType'>d</text>
+<!-- == Table 'city' == -->
+<rect class='entity' x='384' y='536' width='96' height='112' rx='8' ry='8' style='stroke:none'/>
+<path d='M 384 564 L 384 544 Q 384 536 392 536 L 472 536 Q 480 536 480 544 L 480 564 L384 564 ' style='fill:url(#tbg_C7F4BE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='384' y='536' width='96' height='112' rx='8' ry='8' style='fill:none;stroke:#C7F4BE'/>
+<a xlink:href='#city'><text x='419' y='556'>city</text><title>Table dbo.city</title></a>
+  <use id='nn' x='386' y='573' xlink:href='#nn'/><a xlink:href='#city.cityid'><use id='pk' x='386' y='572' xlink:href='#pk'/><title>Pk PK__city__B4BDBD2607884E60 ( cityid ) </title></a>
+<a xlink:href='#city.cityid'><text id='dbo.city.cityid' x='403' y='583' onmouseover="hghl(['address_fkaddresscity','dbo.address.cityid'])" onmouseout="uhghl(['address_fkaddresscity','dbo.address.cityid'])">cityid</text><title>cityid
+* int</title></a>
+<a xlink:href='#city.cityid'><use id='ref' x='468' y='572' xlink:href='#ref'/><title>Referred by address ( cityid ) </title></a>
+  <use id='nn' x='386' y='589' xlink:href='#nn'/><a xlink:href='#city.city'><text id='dbo.city.city' x='403' y='599'>city</text><title>city
+* varchar(50)</title></a>
+<text x='477' y='596' text-anchor='end' class='colType'>t</text>  <use id='nn' x='386' y='605' xlink:href='#nn'/><a xlink:href='#city.countryid'><use id='idx' x='386' y='604' xlink:href='#idx'/><title>idxfkcountryid ( countryid ) </title></a>
+<a xlink:href='#city.countryid'><text id='dbo.city.countryid' x='403' y='615' onmouseover="hghl(['city_fkcitycountry','dbo.country.countryid'])" onmouseout="uhghl(['city_fkcitycountry','dbo.country.countryid'])">countryid</text><title>countryid
+* smallint</title></a>
+<a xlink:href='#city.countryid'><use id='fk' x='468' y='604' xlink:href='#fk'/><title>References country ( countryid ) </title></a>
+  <use id='nn' x='386' y='621' xlink:href='#nn'/><a xlink:href='#city.lastupdate'><text id='dbo.city.lastupdate' x='403' y='631'>lastupdate</text><title>lastupdate
+* datetime default getdate()</title></a>
+<text x='477' y='628' text-anchor='end' class='colType'>d</text>
+<!-- == Table 'country' == -->
+<rect class='entity' x='544' y='536' width='96' height='96' rx='8' ry='8' style='stroke:none'/>
+<path d='M 544 564 L 544 544 Q 544 536 552 536 L 632 536 Q 640 536 640 544 L 640 564 L544 564 ' style='fill:url(#tbg_C7F4BE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='544' y='536' width='96' height='96' rx='8' ry='8' style='fill:none;stroke:#C7F4BE'/>
+<a xlink:href='#country'><text x='568' y='556'>country</text><title>Table dbo.country</title></a>
+  <use id='nn' x='546' y='573' xlink:href='#nn'/><a xlink:href='#country.countryid'><use id='pk' x='546' y='572' xlink:href='#pk'/><title>Pk PK__country__D32342B4E524E3DB ( countryid ) </title></a>
+<a xlink:href='#country.countryid'><text id='dbo.country.countryid' x='563' y='583' onmouseover="hghl(['city_fkcitycountry','dbo.city.countryid'])" onmouseout="uhghl(['city_fkcitycountry','dbo.city.countryid'])">countryid</text><title>countryid
+* smallint</title></a>
+<a xlink:href='#country.countryid'><use id='ref' x='628' y='572' xlink:href='#ref'/><title>Referred by city ( countryid ) </title></a>
+  <use id='nn' x='546' y='589' xlink:href='#nn'/><a xlink:href='#country.country'><text id='dbo.country.country' x='563' y='599'>country</text><title>country
+* varchar(50)</title></a>
+<text x='637' y='596' text-anchor='end' class='colType'>t</text>  <a xlink:href='#country.lastupdate'><text id='dbo.country.lastupdate' x='563' y='615'>lastupdate</text><title>lastupdate
+datetime default getdate()</title></a>
+<text x='637' y='612' text-anchor='end' class='colType'>d</text>
+<!-- == Table 'customer' == -->
+<rect class='entity' x='400' y='248' width='96' height='192' rx='8' ry='8' style='stroke:none'/>
+<path d='M 400 276 L 400 256 Q 400 248 408 248 L 488 248 Q 496 248 496 256 L 496 276 L400 276 ' style='fill:url(#tbg_C7F4BE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='400' y='248' width='96' height='192' rx='8' ry='8' style='fill:none;stroke:#C7F4BE'/>
+<a xlink:href='#customer'><text x='420' y='268'>customer</text><title>Table dbo.customer</title></a>
+  <use id='nn' x='402' y='285' xlink:href='#nn'/><a xlink:href='#customer.customerid'><use id='pk' x='402' y='284' xlink:href='#pk'/><title>Pk PK__customer__B61ED7F5FF9C9DEA ( customerid ) </title></a>
+<a xlink:href='#customer.customerid'><text id='dbo.customer.customerid' x='419' y='295' onmouseover="hghl(['payment_fkpaymentcustomer','dbo.payment.customerid','rental_fkrentalcustomer','dbo.rental.customerid'])" onmouseout="uhghl(['payment_fkpaymentcustomer','dbo.payment.customerid','rental_fkrentalcustomer','dbo.rental.customerid'])">customerid</text><title>customerid
+* int</title></a>
+<a xlink:href='#customer.customerid'><use id='ref' x='484' y='284' xlink:href='#ref'/><title>Referred by payment ( customerid ) 
+Referred by rental ( customerid ) </title></a>
+  <use id='nn' x='402' y='301' xlink:href='#nn'/><a xlink:href='#customer.storeid'><use id='idx' x='402' y='300' xlink:href='#idx'/><title>idxfkstoreid ( storeid ) </title></a>
+<a xlink:href='#customer.storeid'><text id='dbo.customer.storeid' x='419' y='311' onmouseover="hghl(['customer_fkcustomerstore','dbo.store.storeid'])" onmouseout="uhghl(['customer_fkcustomerstore','dbo.store.storeid'])">storeid</text><title>storeid
+* int</title></a>
+<a xlink:href='#customer.storeid'><use id='fk' x='484' y='300' xlink:href='#fk'/><title>References store ( storeid ) </title></a>
+  <use id='nn' x='402' y='317' xlink:href='#nn'/><a xlink:href='#customer.firstname'><text id='dbo.customer.firstname' x='419' y='327'>firstname</text><title>firstname
+* varchar(45)</title></a>
+<text x='493' y='324' text-anchor='end' class='colType'>t</text>  <use id='nn' x='402' y='333' xlink:href='#nn'/><a xlink:href='#customer.lastname'><use id='idx' x='402' y='332' xlink:href='#idx'/><title>idxlastname ( lastname ) </title></a>
+<a xlink:href='#customer.lastname'><text id='dbo.customer.lastname' x='419' y='343'>lastname</text><title>lastname
+* varchar(45)</title></a>
+<text x='493' y='340' text-anchor='end' class='colType'>t</text>  <a xlink:href='#customer.email'><text id='dbo.customer.email' x='419' y='359'>email</text><title>email
+varchar(50)</title></a>
+<text x='493' y='356' text-anchor='end' class='colType'>t</text>  <use id='nn' x='402' y='365' xlink:href='#nn'/><a xlink:href='#customer.addressid'><use id='idx' x='402' y='364' xlink:href='#idx'/><title>idxfkaddressid ( addressid ) </title></a>
+<a xlink:href='#customer.addressid'><text id='dbo.customer.addressid' x='419' y='375' onmouseover="hghl(['customer_fkcustomeraddress','dbo.address.addressid'])" onmouseout="uhghl(['customer_fkcustomeraddress','dbo.address.addressid'])">addressid</text><title>addressid
+* int</title></a>
+<a xlink:href='#customer.addressid'><use id='fk' x='484' y='364' xlink:href='#fk'/><title>References address ( addressid ) </title></a>
+  <use id='nn' x='402' y='381' xlink:href='#nn'/><a xlink:href='#customer.active'><text id='dbo.customer.active' x='419' y='391'>active</text><title>active
+* char(1) default 'Y'</title></a>
+<text x='493' y='388' text-anchor='end' class='colType'>c</text>  <use id='nn' x='402' y='397' xlink:href='#nn'/><a xlink:href='#customer.createdate'><text id='dbo.customer.createdate' x='419' y='407'>createdate</text><title>createdate
+* datetime default getdate()</title></a>
+<text x='493' y='404' text-anchor='end' class='colType'>d</text>  <use id='nn' x='402' y='413' xlink:href='#nn'/><a xlink:href='#customer.lastupdate'><text id='dbo.customer.lastupdate' x='419' y='423'>lastupdate</text><title>lastupdate
+* datetime default getdate()</title></a>
+<text x='493' y='420' text-anchor='end' class='colType'>d</text>
+<!-- == Table 'film' == -->
+<rect class='entity' x='896' y='72' width='128' height='256' rx='8' ry='8' style='stroke:none'/>
+<path d='M 896 100 L 896 80 Q 896 72 904 72 L 1016 72 Q 1024 72 1024 80 L 1024 100 L896 100 ' style='fill:url(#tbg_BED3F4);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='896' y='72' width='128' height='256' rx='8' ry='8' style='fill:none;stroke:#BED3F4'/>
+<a xlink:href='#film'><text x='946' y='92'>film</text><title>Table dbo.film</title></a>
+  <use id='nn' x='898' y='109' xlink:href='#nn'/><a xlink:href='#film.filmid'><use id='pk' x='898' y='108' xlink:href='#pk'/><title>Pk PK__film__C037C0C9E539AC0F ( filmid ) </title></a>
+<a xlink:href='#film.filmid'><text id='dbo.film.filmid' x='915' y='119' onmouseover="hghl(['filmactor_fkfilmactorfilm','dbo.filmactor.filmid','filmcategory_fkfilmcategoryfilm','dbo.filmcategory.filmid','inventory_fkinventoryfilm','dbo.inventory.filmid'])" onmouseout="uhghl(['filmactor_fkfilmactorfilm','dbo.filmactor.filmid','filmcategory_fkfilmcategoryfilm','dbo.filmcategory.filmid','inventory_fkinventoryfilm','dbo.inventory.filmid'])">filmid</text><title>filmid
+* int</title></a>
+<a xlink:href='#film.filmid'><use id='ref' x='1012' y='108' xlink:href='#ref'/><title>Referred by filmactor ( filmid ) 
+Referred by filmcategory ( filmid ) 
+Referred by inventory ( filmid ) </title></a>
+  <use id='nn' x='898' y='125' xlink:href='#nn'/><a xlink:href='#film.title'><text id='dbo.film.title' x='915' y='135'>title</text><title>title
+* varchar(255)</title></a>
+<text x='1021' y='132' text-anchor='end' class='colType'>t</text>  <a xlink:href='#film.description'><text id='dbo.film.description' x='915' y='151'>description</text><title>description
+text</title></a>
+<text x='1021' y='148' text-anchor='end' class='colType'>t</text>  <a xlink:href='#film.releaseyear'><text id='dbo.film.releaseyear' x='915' y='167'>releaseyear</text><title>releaseyear
+varchar(4)</title></a>
+<text x='1021' y='164' text-anchor='end' class='colType'>t</text>  <use id='nn' x='898' y='173' xlink:href='#nn'/><a xlink:href='#film.languageid'><use id='idx' x='898' y='172' xlink:href='#idx'/><title>idxfklanguageid ( languageid ) </title></a>
+<a xlink:href='#film.languageid'><text id='dbo.film.languageid' x='915' y='183' onmouseover="hghl(['film_fkfilmlanguage','dbo.language.languageid'])" onmouseout="uhghl(['film_fkfilmlanguage','dbo.language.languageid'])">languageid</text><title>languageid
+* tinyint</title></a>
+<a xlink:href='#film.languageid'><use id='fk' x='1012' y='172' xlink:href='#fk'/><title>References language ( languageid ) </title></a>
+  <a xlink:href='#film.originallanguageid'><use id='idx' x='898' y='188' xlink:href='#idx'/><title>idxfkoriginallanguageid ( originallanguageid ) </title></a>
+<a xlink:href='#film.originallanguageid'><text id='dbo.film.originallanguageid' x='915' y='199' onmouseover="hghl(['film_fkfilmlanguageoriginal','dbo.language.languageid'])" onmouseout="uhghl(['film_fkfilmlanguageoriginal','dbo.language.languageid'])">originallanguageid</text><title>originallanguageid
+tinyint</title></a>
+<a xlink:href='#film.originallanguageid'><use id='fk' x='1012' y='188' xlink:href='#fk'/><title>References language ( originallanguageid -&gt; languageid ) </title></a>
+  <use id='nn' x='898' y='205' xlink:href='#nn'/><a xlink:href='#film.rentalduration'><text id='dbo.film.rentalduration' x='915' y='215'>rentalduration</text><title>rentalduration
+* tinyint default 3</title></a>
+<text x='1021' y='212' text-anchor='end' class='colType'>#</text>  <use id='nn' x='898' y='221' xlink:href='#nn'/><a xlink:href='#film.rentalrate'><text id='dbo.film.rentalrate' x='915' y='231'>rentalrate</text><title>rentalrate
+* decimal(4,2) default 4.99</title></a>
+<text x='1021' y='228' text-anchor='end' class='colType'>#</text>  <a xlink:href='#film.length'><text id='dbo.film.length' x='915' y='247'>length</text><title>length
+smallint</title></a>
+<text x='1021' y='244' text-anchor='end' class='colType'>#</text>  <use id='nn' x='898' y='253' xlink:href='#nn'/><a xlink:href='#film.replacementcost'><text id='dbo.film.replacementcost' x='915' y='263'>replacementcost</text><title>replacementcost
+* decimal(5,2) default 19.99</title></a>
+<text x='1021' y='260' text-anchor='end' class='colType'>#</text>  <a xlink:href='#film.rating'><text id='dbo.film.rating' x='915' y='279'>rating</text><title>rating
+varchar(10) default 'G'</title></a>
+<text x='1021' y='276' text-anchor='end' class='colType'>t</text>  <a xlink:href='#film.specialfeatures'><text id='dbo.film.specialfeatures' x='915' y='295'>specialfeatures</text><title>specialfeatures
+varchar(255)</title></a>
+<text x='1021' y='292' text-anchor='end' class='colType'>t</text>  <use id='nn' x='898' y='301' xlink:href='#nn'/><a xlink:href='#film.lastupdate'><text id='dbo.film.lastupdate' x='915' y='311'>lastupdate</text><title>lastupdate
+* datetime default getdate()</title></a>
+<text x='1021' y='308' text-anchor='end' class='colType'>d</text>
+<!-- == Table 'filmRev' == -->
+<rect class='entity' x='896' y='392' width='128' height='224' rx='8' ry='8' style='stroke:none'/>
+<path d='M 896 420 L 896 400 Q 896 392 904 392 L 1016 392 Q 1024 392 1024 400 L 1024 420 L896 420 ' style='fill:url(#tbg_BED3F4);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='896' y='392' width='128' height='224' rx='8' ry='8' style='fill:none;stroke:#BED3F4'/>
+<a xlink:href='#filmRev'><text x='937' y='412'>filmRev</text><title>Table dbo.filmRev</title></a>
+  <use id='nn' x='898' y='429' xlink:href='#nn'/><a xlink:href='#filmRev.filmid'><text id='dbo.filmRev.filmid' x='915' y='439'>filmid</text><title>filmid
+* int</title></a>
+<text x='1021' y='436' text-anchor='end' class='colType'>#</text>  <use id='nn' x='898' y='445' xlink:href='#nn'/><a xlink:href='#filmRev.title'><text id='dbo.filmRev.title' x='915' y='455'>title</text><title>title
+* varchar(255)</title></a>
+<text x='1021' y='452' text-anchor='end' class='colType'>t</text>  <a xlink:href='#filmRev.originallanguageid'><text id='dbo.filmRev.originallanguageid' x='915' y='471'>originallanguageid</text><title>originallanguageid
+tinyint</title></a>
+<text x='1021' y='468' text-anchor='end' class='colType'>#</text>  <use id='nn' x='898' y='477' xlink:href='#nn'/><a xlink:href='#filmRev.rentalduration'><text id='dbo.filmRev.rentalduration' x='915' y='487'>rentalduration</text><title>rentalduration
+* tinyint</title></a>
+<text x='1021' y='484' text-anchor='end' class='colType'>#</text>  <use id='nn' x='898' y='493' xlink:href='#nn'/><a xlink:href='#filmRev.rentalrate'><text id='dbo.filmRev.rentalrate' x='915' y='503'>rentalrate</text><title>rentalrate
+* decimal(4,2)</title></a>
+<text x='1021' y='500' text-anchor='end' class='colType'>#</text>  <a xlink:href='#filmRev.length'><text id='dbo.filmRev.length' x='915' y='519'>length</text><title>length
+smallint</title></a>
+<text x='1021' y='516' text-anchor='end' class='colType'>#</text>  <use id='nn' x='898' y='525' xlink:href='#nn'/><a xlink:href='#filmRev.replacementcost'><text id='dbo.filmRev.replacementcost' x='915' y='535'>replacementcost</text><title>replacementcost
+* decimal(5,2)</title></a>
+<text x='1021' y='532' text-anchor='end' class='colType'>#</text>  <a xlink:href='#filmRev.rating'><text id='dbo.filmRev.rating' x='915' y='551'>rating</text><title>rating
+varchar(10)</title></a>
+<text x='1021' y='548' text-anchor='end' class='colType'>t</text>  <a xlink:href='#filmRev.specialfeatures'><text id='dbo.filmRev.specialfeatures' x='915' y='567'>specialfeatures</text><title>specialfeatures
+varchar(255)</title></a>
+<text x='1021' y='564' text-anchor='end' class='colType'>t</text>  <use id='nn' x='898' y='573' xlink:href='#nn'/><a xlink:href='#filmRev.categoryid'><text id='dbo.filmRev.categoryid' x='915' y='583'>categoryid</text><title>categoryid
+* tinyint</title></a>
+<text x='1021' y='580' text-anchor='end' class='colType'>#</text>  <use id='nn' x='898' y='589' xlink:href='#nn'/><a xlink:href='#filmRev.name'><text id='dbo.filmRev.name' x='915' y='599'>name</text><title>name
+* varchar(25)</title></a>
+<text x='1021' y='596' text-anchor='end' class='colType'>t</text>
+<!-- == Table 'filmactor' == -->
+<rect class='entity' x='1088' y='232' width='96' height='96' rx='8' ry='8' style='stroke:none'/>
+<path d='M 1088 260 L 1088 240 Q 1088 232 1096 232 L 1176 232 Q 1184 232 1184 240 L 1184 260 L1088 260 ' style='fill:url(#tbg_BED3F4);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='1088' y='232' width='96' height='96' rx='8' ry='8' style='fill:none;stroke:#BED3F4'/>
+<a xlink:href='#filmactor'><text x='1109' y='252'>filmactor</text><title>Table dbo.filmactor</title></a>
+  <use id='nn' x='1090' y='269' xlink:href='#nn'/><a xlink:href='#filmactor.actorid'><use id='pk' x='1090' y='268' xlink:href='#pk'/><title>Pk PK__filmacto__0F30213FE619491A ( actorid, filmid ) idxfkfilmactoractor ( actorid ) </title></a>
+<a xlink:href='#filmactor.actorid'><text id='dbo.filmactor.actorid' x='1107' y='279' onmouseover="hghl(['filmactor_fkfilmactoractor','dbo.actor.actorid'])" onmouseout="uhghl(['filmactor_fkfilmactoractor','dbo.actor.actorid'])">actorid</text><title>actorid
+* int</title></a>
+<a xlink:href='#filmactor.actorid'><use id='fk' x='1172' y='268' xlink:href='#fk'/><title>References actor ( actorid ) </title></a>
+  <use id='nn' x='1090' y='285' xlink:href='#nn'/><a xlink:href='#filmactor.filmid'><use id='pk' x='1090' y='284' xlink:href='#pk'/><title>Pk PK__filmacto__0F30213FE619491A ( actorid, filmid ) idxfkfilmactorfilm ( filmid ) </title></a>
+<a xlink:href='#filmactor.filmid'><text id='dbo.filmactor.filmid' x='1107' y='295' onmouseover="hghl(['filmactor_fkfilmactorfilm','dbo.film.filmid'])" onmouseout="uhghl(['filmactor_fkfilmactorfilm','dbo.film.filmid'])">filmid</text><title>filmid
+* int</title></a>
+<a xlink:href='#filmactor.filmid'><use id='fk' x='1172' y='284' xlink:href='#fk'/><title>References film ( filmid ) </title></a>
+  <use id='nn' x='1090' y='301' xlink:href='#nn'/><a xlink:href='#filmactor.lastupdate'><text id='dbo.filmactor.lastupdate' x='1107' y='311'>lastupdate</text><title>lastupdate
+* datetime default getdate()</title></a>
+<text x='1181' y='308' text-anchor='end' class='colType'>d</text>
+<!-- == Table 'filmcategory' == -->
+<rect class='entity' x='1088' y='392' width='96' height='96' rx='8' ry='8' style='stroke:none'/>
+<path d='M 1088 420 L 1088 400 Q 1088 392 1096 392 L 1176 392 Q 1184 392 1184 400 L 1184 420 L1088 420 ' style='fill:url(#tbg_BED3F4);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='1088' y='392' width='96' height='96' rx='8' ry='8' style='fill:none;stroke:#BED3F4'/>
+<a xlink:href='#filmcategory'><text x='1100' y='412'>filmcategory</text><title>Table dbo.filmcategory</title></a>
+  <use id='nn' x='1090' y='429' xlink:href='#nn'/><a xlink:href='#filmcategory.filmid'><use id='pk' x='1090' y='428' xlink:href='#pk'/><title>Pk PK__filmcate__D20B1E904C19ED64 ( filmid, categoryid ) idxfkfilmcategoryfilm ( filmid ) </title></a>
+<a xlink:href='#filmcategory.filmid'><text id='dbo.filmcategory.filmid' x='1107' y='439' onmouseover="hghl(['filmcategory_fkfilmcategoryfilm','dbo.film.filmid'])" onmouseout="uhghl(['filmcategory_fkfilmcategoryfilm','dbo.film.filmid'])">filmid</text><title>filmid
+* int</title></a>
+<a xlink:href='#filmcategory.filmid'><use id='fk' x='1172' y='428' xlink:href='#fk'/><title>References film ( filmid ) </title></a>
+  <use id='nn' x='1090' y='445' xlink:href='#nn'/><a xlink:href='#filmcategory.categoryid'><use id='pk' x='1090' y='444' xlink:href='#pk'/><title>Pk PK__filmcate__D20B1E904C19ED64 ( filmid, categoryid ) idxfkfilmcategorycategory ( categoryid ) </title></a>
+<a xlink:href='#filmcategory.categoryid'><text id='dbo.filmcategory.categoryid' x='1107' y='455' onmouseover="hghl(['filmcategory_fkfilmcategorycategory','dbo.category.categoryid'])" onmouseout="uhghl(['filmcategory_fkfilmcategorycategory','dbo.category.categoryid'])">categoryid</text><title>categoryid
+* tinyint</title></a>
+<a xlink:href='#filmcategory.categoryid'><use id='fk' x='1172' y='444' xlink:href='#fk'/><title>References category ( categoryid ) </title></a>
+  <use id='nn' x='1090' y='461' xlink:href='#nn'/><a xlink:href='#filmcategory.lastupdate'><text id='dbo.filmcategory.lastupdate' x='1107' y='471'>lastupdate</text><title>lastupdate
+* datetime default getdate()</title></a>
+<text x='1181' y='468' text-anchor='end' class='colType'>d</text>
+<!-- == Table 'filmtext' == -->
+<rect class='entity' x='736' y='232' width='96' height='96' rx='8' ry='8' style='stroke:none'/>
+<path d='M 736 260 L 736 240 Q 736 232 744 232 L 824 232 Q 832 232 832 240 L 832 260 L736 260 ' style='fill:url(#tbg_BED3F4);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='736' y='232' width='96' height='96' rx='8' ry='8' style='fill:none;stroke:#BED3F4'/>
+<a xlink:href='#filmtext'><text x='760' y='252'>filmtext</text><title>Table dbo.filmtext</title></a>
+  <use id='nn' x='738' y='269' xlink:href='#nn'/><a xlink:href='#filmtext.filmid'><use id='pk' x='738' y='268' xlink:href='#pk'/><title>Pk PK__filmtext__C037C0C9146603EE ( filmid ) </title></a>
+<a xlink:href='#filmtext.filmid'><text id='dbo.filmtext.filmid' x='755' y='279'>filmid</text><title>filmid
+* smallint</title></a>
+<text x='829' y='276' text-anchor='end' class='colType'>#</text>  <use id='nn' x='738' y='285' xlink:href='#nn'/><a xlink:href='#filmtext.title'><text id='dbo.filmtext.title' x='755' y='295'>title</text><title>title
+* varchar(255)</title></a>
+<text x='829' y='292' text-anchor='end' class='colType'>t</text>  <a xlink:href='#filmtext.description'><text id='dbo.filmtext.description' x='755' y='311'>description</text><title>description
+text</title></a>
+<text x='829' y='308' text-anchor='end' class='colType'>t</text>
+<!-- == Table 'inventory' == -->
+<rect class='entity' x='64' y='72' width='96' height='112' rx='8' ry='8' style='stroke:none'/>
+<path d='M 64 100 L 64 80 Q 64 72 72 72 L 152 72 Q 160 72 160 80 L 160 100 L64 100 ' style='fill:url(#tbg_C7F4BE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='64' y='72' width='96' height='112' rx='8' ry='8' style='fill:none;stroke:#C7F4BE'/>
+<a xlink:href='#inventory'><text x='84' y='92'>inventory</text><title>Table dbo.inventory</title></a>
+  <use id='nn' x='66' y='109' xlink:href='#nn'/><a xlink:href='#inventory.inventoryid'><use id='pk' x='66' y='108' xlink:href='#pk'/><title>Pk PK__inventor__C4B4B87A066BAE9D ( inventoryid ) </title></a>
+<a xlink:href='#inventory.inventoryid'><text id='dbo.inventory.inventoryid' x='83' y='119' onmouseover="hghl(['rental_fkrentalinventory','dbo.rental.inventoryid'])" onmouseout="uhghl(['rental_fkrentalinventory','dbo.rental.inventoryid'])">inventoryid</text><title>inventoryid
+* int</title></a>
+<a xlink:href='#inventory.inventoryid'><use id='ref' x='148' y='108' xlink:href='#ref'/><title>Referred by rental ( inventoryid ) </title></a>
+  <use id='nn' x='66' y='125' xlink:href='#nn'/><a xlink:href='#inventory.filmid'><use id='idx' x='66' y='124' xlink:href='#idx'/><title>idxfkfilmid ( filmid ) idxfkfilmidstoreid ( storeid, filmid ) </title></a>
+<a xlink:href='#inventory.filmid'><text id='dbo.inventory.filmid' x='83' y='135' onmouseover="hghl(['inventory_fkinventoryfilm','dbo.film.filmid'])" onmouseout="uhghl(['inventory_fkinventoryfilm','dbo.film.filmid'])">filmid</text><title>filmid
+* int</title></a>
+<a xlink:href='#inventory.filmid'><use id='fk' x='148' y='124' xlink:href='#fk'/><title>References film ( filmid ) </title></a>
+  <use id='nn' x='66' y='141' xlink:href='#nn'/><a xlink:href='#inventory.storeid'><use id='idx' x='66' y='140' xlink:href='#idx'/><title>idxfkfilmidstoreid ( storeid, filmid ) </title></a>
+<a xlink:href='#inventory.storeid'><text id='dbo.inventory.storeid' x='83' y='151' onmouseover="hghl(['inventory_fkinventorystore','dbo.store.storeid'])" onmouseout="uhghl(['inventory_fkinventorystore','dbo.store.storeid'])">storeid</text><title>storeid
+* int</title></a>
+<a xlink:href='#inventory.storeid'><use id='fk' x='148' y='140' xlink:href='#fk'/><title>References store ( storeid ) </title></a>
+  <use id='nn' x='66' y='157' xlink:href='#nn'/><a xlink:href='#inventory.lastupdate'><text id='dbo.inventory.lastupdate' x='83' y='167'>lastupdate</text><title>lastupdate
+* datetime default getdate()</title></a>
+<text x='157' y='164' text-anchor='end' class='colType'>d</text>
+<!-- == Table 'language' == -->
+<rect class='entity' x='1088' y='72' width='96' height='96' rx='8' ry='8' style='stroke:none'/>
+<path d='M 1088 100 L 1088 80 Q 1088 72 1096 72 L 1176 72 Q 1184 72 1184 80 L 1184 100 L1088 100 ' style='fill:url(#tbg_BED3F4);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='1088' y='72' width='96' height='96' rx='8' ry='8' style='fill:none;stroke:#BED3F4'/>
+<a xlink:href='#language'><text x='1109' y='92'>language</text><title>Table dbo.language</title></a>
+  <use id='nn' x='1090' y='109' xlink:href='#nn'/><a xlink:href='#language.languageid'><use id='pk' x='1090' y='108' xlink:href='#pk'/><title>Pk PK__language__12686E4AAC0F0EAB ( languageid ) </title></a>
+<a xlink:href='#language.languageid'><text id='dbo.language.languageid' x='1107' y='119' onmouseover="hghl(['film_fkfilmlanguage','dbo.film.languageid','film_fkfilmlanguageoriginal','dbo.film.originallanguageid'])" onmouseout="uhghl(['film_fkfilmlanguage','dbo.film.languageid','film_fkfilmlanguageoriginal','dbo.film.originallanguageid'])">languageid</text><title>languageid
+* tinyint</title></a>
+<a xlink:href='#language.languageid'><use id='ref' x='1172' y='108' xlink:href='#ref'/><title>Referred by film ( languageid ) 
+Referred by film ( originallanguageid -&gt; languageid ) </title></a>
+  <use id='nn' x='1090' y='125' xlink:href='#nn'/><a xlink:href='#language.name'><text id='dbo.language.name' x='1107' y='135'>name</text><title>name
+* char(20)</title></a>
+<text x='1181' y='132' text-anchor='end' class='colType'>c</text>  <use id='nn' x='1090' y='141' xlink:href='#nn'/><a xlink:href='#language.lastupdate'><text id='dbo.language.lastupdate' x='1107' y='151'>lastupdate</text><title>lastupdate
+* datetime default getdate()</title></a>
+<text x='1181' y='148' text-anchor='end' class='colType'>d</text>
+<!-- == Table 'payment' == -->
+<rect class='entity' x='48' y='760' width='112' height='160' rx='8' ry='8' style='stroke:none'/>
+<path d='M 48 788 L 48 768 Q 48 760 56 760 L 152 760 Q 160 760 160 768 L 160 788 L48 788 ' style='fill:url(#tbg_C7F4BE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='48' y='760' width='112' height='160' rx='8' ry='8' style='fill:none;stroke:#C7F4BE'/>
+<a xlink:href='#payment'><text x='78' y='780'>payment</text><title>Table dbo.payment</title></a>
+  <use id='nn' x='50' y='797' xlink:href='#nn'/><a xlink:href='#payment.paymentid'><use id='pk' x='50' y='796' xlink:href='#pk'/><title>Pk PK__payment__AF26EBEE50E77ADE ( paymentid ) </title></a>
+<a xlink:href='#payment.paymentid'><text id='dbo.payment.paymentid' x='67' y='807'>paymentid</text><title>paymentid
+* int</title></a>
+<text x='157' y='804' text-anchor='end' class='colType'>#</text>  <use id='nn' x='50' y='813' xlink:href='#nn'/><a xlink:href='#payment.customerid'><use id='idx' x='50' y='812' xlink:href='#idx'/><title>idxfkcustomerid ( customerid ) </title></a>
+<a xlink:href='#payment.customerid'><text id='dbo.payment.customerid' x='67' y='823' onmouseover="hghl(['payment_fkpaymentcustomer','dbo.customer.customerid'])" onmouseout="uhghl(['payment_fkpaymentcustomer','dbo.customer.customerid'])">customerid</text><title>customerid
+* int</title></a>
+<a xlink:href='#payment.customerid'><use id='fk' x='148' y='812' xlink:href='#fk'/><title>References customer ( customerid ) </title></a>
+  <use id='nn' x='50' y='829' xlink:href='#nn'/><a xlink:href='#payment.staffid'><use id='idx' x='50' y='828' xlink:href='#idx'/><title>idxfkstaffid ( staffid ) </title></a>
+<a xlink:href='#payment.staffid'><text id='dbo.payment.staffid' x='67' y='839' onmouseover="hghl(['payment_fkpaymentstaff','dbo.staff.staffid'])" onmouseout="uhghl(['payment_fkpaymentstaff','dbo.staff.staffid'])">staffid</text><title>staffid
+* tinyint</title></a>
+<a xlink:href='#payment.staffid'><use id='fk' x='148' y='828' xlink:href='#fk'/><title>References staff ( staffid ) </title></a>
+  <a xlink:href='#payment.rentalid'><text id='dbo.payment.rentalid' x='67' y='855' onmouseover="hghl(['payment_fkpaymentrental','dbo.rental.rentalid'])" onmouseout="uhghl(['payment_fkpaymentrental','dbo.rental.rentalid'])">rentalid</text><title>rentalid
+int</title></a>
+<a xlink:href='#payment.rentalid'><use id='fk' x='148' y='844' xlink:href='#fk'/><title>References rental ( rentalid ) </title></a>
+  <use id='nn' x='50' y='861' xlink:href='#nn'/><a xlink:href='#payment.amount'><text id='dbo.payment.amount' x='67' y='871'>amount</text><title>amount
+* decimal(5,2)</title></a>
+<text x='157' y='868' text-anchor='end' class='colType'>#</text>  <use id='nn' x='50' y='877' xlink:href='#nn'/><a xlink:href='#payment.paymentdate'><text id='dbo.payment.paymentdate' x='67' y='887'>paymentdate</text><title>paymentdate
+* datetime</title></a>
+<text x='157' y='884' text-anchor='end' class='colType'>d</text>  <use id='nn' x='50' y='893' xlink:href='#nn'/><a xlink:href='#payment.lastupdate'><text id='dbo.payment.lastupdate' x='67' y='903'>lastupdate</text><title>lastupdate
+* datetime default getdate()</title></a>
+<text x='157' y='900' text-anchor='end' class='colType'>d</text>
+<!-- == Table 'rental' == -->
+<rect class='entity' x='64' y='536' width='96' height='160' rx='8' ry='8' style='stroke:none'/>
+<path d='M 64 564 L 64 544 Q 64 536 72 536 L 152 536 Q 160 536 160 544 L 160 564 L64 564 ' style='fill:url(#tbg_C7F4BE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='64' y='536' width='96' height='160' rx='8' ry='8' style='fill:none;stroke:#C7F4BE'/>
+<a xlink:href='#rental'><text x='93' y='556'>rental</text><title>Table dbo.rental</title></a>
+  <use id='nn' x='66' y='573' xlink:href='#nn'/><a xlink:href='#rental.rentalid'><use id='pk' x='66' y='572' xlink:href='#pk'/><title>Pk PK__rental__01677F569B3F6C11 ( rentalid ) </title></a>
+<a xlink:href='#rental.rentalid'><text id='dbo.rental.rentalid' x='83' y='583' onmouseover="hghl(['payment_fkpaymentrental','dbo.payment.rentalid'])" onmouseout="uhghl(['payment_fkpaymentrental','dbo.payment.rentalid'])">rentalid</text><title>rentalid
+* int</title></a>
+<a xlink:href='#rental.rentalid'><use id='ref' x='148' y='572' xlink:href='#ref'/><title>Referred by payment ( rentalid ) </title></a>
+  <use id='nn' x='66' y='589' xlink:href='#nn'/><a xlink:href='#rental.rentaldate'><use id='unq' x='66' y='588' xlink:href='#unq'/><title>Unq idxuq ( rentaldate, inventoryid, customerid ) </title></a>
+<a xlink:href='#rental.rentaldate'><text id='dbo.rental.rentaldate' x='83' y='599'>rentaldate</text><title>rentaldate
+* datetime</title></a>
+<text x='157' y='596' text-anchor='end' class='colType'>d</text>  <use id='nn' x='66' y='605' xlink:href='#nn'/><a xlink:href='#rental.inventoryid'><use id='unq' x='66' y='604' xlink:href='#unq'/><title>Unq idxuq ( rentaldate, inventoryid, customerid ) idxfkinventoryid ( inventoryid ) </title></a>
+<a xlink:href='#rental.inventoryid'><text id='dbo.rental.inventoryid' x='83' y='615' onmouseover="hghl(['rental_fkrentalinventory','dbo.inventory.inventoryid'])" onmouseout="uhghl(['rental_fkrentalinventory','dbo.inventory.inventoryid'])">inventoryid</text><title>inventoryid
+* int</title></a>
+<a xlink:href='#rental.inventoryid'><use id='fk' x='148' y='604' xlink:href='#fk'/><title>References inventory ( inventoryid ) </title></a>
+  <use id='nn' x='66' y='621' xlink:href='#nn'/><a xlink:href='#rental.customerid'><use id='unq' x='66' y='620' xlink:href='#unq'/><title>Unq idxuq ( rentaldate, inventoryid, customerid ) idxfkcustomerid ( customerid ) </title></a>
+<a xlink:href='#rental.customerid'><text id='dbo.rental.customerid' x='83' y='631' onmouseover="hghl(['rental_fkrentalcustomer','dbo.customer.customerid'])" onmouseout="uhghl(['rental_fkrentalcustomer','dbo.customer.customerid'])">customerid</text><title>customerid
+* int</title></a>
+<a xlink:href='#rental.customerid'><use id='fk' x='148' y='620' xlink:href='#fk'/><title>References customer ( customerid ) </title></a>
+  <a xlink:href='#rental.returndate'><text id='dbo.rental.returndate' x='83' y='647'>returndate</text><title>returndate
+datetime</title></a>
+<text x='157' y='644' text-anchor='end' class='colType'>d</text>  <use id='nn' x='66' y='653' xlink:href='#nn'/><a xlink:href='#rental.staffid'><use id='idx' x='66' y='652' xlink:href='#idx'/><title>idxfkstaffid ( staffid ) </title></a>
+<a xlink:href='#rental.staffid'><text id='dbo.rental.staffid' x='83' y='663' onmouseover="hghl(['rental_fkrentalstaff','dbo.staff.staffid'])" onmouseout="uhghl(['rental_fkrentalstaff','dbo.staff.staffid'])">staffid</text><title>staffid
+* tinyint</title></a>
+<a xlink:href='#rental.staffid'><use id='fk' x='148' y='652' xlink:href='#fk'/><title>References staff ( staffid ) </title></a>
+  <use id='nn' x='66' y='669' xlink:href='#nn'/><a xlink:href='#rental.lastupdate'><text id='dbo.rental.lastupdate' x='83' y='679'>lastupdate</text><title>lastupdate
+* datetime default getdate()</title></a>
+<text x='157' y='676' text-anchor='end' class='colType'>d</text>
+<!-- == Table 'staff' == -->
+<rect class='entity' x='64' y='248' width='96' height='224' rx='8' ry='8' style='stroke:none'/>
+<path d='M 64 276 L 64 256 Q 64 248 72 248 L 152 248 Q 160 248 160 256 L 160 276 L64 276 ' style='fill:url(#tbg_C7F4BE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='64' y='248' width='96' height='224' rx='8' ry='8' style='fill:none;stroke:#C7F4BE'/>
+<a xlink:href='#staff'><text x='96' y='268'>staff</text><title>Table dbo.staff</title></a>
+  <use id='nn' x='66' y='285' xlink:href='#nn'/><a xlink:href='#staff.staffid'><use id='pk' x='66' y='284' xlink:href='#pk'/><title>Pk PK__staff__645AE4A63BDB665E ( staffid ) </title></a>
+<a xlink:href='#staff.staffid'><text id='dbo.staff.staffid' x='83' y='295' onmouseover="hghl(['payment_fkpaymentstaff','dbo.payment.staffid','rental_fkrentalstaff','dbo.rental.staffid','store_fkstorestaff','dbo.store.managerstaffid'])" onmouseout="uhghl(['payment_fkpaymentstaff','dbo.payment.staffid','rental_fkrentalstaff','dbo.rental.staffid','store_fkstorestaff','dbo.store.managerstaffid'])">staffid</text><title>staffid
+* tinyint</title></a>
+<a xlink:href='#staff.staffid'><use id='ref' x='148' y='284' xlink:href='#ref'/><title>Referred by payment ( staffid ) 
+Referred by rental ( staffid ) 
+Referred by store ( managerstaffid -&gt; staffid ) </title></a>
+  <use id='nn' x='66' y='301' xlink:href='#nn'/><a xlink:href='#staff.firstname'><text id='dbo.staff.firstname' x='83' y='311'>firstname</text><title>firstname
+* varchar(45)</title></a>
+<text x='157' y='308' text-anchor='end' class='colType'>t</text>  <use id='nn' x='66' y='317' xlink:href='#nn'/><a xlink:href='#staff.lastname'><text id='dbo.staff.lastname' x='83' y='327'>lastname</text><title>lastname
+* varchar(45)</title></a>
+<text x='157' y='324' text-anchor='end' class='colType'>t</text>  <use id='nn' x='66' y='333' xlink:href='#nn'/><a xlink:href='#staff.addressid'><use id='idx' x='66' y='332' xlink:href='#idx'/><title>idxfkaddressid ( addressid ) </title></a>
+<a xlink:href='#staff.addressid'><text id='dbo.staff.addressid' x='83' y='343' onmouseover="hghl(['staff_fkstaffaddress','dbo.address.addressid'])" onmouseout="uhghl(['staff_fkstaffaddress','dbo.address.addressid'])">addressid</text><title>addressid
+* int</title></a>
+<a xlink:href='#staff.addressid'><use id='fk' x='148' y='332' xlink:href='#fk'/><title>References address ( addressid ) </title></a>
+  <a xlink:href='#staff.picture'><text id='dbo.staff.picture' x='83' y='359'>picture</text><title>picture
+image</title></a>
+<text x='157' y='356' text-anchor='end' class='colType'>~</text>  <a xlink:href='#staff.email'><text id='dbo.staff.email' x='83' y='375'>email</text><title>email
+varchar(50)</title></a>
+<text x='157' y='372' text-anchor='end' class='colType'>t</text>  <use id='nn' x='66' y='381' xlink:href='#nn'/><a xlink:href='#staff.storeid'><use id='idx' x='66' y='380' xlink:href='#idx'/><title>idxfkstoreid ( storeid ) </title></a>
+<a xlink:href='#staff.storeid'><text id='dbo.staff.storeid' x='83' y='391' onmouseover="hghl(['staff_fkstaffstore','dbo.store.storeid'])" onmouseout="uhghl(['staff_fkstaffstore','dbo.store.storeid'])">storeid</text><title>storeid
+* int</title></a>
+<a xlink:href='#staff.storeid'><use id='fk' x='148' y='380' xlink:href='#fk'/><title>References store ( storeid ) </title></a>
+  <use id='nn' x='66' y='397' xlink:href='#nn'/><a xlink:href='#staff.active'><text id='dbo.staff.active' x='83' y='407'>active</text><title>active
+* bit default 1</title></a>
+<text x='157' y='404' text-anchor='end' class='colType'>b</text>  <use id='nn' x='66' y='413' xlink:href='#nn'/><a xlink:href='#staff.username'><text id='dbo.staff.username' x='83' y='423'>username</text><title>username
+* varchar(16)</title></a>
+<text x='157' y='420' text-anchor='end' class='colType'>t</text>  <a xlink:href='#staff.password'><text id='dbo.staff.password' x='83' y='439'>password</text><title>password
+varchar(40)</title></a>
+<text x='157' y='436' text-anchor='end' class='colType'>t</text>  <use id='nn' x='66' y='445' xlink:href='#nn'/><a xlink:href='#staff.lastupdate'><text id='dbo.staff.lastupdate' x='83' y='455'>lastupdate</text><title>lastupdate
+* datetime default getdate()</title></a>
+<text x='157' y='452' text-anchor='end' class='colType'>d</text>
+<!-- == Table 'store' == -->
+<rect class='entity' x='224' y='248' width='112' height='112' rx='8' ry='8' style='stroke:none'/>
+<path d='M 224 276 L 224 256 Q 224 248 232 248 L 328 248 Q 336 248 336 256 L 336 276 L224 276 ' style='fill:url(#tbg_C7F4BE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='224' y='248' width='112' height='112' rx='8' ry='8' style='fill:none;stroke:#C7F4BE'/>
+<a xlink:href='#store'><text x='263' y='268'>store</text><title>Table dbo.store</title></a>
+  <use id='nn' x='226' y='285' xlink:href='#nn'/><a xlink:href='#store.storeid'><use id='pk' x='226' y='284' xlink:href='#pk'/><title>Pk PK__store__01A2160B6779D1C4 ( storeid ) </title></a>
+<a xlink:href='#store.storeid'><text id='dbo.store.storeid' x='243' y='295' onmouseover="hghl(['customer_fkcustomerstore','dbo.customer.storeid','inventory_fkinventorystore','dbo.inventory.storeid','staff_fkstaffstore','dbo.staff.storeid'])" onmouseout="uhghl(['customer_fkcustomerstore','dbo.customer.storeid','inventory_fkinventorystore','dbo.inventory.storeid','staff_fkstaffstore','dbo.staff.storeid'])">storeid</text><title>storeid
+* int</title></a>
+<a xlink:href='#store.storeid'><use id='ref' x='324' y='284' xlink:href='#ref'/><title>Referred by customer ( storeid ) 
+Referred by inventory ( storeid ) 
+Referred by staff ( storeid ) </title></a>
+  <use id='nn' x='226' y='301' xlink:href='#nn'/><a xlink:href='#store.managerstaffid'><use id='unq' x='226' y='300' xlink:href='#unq'/><title>Unq idxfkaddressid ( managerstaffid ) </title></a>
+<a xlink:href='#store.managerstaffid'><text id='dbo.store.managerstaffid' x='243' y='311' onmouseover="hghl(['store_fkstorestaff','dbo.staff.staffid'])" onmouseout="uhghl(['store_fkstorestaff','dbo.staff.staffid'])">managerstaffid</text><title>managerstaffid
+* tinyint</title></a>
+<a xlink:href='#store.managerstaffid'><use id='fk' x='324' y='300' xlink:href='#fk'/><title>References staff ( managerstaffid -&gt; staffid ) </title></a>
+  <use id='nn' x='226' y='317' xlink:href='#nn'/><a xlink:href='#store.addressid'><use id='idx' x='226' y='316' xlink:href='#idx'/><title>idxfkstoreaddress ( addressid ) </title></a>
+<a xlink:href='#store.addressid'><text id='dbo.store.addressid' x='243' y='327' onmouseover="hghl(['store_fkstoreaddress','dbo.address.addressid'])" onmouseout="uhghl(['store_fkstoreaddress','dbo.address.addressid'])">addressid</text><title>addressid
+* int</title></a>
+<a xlink:href='#store.addressid'><use id='fk' x='324' y='316' xlink:href='#fk'/><title>References address ( addressid ) </title></a>
+  <use id='nn' x='226' y='333' xlink:href='#nn'/><a xlink:href='#store.lastupdate'><text id='dbo.store.lastupdate' x='243' y='343'>lastupdate</text><title>lastupdate
+* datetime default getdate()</title></a>
+<text x='333' y='340' text-anchor='end' class='colType'>d</text>
+<!-- == Table 'customerlist' == -->
+<rect class='entity' x='1200' y='728' width='80' height='192' rx='8' ry='8' style='stroke:none'/>
+<path d='M 1200 756 L 1200 736 Q 1200 728 1208 728 L 1272 728 Q 1280 728 1280 736 L 1280 756 L1200 756 ' style='fill:url(#tbg_F4DDBE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='1200' y='728' width='80' height='192' rx='8' ry='8' style='fill:none;stroke:#F4DDBE'/>
+<use id='view' x='1264' y='728' xlink:href='#view'/>
+<a xlink:href='#customerlist'><text x='1205' y='748'>customerlist</text><title>View dbo.customerlist</title></a>
+  <use id='nn' x='1202' y='765' xlink:href='#nn'/><a xlink:href='#customerlist.ID'><text id='dbo.customerlist.ID' x='1219' y='775'>ID</text><title>ID
+* int</title></a>
+<text x='1277' y='772' text-anchor='end' class='colType'>#</text>  <use id='nn' x='1202' y='781' xlink:href='#nn'/><a xlink:href='#customerlist.name'><text id='dbo.customerlist.name' x='1219' y='791'>name</text><title>name
+* varchar(91)</title></a>
+<text x='1277' y='788' text-anchor='end' class='colType'>t</text>  <use id='nn' x='1202' y='797' xlink:href='#nn'/><a xlink:href='#customerlist.address'><text id='dbo.customerlist.address' x='1219' y='807'>address</text><title>address
+* varchar(50)</title></a>
+<text x='1277' y='804' text-anchor='end' class='colType'>t</text>  <a xlink:href='#customerlist.zipcode'><text id='dbo.customerlist.zipcode' x='1219' y='823'>zipcode</text><title>zipcode
+varchar(10)</title></a>
+<text x='1277' y='820' text-anchor='end' class='colType'>t</text>  <use id='nn' x='1202' y='829' xlink:href='#nn'/><a xlink:href='#customerlist.phone'><text id='dbo.customerlist.phone' x='1219' y='839'>phone</text><title>phone
+* varchar(20)</title></a>
+<text x='1277' y='836' text-anchor='end' class='colType'>t</text>  <use id='nn' x='1202' y='845' xlink:href='#nn'/><a xlink:href='#customerlist.city'><text id='dbo.customerlist.city' x='1219' y='855'>city</text><title>city
+* varchar(50)</title></a>
+<text x='1277' y='852' text-anchor='end' class='colType'>t</text>  <use id='nn' x='1202' y='861' xlink:href='#nn'/><a xlink:href='#customerlist.country'><text id='dbo.customerlist.country' x='1219' y='871'>country</text><title>country
+* varchar(50)</title></a>
+<text x='1277' y='868' text-anchor='end' class='colType'>t</text>  <use id='nn' x='1202' y='877' xlink:href='#nn'/><a xlink:href='#customerlist.notes'><text id='dbo.customerlist.notes' x='1219' y='887'>notes</text><title>notes
+* varchar(6)</title></a>
+<text x='1277' y='884' text-anchor='end' class='colType'>t</text>  <use id='nn' x='1202' y='893' xlink:href='#nn'/><a xlink:href='#customerlist.SID'><text id='dbo.customerlist.SID' x='1219' y='903'>SID</text><title>SID
+* int</title></a>
+<text x='1277' y='900' text-anchor='end' class='colType'>#</text>
+<!-- == Table 'filmlist' == -->
+<rect class='entity' x='736' y='392' width='96' height='176' rx='8' ry='8' style='stroke:none'/>
+<path d='M 736 420 L 736 400 Q 736 392 744 392 L 824 392 Q 832 392 832 400 L 832 420 L736 420 ' style='fill:url(#tbg_BED3F4);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='736' y='392' width='96' height='176' rx='8' ry='8' style='fill:none;stroke:#BED3F4'/>
+<use id='view' x='816' y='392' xlink:href='#view'/>
+<a xlink:href='#filmlist'><text x='763' y='412'>filmlist</text><title>View dbo.filmlist</title></a>
+  <a xlink:href='#filmlist.FID'><text id='dbo.filmlist.FID' x='755' y='439'>FID</text><title>FID
+int</title></a>
+<text x='829' y='436' text-anchor='end' class='colType'>#</text>  <a xlink:href='#filmlist.title'><text id='dbo.filmlist.title' x='755' y='455'>title</text><title>title
+varchar(255)</title></a>
+<text x='829' y='452' text-anchor='end' class='colType'>t</text>  <a xlink:href='#filmlist.description'><text id='dbo.filmlist.description' x='755' y='471'>description</text><title>description
+text</title></a>
+<text x='829' y='468' text-anchor='end' class='colType'>t</text>  <use id='nn' x='738' y='477' xlink:href='#nn'/><a xlink:href='#filmlist.category'><text id='dbo.filmlist.category' x='755' y='487'>category</text><title>category
+* varchar(25)</title></a>
+<text x='829' y='484' text-anchor='end' class='colType'>t</text>  <a xlink:href='#filmlist.price'><text id='dbo.filmlist.price' x='755' y='503'>price</text><title>price
+decimal(4,2)</title></a>
+<text x='829' y='500' text-anchor='end' class='colType'>#</text>  <a xlink:href='#filmlist.length'><text id='dbo.filmlist.length' x='755' y='519'>length</text><title>length
+smallint</title></a>
+<text x='829' y='516' text-anchor='end' class='colType'>#</text>  <a xlink:href='#filmlist.rating'><text id='dbo.filmlist.rating' x='755' y='535'>rating</text><title>rating
+varchar(10)</title></a>
+<text x='829' y='532' text-anchor='end' class='colType'>t</text>  <use id='nn' x='738' y='541' xlink:href='#nn'/><a xlink:href='#filmlist.actors'><text id='dbo.filmlist.actors' x='755' y='551'>actors</text><title>actors
+* varchar(91)</title></a>
+<text x='829' y='548' text-anchor='end' class='colType'>t</text>
+<!-- == Table 'salesbyfilmcategory' == -->
+<rect class='entity' x='1008' y='728' width='128' height='80' rx='8' ry='8' style='stroke:none'/>
+<path d='M 1008 756 L 1008 736 Q 1008 728 1016 728 L 1128 728 Q 1136 728 1136 736 L 1136 756 L1008 756 ' style='fill:url(#tbg_F4DDBE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='1008' y='728' width='128' height='80' rx='8' ry='8' style='fill:none;stroke:#F4DDBE'/>
+<use id='view' x='1120' y='728' xlink:href='#view'/>
+<a xlink:href='#salesbyfilmcategory'><text x='1017' y='748'>salesbyfilmcategory</text><title>View dbo.salesbyfilmcategory</title></a>
+  <use id='nn' x='1010' y='765' xlink:href='#nn'/><a xlink:href='#salesbyfilmcategory.category'><text id='dbo.salesbyfilmcategory.category' x='1027' y='775'>category</text><title>category
+* varchar(25)</title></a>
+<text x='1133' y='772' text-anchor='end' class='colType'>t</text>  <a xlink:href='#salesbyfilmcategory.totalsales'><text id='dbo.salesbyfilmcategory.totalsales' x='1027' y='791'>totalsales</text><title>totalsales
+decimal(38,2)</title></a>
+<text x='1133' y='788' text-anchor='end' class='colType'>#</text>
+<!-- == Table 'salesbystore' == -->
+<rect class='entity' x='848' y='872' width='96' height='112' rx='8' ry='8' style='stroke:none'/>
+<path d='M 848 900 L 848 880 Q 848 872 856 872 L 936 872 Q 944 872 944 880 L 944 900 L848 900 ' style='fill:url(#tbg_F4DDBE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='848' y='872' width='96' height='112' rx='8' ry='8' style='fill:none;stroke:#F4DDBE'/>
+<use id='view' x='928' y='872' xlink:href='#view'/>
+<a xlink:href='#salesbystore'><text x='860' y='892'>salesbystore</text><title>View dbo.salesbystore</title></a>
+  <use id='nn' x='850' y='909' xlink:href='#nn'/><a xlink:href='#salesbystore.storeid'><text id='dbo.salesbystore.storeid' x='867' y='919'>storeid</text><title>storeid
+* int</title></a>
+<text x='941' y='916' text-anchor='end' class='colType'>#</text>  <use id='nn' x='850' y='925' xlink:href='#nn'/><a xlink:href='#salesbystore.store'><text id='dbo.salesbystore.store' x='867' y='935'>store</text><title>store
+* varchar(101)</title></a>
+<text x='941' y='932' text-anchor='end' class='colType'>t</text>  <use id='nn' x='850' y='941' xlink:href='#nn'/><a xlink:href='#salesbystore.manager'><text id='dbo.salesbystore.manager' x='867' y='951'>manager</text><title>manager
+* varchar(91)</title></a>
+<text x='941' y='948' text-anchor='end' class='colType'>t</text>  <a xlink:href='#salesbystore.totalsales'><text id='dbo.salesbystore.totalsales' x='867' y='967'>totalsales</text><title>totalsales
+decimal(38,2)</title></a>
+<text x='941' y='964' text-anchor='end' class='colType'>#</text>
+<!-- == Table 'stafflist' == -->
+<rect class='entity' x='1008' y='872' width='80' height='176' rx='8' ry='8' style='stroke:none'/>
+<path d='M 1008 900 L 1008 880 Q 1008 872 1016 872 L 1080 872 Q 1088 872 1088 880 L 1088 900 L1008 900 ' style='fill:url(#tbg_F4DDBE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='1008' y='872' width='80' height='176' rx='8' ry='8' style='fill:none;stroke:#F4DDBE'/>
+<use id='view' x='1072' y='872' xlink:href='#view'/>
+<a xlink:href='#stafflist'><text x='1025' y='892'>stafflist</text><title>View dbo.stafflist</title></a>
+  <use id='nn' x='1010' y='909' xlink:href='#nn'/><a xlink:href='#stafflist.ID'><text id='dbo.stafflist.ID' x='1027' y='919'>ID</text><title>ID
+* tinyint</title></a>
+<text x='1085' y='916' text-anchor='end' class='colType'>#</text>  <use id='nn' x='1010' y='925' xlink:href='#nn'/><a xlink:href='#stafflist.name'><text id='dbo.stafflist.name' x='1027' y='935'>name</text><title>name
+* varchar(91)</title></a>
+<text x='1085' y='932' text-anchor='end' class='colType'>t</text>  <use id='nn' x='1010' y='941' xlink:href='#nn'/><a xlink:href='#stafflist.address'><text id='dbo.stafflist.address' x='1027' y='951'>address</text><title>address
+* varchar(50)</title></a>
+<text x='1085' y='948' text-anchor='end' class='colType'>t</text>  <a xlink:href='#stafflist.zipcode'><text id='dbo.stafflist.zipcode' x='1027' y='967'>zipcode</text><title>zipcode
+varchar(10)</title></a>
+<text x='1085' y='964' text-anchor='end' class='colType'>t</text>  <use id='nn' x='1010' y='973' xlink:href='#nn'/><a xlink:href='#stafflist.phone'><text id='dbo.stafflist.phone' x='1027' y='983'>phone</text><title>phone
+* varchar(20)</title></a>
+<text x='1085' y='980' text-anchor='end' class='colType'>t</text>  <use id='nn' x='1010' y='989' xlink:href='#nn'/><a xlink:href='#stafflist.city'><text id='dbo.stafflist.city' x='1027' y='999'>city</text><title>city
+* varchar(50)</title></a>
+<text x='1085' y='996' text-anchor='end' class='colType'>t</text>  <use id='nn' x='1010' y='1005' xlink:href='#nn'/><a xlink:href='#stafflist.country'><text id='dbo.stafflist.country' x='1027' y='1015'>country</text><title>country
+* varchar(50)</title></a>
+<text x='1085' y='1012' text-anchor='end' class='colType'>t</text>  <use id='nn' x='1010' y='1021' xlink:href='#nn'/><a xlink:href='#stafflist.SID'><text id='dbo.stafflist.SID' x='1027' y='1031'>SID</text><title>SID
+* int</title></a>
+<text x='1085' y='1028' text-anchor='end' class='colType'>#</text>
+</g></svg></div>
+
+
+<br><br>
+<div class='card'><div class='card-body'><a name='actor' onclick='window.scrollTo(1048, 240);return false;' style='cursor:pointer;'><h4 class='card-title'>Table actor</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='actor.actorid'>actorid</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='actor.firstname'>firstname</a></td>
+		<td> varchar&#40; 45 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg></td>
+		<td><a name='actor.lastname'>lastname</a></td>
+		<td> varchar&#40; 45 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='actor.lastupdate'>lastupdate</a></td>
+		<td> datetime   DEFAULT getdate() </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>PK&#95;&#95;actor&#95;&#95;83335D3308D5FF1D</td>
+		<td> ON actorid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idxactorlastname</td>
+		<td> ON lastname</td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='address' onclick='window.scrollTo(60, 544);return false;' style='cursor:pointer;'><h4 class='card-title'>Table address</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='address.addressid'>addressid</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='address.address'>address</a></td>
+		<td> varchar&#40; 50 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='address.address2'>address2</a></td>
+		<td> varchar&#40; 50 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='address.district'>district</a></td>
+		<td> varchar&#40; 20 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='address.cityid'>cityid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='address.postalcode'>postalcode</a></td>
+		<td> varchar&#40; 10 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='address.phone'>phone</a></td>
+		<td> varchar&#40; 20 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='address.lastupdate'>lastupdate</a></td>
+		<td> datetime   DEFAULT getdate() </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>PK&#95;&#95;address&#95;&#95;26A0158537CA7AC3</td>
+		<td> ON addressid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idxfkcityid</td>
+		<td> ON cityid</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fkaddresscity</td>
+		<td > ( cityid ) ref <a href='#city'>city</a> (cityid) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='category' onclick='window.scrollTo(1048, 560);return false;' style='cursor:pointer;'><h4 class='card-title'>Table category</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='category.categoryid'>categoryid</a></td>
+		<td> tinyint  AUTOINCREMENT  </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='category.name'>name</a></td>
+		<td> varchar&#40; 25 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='category.lastupdate'>lastupdate</a></td>
+		<td> datetime   DEFAULT getdate() </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>PK&#95;&#95;category&#95;&#95;23CDE5903EA6F76C</td>
+		<td> ON categoryid</td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='city' onclick='window.scrollTo(184, 544);return false;' style='cursor:pointer;'><h4 class='card-title'>Table city</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='city.cityid'>cityid</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='city.city'>city</a></td>
+		<td> varchar&#40; 50 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='city.countryid'>countryid</a></td>
+		<td> smallint   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='city.lastupdate'>lastupdate</a></td>
+		<td> datetime   DEFAULT getdate() </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>PK&#95;&#95;city&#95;&#95;B4BDBD2607884E60</td>
+		<td> ON cityid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idxfkcountryid</td>
+		<td> ON countryid</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fkcitycountry</td>
+		<td > ( countryid ) ref <a href='#country'>country</a> (countryid) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='country' onclick='window.scrollTo(344, 544);return false;' style='cursor:pointer;'><h4 class='card-title'>Table country</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='country.countryid'>countryid</a></td>
+		<td> smallint  AUTOINCREMENT  </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='country.country'>country</a></td>
+		<td> varchar&#40; 50 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='country.lastupdate'>lastupdate</a></td>
+		<td> datetime   DEFAULT getdate() </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>PK&#95;&#95;country&#95;&#95;D32342B4E524E3DB</td>
+		<td> ON countryid</td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='customer' onclick='window.scrollTo(200, 256);return false;' style='cursor:pointer;'><h4 class='card-title'>Table customer</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='customer.customerid'>customerid</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='customer.storeid'>storeid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='customer.firstname'>firstname</a></td>
+		<td> varchar&#40; 45 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg></td>
+		<td><a name='customer.lastname'>lastname</a></td>
+		<td> varchar&#40; 45 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='customer.email'>email</a></td>
+		<td> varchar&#40; 50 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='customer.addressid'>addressid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='customer.active'>active</a></td>
+		<td> char&#40; 1 &#41;   DEFAULT 'Y' </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='customer.createdate'>createdate</a></td>
+		<td> datetime   DEFAULT getdate() </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='customer.lastupdate'>lastupdate</a></td>
+		<td> datetime   DEFAULT getdate() </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>PK&#95;&#95;customer&#95;&#95;B61ED7F5FF9C9DEA</td>
+		<td> ON customerid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idxfkaddressid</td>
+		<td> ON addressid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idxfkstoreid</td>
+		<td> ON storeid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idxlastname</td>
+		<td> ON lastname</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fkcustomeraddress</td>
+		<td > ( addressid ) ref <a href='#address'>address</a> (addressid) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fkcustomerstore</td>
+		<td > ( storeid ) ref <a href='#store'>store</a> (storeid) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='film' onclick='window.scrollTo(696, 80);return false;' style='cursor:pointer;'><h4 class='card-title'>Table film</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='film.filmid'>filmid</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='film.title'>title</a></td>
+		<td> varchar&#40; 255 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='film.description'>description</a></td>
+		<td> text   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='film.releaseyear'>releaseyear</a></td>
+		<td> varchar&#40; 4 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='film.languageid'>languageid</a></td>
+		<td> tinyint   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='film.originallanguageid'>originallanguageid</a></td>
+		<td> tinyint   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='film.rentalduration'>rentalduration</a></td>
+		<td> tinyint   DEFAULT 3 </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='film.rentalrate'>rentalrate</a></td>
+		<td> decimal&#40; 4&#44; 2 &#41;   DEFAULT 4.99 </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='film.length'>length</a></td>
+		<td> smallint   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='film.replacementcost'>replacementcost</a></td>
+		<td> decimal&#40; 5&#44; 2 &#41;   DEFAULT 19.99 </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='film.rating'>rating</a></td>
+		<td> varchar&#40; 10 &#41;   DEFAULT 'G' </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='film.specialfeatures'>specialfeatures</a></td>
+		<td> varchar&#40; 255 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='film.lastupdate'>lastupdate</a></td>
+		<td> datetime   DEFAULT getdate() </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>PK&#95;&#95;film&#95;&#95;C037C0C9E539AC0F</td>
+		<td> ON filmid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idxfklanguageid</td>
+		<td> ON languageid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idxfkoriginallanguageid</td>
+		<td> ON originallanguageid</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fkfilmlanguage</td>
+		<td > ( languageid ) ref <a href='#language'>language</a> (languageid) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fkfilmlanguageoriginal</td>
+		<td > ( originallanguageid ) ref <a href='#language'>language</a> (languageid) </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Constraints</th></tr>
+	<tr>
+		<td>&nbsp;</td><td> CHECKspecialrating </td><td> &#91;rating&#93;&#61;&#39;NC&#45;17&#39; OR &#91;rating&#93;&#61;&#39;R&#39; OR &#91;rating&#93;&#61;&#39;PG&#45;13&#39; OR &#91;rating&#93;&#61;&#39;PG&#39; OR &#91;rating&#93;&#61;&#39;G&#39; </td><td> </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><td> CHECKspecialfeatures </td><td> &#91;specialfeatures&#93; IS NULL OR &#91;specialfeatures&#93; like &#39;&#37;Trailers&#37;&#39; OR &#91;specialfeatures&#93; like &#39;&#37;Commentaries&#37;&#39; OR &#91;specialfeatures&#93; like &#39;&#37;Deleted Scenes&#37;&#39; OR &#91;specialfeatures&#93; like &#39;&#37;Behind the Scenes&#37;&#39; </td><td> </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='filmRev' onclick='window.scrollTo(696, 400);return false;' style='cursor:pointer;'><h4 class='card-title'>Table filmRev</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*</td>
+		<td><a name='filmRev.filmid'>filmid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='filmRev.title'>title</a></td>
+		<td> varchar&#40; 255 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='filmRev.originallanguageid'>originallanguageid</a></td>
+		<td> tinyint   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='filmRev.rentalduration'>rentalduration</a></td>
+		<td> tinyint   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='filmRev.rentalrate'>rentalrate</a></td>
+		<td> decimal&#40; 4&#44; 2 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='filmRev.length'>length</a></td>
+		<td> smallint   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='filmRev.replacementcost'>replacementcost</a></td>
+		<td> decimal&#40; 5&#44; 2 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='filmRev.rating'>rating</a></td>
+		<td> varchar&#40; 10 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='filmRev.specialfeatures'>specialfeatures</a></td>
+		<td> varchar&#40; 255 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='filmRev.categoryid'>categoryid</a></td>
+		<td> tinyint   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='filmRev.name'>name</a></td>
+		<td> varchar&#40; 25 &#41;   </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='filmactor' onclick='window.scrollTo(888, 240);return false;' style='cursor:pointer;'><h4 class='card-title'>Table filmactor</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='filmactor.actorid'>actorid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='filmactor.filmid'>filmid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='filmactor.lastupdate'>lastupdate</a></td>
+		<td> datetime   DEFAULT getdate() </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>PK&#95;&#95;filmacto&#95;&#95;0F30213FE619491A</td>
+		<td> ON actorid&#44; filmid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idxfkfilmactoractor</td>
+		<td> ON actorid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idxfkfilmactorfilm</td>
+		<td> ON filmid</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fkfilmactoractor</td>
+		<td > ( actorid ) ref <a href='#actor'>actor</a> (actorid) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fkfilmactorfilm</td>
+		<td > ( filmid ) ref <a href='#film'>film</a> (filmid) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='filmcategory' onclick='window.scrollTo(888, 400);return false;' style='cursor:pointer;'><h4 class='card-title'>Table filmcategory</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='filmcategory.filmid'>filmid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='filmcategory.categoryid'>categoryid</a></td>
+		<td> tinyint   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='filmcategory.lastupdate'>lastupdate</a></td>
+		<td> datetime   DEFAULT getdate() </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>PK&#95;&#95;filmcate&#95;&#95;D20B1E904C19ED64</td>
+		<td> ON filmid&#44; categoryid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idxfkfilmcategorycategory</td>
+		<td> ON categoryid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idxfkfilmcategoryfilm</td>
+		<td> ON filmid</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fkfilmcategorycategory</td>
+		<td > ( categoryid ) ref <a href='#category'>category</a> (categoryid) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fkfilmcategoryfilm</td>
+		<td > ( filmid ) ref <a href='#film'>film</a> (filmid) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='filmtext' onclick='window.scrollTo(536, 240);return false;' style='cursor:pointer;'><h4 class='card-title'>Table filmtext</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg></td>
+		<td><a name='filmtext.filmid'>filmid</a></td>
+		<td> smallint   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='filmtext.title'>title</a></td>
+		<td> varchar&#40; 255 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='filmtext.description'>description</a></td>
+		<td> text   </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>PK&#95;&#95;filmtext&#95;&#95;C037C0C9146603EE</td>
+		<td> ON filmid</td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='inventory' onclick='window.scrollTo(60, 80);return false;' style='cursor:pointer;'><h4 class='card-title'>Table inventory</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='inventory.inventoryid'>inventoryid</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='inventory.filmid'>filmid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='inventory.storeid'>storeid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='inventory.lastupdate'>lastupdate</a></td>
+		<td> datetime   DEFAULT getdate() </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>PK&#95;&#95;inventor&#95;&#95;C4B4B87A066BAE9D</td>
+		<td> ON inventoryid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idxfkfilmid</td>
+		<td> ON filmid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idxfkfilmidstoreid</td>
+		<td> ON storeid&#44; filmid</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fkinventoryfilm</td>
+		<td > ( filmid ) ref <a href='#film'>film</a> (filmid) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fkinventorystore</td>
+		<td > ( storeid ) ref <a href='#store'>store</a> (storeid) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='language' onclick='window.scrollTo(888, 80);return false;' style='cursor:pointer;'><h4 class='card-title'>Table language</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='language.languageid'>languageid</a></td>
+		<td> tinyint  AUTOINCREMENT  </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='language.name'>name</a></td>
+		<td> char&#40; 20 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='language.lastupdate'>lastupdate</a></td>
+		<td> datetime   DEFAULT getdate() </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>PK&#95;&#95;language&#95;&#95;12686E4AAC0F0EAB</td>
+		<td> ON languageid</td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='payment' onclick='window.scrollTo(60, 768);return false;' style='cursor:pointer;'><h4 class='card-title'>Table payment</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg></td>
+		<td><a name='payment.paymentid'>paymentid</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='payment.customerid'>customerid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='payment.staffid'>staffid</a></td>
+		<td> tinyint   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='payment.rentalid'>rentalid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='payment.amount'>amount</a></td>
+		<td> decimal&#40; 5&#44; 2 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='payment.paymentdate'>paymentdate</a></td>
+		<td> datetime   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='payment.lastupdate'>lastupdate</a></td>
+		<td> datetime   DEFAULT getdate() </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>PK&#95;&#95;payment&#95;&#95;AF26EBEE50E77ADE</td>
+		<td> ON paymentid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idxfkcustomerid</td>
+		<td> ON customerid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idxfkstaffid</td>
+		<td> ON staffid</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fkpaymentcustomer</td>
+		<td > ( customerid ) ref <a href='#customer'>customer</a> (customerid) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fkpaymentrental</td>
+		<td > ( rentalid ) ref <a href='#rental'>rental</a> (rentalid) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fkpaymentstaff</td>
+		<td > ( staffid ) ref <a href='#staff'>staff</a> (staffid) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='rental' onclick='window.scrollTo(60, 544);return false;' style='cursor:pointer;'><h4 class='card-title'>Table rental</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='rental.rentalid'>rentalid</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg></td>
+		<td><a name='rental.rentaldate'>rentaldate</a></td>
+		<td> datetime   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='rental.inventoryid'>inventoryid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='rental.customerid'>customerid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='rental.returndate'>returndate</a></td>
+		<td> datetime   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='rental.staffid'>staffid</a></td>
+		<td> tinyint   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='rental.lastupdate'>lastupdate</a></td>
+		<td> datetime   DEFAULT getdate() </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>PK&#95;&#95;rental&#95;&#95;01677F569B3F6C11</td>
+		<td> ON rentalid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>idxuq</td>
+		<td> ON rentaldate&#44; inventoryid&#44; customerid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idxfkcustomerid</td>
+		<td> ON customerid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idxfkinventoryid</td>
+		<td> ON inventoryid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idxfkstaffid</td>
+		<td> ON staffid</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fkrentalcustomer</td>
+		<td > ( customerid ) ref <a href='#customer'>customer</a> (customerid) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fkrentalinventory</td>
+		<td > ( inventoryid ) ref <a href='#inventory'>inventory</a> (inventoryid) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fkrentalstaff</td>
+		<td > ( staffid ) ref <a href='#staff'>staff</a> (staffid) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='staff' onclick='window.scrollTo(60, 256);return false;' style='cursor:pointer;'><h4 class='card-title'>Table staff</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='staff.staffid'>staffid</a></td>
+		<td> tinyint  AUTOINCREMENT  </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='staff.firstname'>firstname</a></td>
+		<td> varchar&#40; 45 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='staff.lastname'>lastname</a></td>
+		<td> varchar&#40; 45 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='staff.addressid'>addressid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='staff.picture'>picture</a></td>
+		<td> image   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='staff.email'>email</a></td>
+		<td> varchar&#40; 50 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='staff.storeid'>storeid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='staff.active'>active</a></td>
+		<td> bit   DEFAULT 1 </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='staff.username'>username</a></td>
+		<td> varchar&#40; 16 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='staff.password'>password</a></td>
+		<td> varchar&#40; 40 &#41;   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='staff.lastupdate'>lastupdate</a></td>
+		<td> datetime   DEFAULT getdate() </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>PK&#95;&#95;staff&#95;&#95;645AE4A63BDB665E</td>
+		<td> ON staffid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idxfkaddressid</td>
+		<td> ON addressid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idxfkstoreid</td>
+		<td> ON storeid</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fkstaffaddress</td>
+		<td > ( addressid ) ref <a href='#address'>address</a> (addressid) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fkstaffstore</td>
+		<td > ( storeid ) ref <a href='#store'>store</a> (storeid) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='store' onclick='window.scrollTo(60, 256);return false;' style='cursor:pointer;'><h4 class='card-title'>Table store</h4></a>
+<table class='table-sm table-bordered'>
+<thead>
+<tr><th>Indexes</th><th>Field Name</th><th>Data Type</th><th>Description</th></tr></thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='store.storeid'>storeid</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='store.managerstaffid'>managerstaffid</a></td>
+		<td> tinyint   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#idx'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='store.addressid'>addressid</a></td>
+		<td> int   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='store.lastupdate'>lastupdate</a></td>
+		<td> datetime   DEFAULT getdate() </td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>PK&#95;&#95;store&#95;&#95;01A2160B6779D1C4</td>
+		<td> ON storeid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>idxfkaddressid</td>
+		<td> ON managerstaffid</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#idx'/></svg></td><td>idxfkstoreaddress</td>
+		<td> ON addressid</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fkstoreaddress</td>
+		<td > ( addressid ) ref <a href='#address'>address</a> (addressid) </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fkstorestaff</td>
+		<td > ( managerstaffid ) ref <a href='#staff'>staff</a> (staffid) </td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table></div></div>
+
+<br><br>
+<div class='card'><div class='card-body'><a name='customerlist' onclick='window.scrollTo(1000, 736);return false;' style='cursor:pointer;'><h2>View customerlist</h2></a>
+<table class='table-sm table-bordered'>
+<thead>
+	<tr>
+		<th><a name='customerlist'>Query</a></th></tr>
+</thead>
+<tbody>
+	<tr><td>
+&#45;&#45;
+&#45;&#45; View structure for view customerlist
+&#45;&#45;
+
+CREATE VIEW &#91;dbo&#93;&#46;&#91;customerlist&#93;
+AS
+SELECT cu&#46;customerid AS ID&#44; 
+       cu&#46;firstname &#43; &#39; &#39; &#43; cu&#46;lastname AS name&#44; 
+       a&#46;address AS address&#44; 
+       a&#46;postalcode AS zipcode&#44;
+&#09;   a&#46;phone AS phone&#44; 
+&#09;   city&#46;city AS city&#44; 
+&#09;   country&#46;country AS country&#44; 
+&#09;   case when cu&#46;active&#61;1 then &#39;active&#39; else &#39;&#39; end AS notes&#44; 
+&#09;   cu&#46;storeid AS SID
+FROM customer AS cu JOIN address AS a ON cu&#46;addressid &#61; a&#46;addressid JOIN city ON a&#46;cityid &#61; city&#46;cityid
+&#09;JOIN country ON city&#46;countryid &#61; country&#46;countryid
+</td></tr>
+</tbody>
+</table></div></div>
+<br><br>
+<div class='card'><div class='card-body'><a name='filmlist' onclick='window.scrollTo(536, 400);return false;' style='cursor:pointer;'><h2>View filmlist</h2></a>
+<table class='table-sm table-bordered'>
+<thead>
+	<tr>
+		<th><a name='filmlist'>Query</a></th></tr>
+</thead>
+<tbody>
+	<tr><td>&#45;&#45;
+&#45;&#45; View structure for view filmlist
+&#45;&#45;
+
+CREATE VIEW &#91;dbo&#93;&#46;&#91;filmlist&#93;
+AS
+SELECT film&#46;filmid AS FID&#44; 
+       film&#46;title AS title&#44; 
+       film&#46;description AS description&#44; 
+       category&#46;name AS category&#44; 
+       film&#46;rentalrate AS price&#44;
+&#09;   film&#46;length AS length&#44; 
+&#09;   film&#46;rating AS rating&#44; 
+&#09;   actor&#46;firstname&#43;&#39; &#39;&#43;actor&#46;lastname AS actors
+FROM category LEFT JOIN filmcategory ON category&#46;categoryid &#61; filmcategory&#46;categoryid LEFT JOIN film ON filmcategory&#46;filmid &#61; film&#46;filmid
+        JOIN filmactor ON film&#46;filmid &#61; filmactor&#46;filmid
+&#09;JOIN actor ON filmactor&#46;actorid &#61; actor&#46;actorid
+</td></tr>
+</tbody>
+</table></div></div>
+<br><br>
+<div class='card'><div class='card-body'><a name='salesbyfilmcategory' onclick='window.scrollTo(808, 736);return false;' style='cursor:pointer;'><h2>View salesbyfilmcategory</h2></a>
+<table class='table-sm table-bordered'>
+<thead>
+	<tr>
+		<th><a name='salesbyfilmcategory'>Query</a></th></tr>
+</thead>
+<tbody>
+	<tr><td>&#45;&#45;
+&#45;&#45; View structure for view salesbyfilmcategory
+&#45;&#45;
+&#45;&#45; Note that total sales will add up to &gt;100&#37; because
+&#45;&#45; some titles belong to more than 1 category
+&#45;&#45;
+
+CREATE VIEW &#91;dbo&#93;&#46;&#91;salesbyfilmcategory&#93;
+AS
+SELECT
+c&#46;name AS category
+&#44; SUM&#40;p&#46;amount&#41; AS totalsales
+FROM payment AS p
+INNER JOIN rental AS r ON p&#46;rentalid &#61; r&#46;rentalid
+INNER JOIN inventory AS i ON r&#46;inventoryid &#61; i&#46;inventoryid
+INNER JOIN film AS f ON i&#46;filmid &#61; f&#46;filmid
+INNER JOIN filmcategory AS fc ON f&#46;filmid &#61; fc&#46;filmid
+INNER JOIN category AS c ON fc&#46;categoryid &#61; c&#46;categoryid
+GROUP BY c&#46;name
+</td></tr>
+</tbody>
+</table></div></div>
+<br><br>
+<div class='card'><div class='card-body'><a name='salesbystore' onclick='window.scrollTo(648, 880);return false;' style='cursor:pointer;'><h2>View salesbystore</h2></a>
+<table class='table-sm table-bordered'>
+<thead>
+	<tr>
+		<th><a name='salesbystore'>Query</a></th></tr>
+</thead>
+<tbody>
+	<tr><td>&#45;&#45;
+&#45;&#45; View structure for view salesbystore
+&#45;&#45;
+
+CREATE VIEW &#91;dbo&#93;&#46;&#91;salesbystore&#93;
+AS
+SELECT
+  s&#46;storeid
+ &#44;c&#46;city&#43;&#39;&#44;&#39;&#43;cy&#46;country AS store
+ &#44;m&#46;firstname&#43;&#39; &#39;&#43; m&#46;lastname AS manager
+ &#44;SUM&#40;p&#46;amount&#41; AS totalsales
+FROM payment AS p
+INNER JOIN rental AS r ON p&#46;rentalid &#61; r&#46;rentalid
+INNER JOIN inventory AS i ON r&#46;inventoryid &#61; i&#46;inventoryid
+INNER JOIN store AS s ON i&#46;storeid &#61; s&#46;storeid
+INNER JOIN address AS a ON s&#46;addressid &#61; a&#46;addressid
+INNER JOIN city AS c ON a&#46;cityid &#61; c&#46;cityid
+INNER JOIN country AS cy ON c&#46;countryid &#61; cy&#46;countryid
+INNER JOIN staff AS m ON s&#46;managerstaffid &#61; m&#46;staffid
+GROUP BY   
+  s&#46;storeid
+&#44; c&#46;city&#43; &#39;&#44;&#39;&#43;cy&#46;country 
+&#44; m&#46;firstname&#43;&#39; &#39;&#43; m&#46;lastname
+</td></tr>
+</tbody>
+</table></div></div>
+<br><br>
+<div class='card'><div class='card-body'><a name='stafflist' onclick='window.scrollTo(808, 880);return false;' style='cursor:pointer;'><h2>View stafflist</h2></a>
+<table class='table-sm table-bordered'>
+<thead>
+	<tr>
+		<th><a name='stafflist'>Query</a></th></tr>
+</thead>
+<tbody>
+	<tr><td>
+&#45;&#45;
+&#45;&#45; View structure for view stafflist
+&#45;&#45;
+
+CREATE VIEW &#91;dbo&#93;&#46;&#91;stafflist&#93;
+AS
+SELECT s&#46;staffid AS ID&#44; 
+       s&#46;firstname&#43;&#39; &#39;&#43;s&#46;lastname AS name&#44; 
+       a&#46;address AS address&#44; 
+       a&#46;postalcode AS zipcode&#44; 
+       a&#46;phone AS phone&#44;
+&#09;   city&#46;city AS city&#44; 
+&#09;   country&#46;country AS country&#44; 
+&#09;   s&#46;storeid AS SID
+FROM staff AS s JOIN address AS a ON s&#46;addressid &#61; a&#46;addressid JOIN city ON a&#46;cityid &#61; city&#46;cityid
+&#09;JOIN country ON city&#46;countryid &#61; country&#46;countryid
+</td></tr>
+</tbody>
+</table></div></div>
+<p align='right'><a href='https://www.dbschema.com' style='color:#aaa'>Powered by DbSchema</a></p></body></html>

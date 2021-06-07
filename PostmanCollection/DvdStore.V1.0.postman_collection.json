@@ -1,0 +1,698 @@
+{
+	"info": {
+		"_postman_id": "19f29e9f-4404-47ab-983c-f87fba2753d7",
+		"name": "DvdStore V1.0",
+		"description": "DvdStore Api Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Root of the API - HEAD",
+			"request": {
+				"method": "HEAD",
+				"header": [
+					{
+						"key": "acc",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:51000/api/v1.0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "51000",
+					"path": [
+						"api",
+						"v1.0"
+					]
+				},
+				"description": "Get Root of API - HttpHead Verb Test"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Root of the API - OPTIONS",
+			"request": {
+				"method": "OPTIONS",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:51000/api/v1.0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "51000",
+					"path": [
+						"api",
+						"v1.0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Root of the API",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:51000/api/v1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "51000",
+					"path": [
+						"api",
+						"v1"
+					]
+				},
+				"description": "Get the Root of the API"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Actors - HEAD",
+			"request": {
+				"method": "HEAD",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:51000/api/v1/actors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "51000",
+					"path": [
+						"api",
+						"v1",
+						"actors"
+					]
+				},
+				"description": "Get Actors - HttpHead Test"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Actors - OPTIONS",
+			"request": {
+				"method": "OPTIONS",
+				"header": [
+					{
+						"key": "Accept-Charset",
+						"type": "text",
+						"value": "application/vnd.api+json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:51000/api/v1/actors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "51000",
+					"path": [
+						"api",
+						"v1",
+						"actors"
+					]
+				},
+				"description": "Get Actors - HttpOptions Verb Test"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Actors",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:51000/api/v1/actors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "51000",
+					"path": [
+						"api",
+						"v1",
+						"actors"
+					]
+				},
+				"description": "\r\n\r\n\r\nhttp://localhost:51000/api/actors"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Actors (Add XML Accept Header Test)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/xml"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:51000/api/v1/actors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "51000",
+					"path": [
+						"api",
+						"v1",
+						"actors"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				},
+				"description": "Get Actors (Add XML Accept Header Test)"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Actors (Add ZIP Accept Header for 406 Test)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/zip"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:51000/api/v1/actors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "51000",
+					"path": [
+						"api",
+						"v1",
+						"actors"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				},
+				"description": "Get Actors (Add ZIP Accept Header for 406 Test)\r\n\r\nThis test for 406 that we want as the app is only setupp for JSON and XML output formatters."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Actor by actorId 150 - HEAD ",
+			"request": {
+				"method": "HEAD",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:51000/api/v1/actors/150",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "51000",
+					"path": [
+						"api",
+						"v1",
+						"actors",
+						"150"
+					]
+				},
+				"description": "Get Actor by actorId 150 - HEAD \r\nNote that the test db has actor id's from 1 to 200"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Actor by actorId 150",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:51000/api/v1/actors/150",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "51000",
+					"path": [
+						"api",
+						"v1",
+						"actors",
+						"150"
+					]
+				},
+				"description": "Get Actor by actorId 150 - Note that the test db has actor id's from 1 to 200"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Actor by actorId 900 (Not Existing 404 check)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:51000/api/v1/actors/900",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "51000",
+					"path": [
+						"api",
+						"v1",
+						"actors",
+						"900"
+					]
+				},
+				"description": "Get Actor by actorId 900 (Not Existing 404 check)"
+			},
+			"response": []
+		},
+		{
+			"name": "Post Actor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstname\": \"PostmanFirstName\",\r\n  \"lastname\": \"TestPostmanLastName\",\r\n  \"lastupdate\": \"2021-01-17T14:47:38.116Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:51000/api/v1/actors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "51000",
+					"path": [
+						"api",
+						"v1",
+						"actors"
+					]
+				},
+				"description": "Create Actor call (POST) - PostActor Method on Controller"
+			},
+			"response": []
+		},
+		{
+			"name": "Post Actor (No Body Error Test 400 - Bad Request)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:51000/api/v1/actors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "51000",
+					"path": [
+						"api",
+						"v1",
+						"actors"
+					]
+				},
+				"description": "Create Actor call (POST) - No Body - PostActor Method on Controller\r\nSend with no body to test error"
+			},
+			"response": []
+		},
+		{
+			"name": "Put Actor - actorId=1206",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstname\": \"PostmanFirstName\",\r\n  \"lastname\": \"PutTest01\",\r\n  \"lastupdate\": \"2021-01-17T18:06:20.890Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:51000/api/v1/actors?actorId=2205",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "51000",
+					"path": [
+						"api",
+						"v1",
+						"actors"
+					],
+					"query": [
+						{
+							"key": "actorId",
+							"value": "2205"
+						}
+					]
+				},
+				"description": "Put Actor - Update Actor test\r\nReturns a Http Status Code of 204"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Actor by actorId",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:51000/api/v1/actors/2205",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "51000",
+					"path": [
+						"api",
+						"v1",
+						"actors",
+						"2205"
+					]
+				},
+				"description": "Delete Actor by actorId\r\nUsing the DeleteActor controler method\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Films - HEAD",
+			"request": {
+				"method": "HEAD",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:51000/api/v1/films",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "51000",
+					"path": [
+						"api",
+						"v1",
+						"films"
+					]
+				},
+				"description": "Get Films - HttpHead Verb Test"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Films - OPTIONS",
+			"request": {
+				"method": "OPTIONS",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:51000/api/v1/Films",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "51000",
+					"path": [
+						"api",
+						"v1",
+						"Films"
+					]
+				},
+				"description": "Get Films - HttpOptions Verb Test"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all the Films for a specific Actor by actorId",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:51000/api/v1/Films",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "51000",
+					"path": [
+						"api",
+						"v1",
+						"Films"
+					]
+				},
+				"description": "Get all the Films for a specific Actor by actorId"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Films (Add XML Accept Header Test)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/xml"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:51000/api/v1/films",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "51000",
+					"path": [
+						"api",
+						"v1",
+						"films"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all the Films for a specific Actor by actorId",
+			"request": {
+				"method": "HEAD",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:51000/api/v1/Films/150",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "51000",
+					"path": [
+						"api",
+						"v1",
+						"Films",
+						"150"
+					]
+				},
+				"description": "Get a specific Film for and Actor by actorId and filmId"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all the Films for a specific Actor by actorId",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:51000/api/v1/Films/150",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "51000",
+					"path": [
+						"api",
+						"v1",
+						"Films",
+						"150"
+					]
+				},
+				"description": "Get all the Films for a specific Actor by actorId"
+			},
+			"response": []
+		},
+		{
+			"name": "Get a specific Film for and Actor by actorId and filmId",
+			"request": {
+				"method": "HEAD",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:51000/api/v1/Films/150/23",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "51000",
+					"path": [
+						"api",
+						"v1",
+						"Films",
+						"150",
+						"23"
+					]
+				},
+				"description": "Get a specific Film for and Actor by actorId and filmId"
+			},
+			"response": []
+		},
+		{
+			"name": "Get a specific Film for and Actor by actorId and filmId",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:51000/api/v1/Films/150/23",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "51000",
+					"path": [
+						"api",
+						"v1",
+						"Films",
+						"150",
+						"23"
+					]
+				},
+				"description": "Get a specific Film for and Actor by actorId and filmId"
+			},
+			"response": []
+		}
+	]
+}

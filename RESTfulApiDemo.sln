@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DVDStoreDbScripts", "DVDStoreDbScripts", "{8DE2784B-29FE-48AC-976B-9404DE41A474}"
+	ProjectSection(SolutionItems) = preProject
+		000-DropAndCreate-DVDStoreDb.sql = 000-DropAndCreate-DVDStoreDb.sql
+		001-Revised Create DVDStore Script.sql = 001-Revised Create DVDStore Script.sql
+		002-Clean Version of Drop and Create DVDStore Script.sql = 002-Clean Version of Drop and Create DVDStore Script.sql
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DVDStore.DAL", "DVDStoreDbLibrary\DVDStore.DAL.csproj", "{12CF6BB4-E2A9-4824-9A9F-B4D06B0AE453}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DVDStore.API", "DVDStore.API\DVDStore.API.csproj", "{7232F1A3-54EF-487E-BEED-50E47A447E41}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DVDStoreNotes", "DVDStoreNotes", "{922BA05B-3DA9-48AE-AA98-E070D3F7BBBB}"
+	ProjectSection(SolutionItems) = preProject
+		DVDStoreNotesOnSolutionDevelopment.docx = DVDStoreNotesOnSolutionDevelopment.docx
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DVDStore.DAL.Repositories", "DVDStore.DAL.Repositories\DVDStore.DAL.Repositories.csproj", "{CBA51E28-34F0-4FC0-83EF-AA477ED4E4AA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Helpers", "Api.Helpers\Api.Helpers.csproj", "{CBDB3112-D7DD-424F-AAFA-09E40A5F72BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DVDStoreDbSchema", "DVDStoreDbSchema", "{E0BCF44F-D503-426F-B3CC-6A8CB8181552}"
+	ProjectSection(SolutionItems) = preProject
+		DVDStore-Documentation.html = DVDStore-Documentation.html
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DVDStore.Test.Repositories.DbUnitTests", "DVDStore.Test.Repositories.DbUnitTests\DVDStore.Test.Repositories.DbUnitTests.csproj", "{385B7248-FF2E-4944-A1B2-6F72BE2D7760}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DVDStore.Test.Repositories.MockedUnitTests", "DVDStore.Test.Repositories.MockedUnitTests\DVDStore.Test.Repositories.MockedUnitTests.csproj", "{7357AEE9-7A16-47E1-9E31-2E331AC77DFC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{63825570-BEB6-425C-9D85-978398EF8E58}"
+	ProjectSection(SolutionItems) = preProject
+		PostmanCollection\DvdStore.V1.0.postman_collection.json = PostmanCollection\DvdStore.V1.0.postman_collection.json
+		PostmanCollection\DvdStore.V1.1.postman_collection.json = PostmanCollection\DvdStore.V1.1.postman_collection.json
+		README.txt = README.txt
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DVDStore.Common", "DVDStore.Common\DVDStore.Common.csproj", "{E75751D8-DF01-48FF-A3AC-27DF1593D9CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12CF6BB4-E2A9-4824-9A9F-B4D06B0AE453}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12CF6BB4-E2A9-4824-9A9F-B4D06B0AE453}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12CF6BB4-E2A9-4824-9A9F-B4D06B0AE453}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12CF6BB4-E2A9-4824-9A9F-B4D06B0AE453}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7232F1A3-54EF-487E-BEED-50E47A447E41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7232F1A3-54EF-487E-BEED-50E47A447E41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7232F1A3-54EF-487E-BEED-50E47A447E41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7232F1A3-54EF-487E-BEED-50E47A447E41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBA51E28-34F0-4FC0-83EF-AA477ED4E4AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBA51E28-34F0-4FC0-83EF-AA477ED4E4AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBA51E28-34F0-4FC0-83EF-AA477ED4E4AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBA51E28-34F0-4FC0-83EF-AA477ED4E4AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBDB3112-D7DD-424F-AAFA-09E40A5F72BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBDB3112-D7DD-424F-AAFA-09E40A5F72BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBDB3112-D7DD-424F-AAFA-09E40A5F72BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBDB3112-D7DD-424F-AAFA-09E40A5F72BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{385B7248-FF2E-4944-A1B2-6F72BE2D7760}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{385B7248-FF2E-4944-A1B2-6F72BE2D7760}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{385B7248-FF2E-4944-A1B2-6F72BE2D7760}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{385B7248-FF2E-4944-A1B2-6F72BE2D7760}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7357AEE9-7A16-47E1-9E31-2E331AC77DFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7357AEE9-7A16-47E1-9E31-2E331AC77DFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7357AEE9-7A16-47E1-9E31-2E331AC77DFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7357AEE9-7A16-47E1-9E31-2E331AC77DFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E75751D8-DF01-48FF-A3AC-27DF1593D9CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E75751D8-DF01-48FF-A3AC-27DF1593D9CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E75751D8-DF01-48FF-A3AC-27DF1593D9CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E75751D8-DF01-48FF-A3AC-27DF1593D9CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3844BA01-E893-4BDE-80C7-18CB66F85D23}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DVDStore.DAL": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    }
+  }
+}
