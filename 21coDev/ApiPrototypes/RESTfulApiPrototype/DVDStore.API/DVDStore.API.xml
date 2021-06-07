@@ -1,0 +1,562 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DVDStore.API</name>
+    </assembly>
+    <members>
+        <member name="T:DVDStore.API.Areas.Catalog.AutoMapperProfiles.v1_0.ActorsProfile">
+            <summary>
+                ActorsProfile
+            </summary>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.AutoMapperProfiles.v1_0.ActorsProfile.#ctor">
+            <summary>
+                ActorsProfile Constructor
+            </summary>
+            <remarks>
+                AutoMapper docs - Projection and CreateMap
+                https://docs.automapper.org/en/stable/Projection.html
+            </remarks>
+        </member>
+        <member name="T:DVDStore.API.Areas.Catalog.AutoMapperProfiles.v1_0.FilmactorProfile">
+            <summary>
+                FilmactorProfile
+            </summary>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.AutoMapperProfiles.v1_0.FilmactorProfile.#ctor">
+            <summary>
+              FilmactorProfile Constructor
+            </summary>
+        </member>
+        <member name="T:DVDStore.API.Areas.Catalog.AutoMapperProfiles.v1_0.FilmsProfile">
+            <summary>
+                FilmsProfile
+            </summary>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.AutoMapperProfiles.v1_0.FilmsProfile.#ctor">
+            <summary>
+                FilmsProfile Constructor
+            </summary>
+        </member>
+        <member name="T:DVDStore.API.Areas.Catalog.AutoMapperProfiles.v1_1.ActorsProfile">
+            <summary>
+                ActorsProfile
+            </summary>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.AutoMapperProfiles.v1_1.ActorsProfile.#ctor">
+            <summary>
+                ActorsProfile Constructor
+            </summary>
+            <remarks>
+                AutoMapper docs - Projection and CreateMap
+                https://docs.automapper.org/en/stable/Projection.html
+            </remarks>
+        </member>
+        <member name="T:DVDStore.API.Areas.Catalog.AutoMapperProfiles.v1_1.FilmactorProfile">
+            <summary>
+                FilmactorProfile
+            </summary>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.AutoMapperProfiles.v1_1.FilmactorProfile.#ctor">
+            <summary>
+              FilmactorProfile Constructor
+            </summary>
+        </member>
+        <member name="T:DVDStore.API.Areas.Catalog.AutoMapperProfiles.v1_1.FilmsProfile">
+            <summary>
+                FilmsProfile
+            </summary>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.AutoMapperProfiles.v1_1.FilmsProfile.#ctor">
+            <summary>
+                FilmsProfile Constructor
+            </summary>
+        </member>
+        <member name="T:DVDStore.API.Areas.Catalog.Controllers.v1_0.ActorsController">
+            <summary>
+                ActorsController
+            </summary>
+            <remarks>
+                I've sprinkled "Notes for Training" through this controller with
+                links to MSDN documentation and other sources.
+                ===================================================================
+                Notes for Training:
+                Routing to controller actions in ASP.NET Core -
+                https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.apicontrollerattribute?view=aspnetcore-5.0
+                Attribute routing for REST APIs -
+                https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0#ar
+                Controller action return types in ASP.NET Core web API -
+                https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-5.0
+                Started Adding HttpHead Verb to all Get methods.  My reasoning is
+                this. Making API requests with HEAD methods is actually an
+                effective
+                way of simply verifying that a resource is available. It is good
+                practice to have a test for HEAD requests everywhere you have a
+                test for GET requests (as long as the API supports it).
+                HttpVerbs - Important Reading:
+                https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0#http-verb-templates
+                Route Names
+                https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0#route-name
+            </remarks>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.Controllers.v1_0.ActorsController.#ctor(DVDStore.DAL.Repositories.v1_0.IDvdStoreRepository,AutoMapper.IMapper)">
+            <summary>
+                ActorsController Constructor
+            </summary>
+            <param name="dvdStoreRepository"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.Controllers.v1_0.ActorsController.DeleteActor(System.Int32)">
+            <summary>
+                Delete an Actor by actorId
+            </summary>
+            <param name="actorId"></param>
+            <returns></returns>
+            <remarks>
+                This is used to an actor by Id
+            </remarks>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.Controllers.v1_0.ActorsController.GetActor(System.Int32)">
+            <summary>
+                Get a single Actor by the actorId
+            </summary>
+            <param name="actorId"></param>
+            <returns>
+                IActionResult -
+                https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-5.0#iactionresult-type
+            </returns>
+            <remarks>
+                This is used to get and actor by Id
+            </remarks>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.Controllers.v1_0.ActorsController.GetActors">
+            <summary>
+                Get ALL the Actors
+            </summary>
+            <returns>
+                ActionResult -
+                https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-5.0#actionresultt-type
+            </returns>
+            <remarks>
+                This is used to get a list of actors.
+                TODO: Set this up for paging later using the methods working in
+                repo
+            </remarks>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.Controllers.v1_0.ActorsController.GetActorsOptions">
+            <summary>
+                Get the Options allowed for Actors controller
+            </summary>
+            <returns></returns>
+            <remarks>
+                Returns a response telling user the type of actions allowed on
+                this controller
+            </remarks>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.Controllers.v1_0.ActorsController.PostActor(DVDStore.Common.Models.v1_0.Dto.ActorForCreationDto)">
+            <summary>
+                Post a new Actor to the DB.
+            </summary>
+            <param name="actor"></param>
+            <returns></returns>
+            <remarks>
+                This is used to ADD a new Actor
+            </remarks>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.Controllers.v1_0.ActorsController.PutUpdateActor(System.Int32,DVDStore.Common.Models.v1_0.Dto.ActorForUpdateDto)">
+            <summary>
+                Put/Update a specific Actor by actorId using and Actor Object
+            </summary>
+            <param name="actorId"></param>
+            <param name="actorForUpdate"></param>
+            <returns></returns>
+            <remarks>
+                This is to update an actor or add as new if doesn't exist.
+            </remarks>
+        </member>
+        <member name="T:DVDStore.API.Areas.Catalog.Controllers.v1_0.FilmsController">
+            <summary>
+                FilmsController
+            </summary>
+            <remarks>
+                I've sprinkled "Notes for Training" through this controller with
+                links to MSDN documentation and other sources.
+                ===================================================================
+                Notes for Training:
+                Routing to controller actions in ASP.NET Core -
+                https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.apicontrollerattribute?view=aspnetcore-5.0
+                Attribute routing for REST APIs -
+                https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0#ar
+                Controller action return types in ASP.NET Core web API -
+                https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-5.0
+                Started Adding HttpHead Verb to all Get methods.  My reasoning is
+                this. Making API requests with HEAD methods is actually an
+                effective
+                way of simply verifying that a resource is available. It is good
+                practice to have a test for HEAD requests everywhere you have a
+                test for GET requests (as long as the API supports it).
+                HttpVerbs - Important Reading:
+                https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0#http-verb-templates
+                Route Names
+                https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0#route-name
+            </remarks>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.Controllers.v1_0.FilmsController.#ctor(DVDStore.DAL.Repositories.v1_0.IDvdStoreRepository,AutoMapper.IMapper)">
+            <summary>
+                FilmsController Constructor
+            </summary>
+            <param name="dvdStoreRepository"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.Controllers.v1_0.FilmsController.GetFilm(System.Int32,System.Int32)">
+            <summary>
+                Get a specific Film for and Actor by actorId and filmId
+            </summary>
+            <param name="actorId"></param>
+            <param name="filmId"></param>
+            <returns>
+                FilmDto object
+            </returns>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.Controllers.v1_0.FilmsController.GetFilms">
+            <summary>
+                Get all the Films
+            </summary>
+            <returns>
+                IEnumerable List of FilmDto
+            </returns>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.Controllers.v1_0.FilmsController.GetFilms(System.Int32)">
+            <summary>
+                Get all the Films for a specific Actor by actorId
+            </summary>
+            <param name="actorId"></param>
+            <returns>
+                IEnumerable List of FilmDto
+            </returns>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.Controllers.v1_0.FilmsController.GetFilmsOptions">
+            <summary>
+                Get the Options allowed for the Films controller
+            </summary>
+            <returns></returns>
+            <remarks>
+                Returns a response telling user the type of actions allowed on
+                this controller
+            </remarks>
+        </member>
+        <member name="T:DVDStore.API.Areas.Catalog.Controllers.v1_1.ActorsController">
+            <summary>
+            ActorsController
+            </summary>
+            <remarks>
+            I've sprinkled "Notes for Training" through this controller with links
+            to MSDN documentation and other sources.
+            ===================================================================
+            Notes for Training: Routing to controller actions in ASP.NET Core -
+            https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.apicontrollerattribute?view=aspnetcore-5.0
+            Attribute routing for REST APIs -
+            https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0#ar
+            Controller action return types in ASP.NET Core web API -
+            https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-5.0
+            Started Adding HttpHead Verb to all Get methods. My reasoning is this.
+            Making API requests with HEAD methods is actually an effective way of
+            simply verifying that a resource is available. It is good practice to
+            have a test for HEAD requests everywhere you have a test for GET
+            requests (as long as the API supports it). HttpVerbs - Important
+            Reading:
+            https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0#http-verb-templates
+            Route Names https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0#route-name
+            </remarks>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.Controllers.v1_1.ActorsController.#ctor(DVDStore.DAL.Repositories.v1_1.IDvdStoreRepository,AutoMapper.IMapper,DVDStore.Common.PropertyMapping.v1_1.IDvdStorePropertyMapper,Api.Helpers.PropMapHelpers.IPropertyCheckerService)">
+            <summary>
+            ActorsController Constructor
+            </summary>
+            <param name="dvdStoreRepository"> </param>
+            <param name="mapper"> </param>
+            <param name="dvdStorePropertyMapper"> </param>
+            <param name="propertyCheckerService"> </param>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.Controllers.v1_1.ActorsController.DeleteActor(System.Int32)">
+            <summary>
+            Delete an Actor by actorId
+            </summary>
+            <param name="actorId"> </param>
+            <returns> </returns>
+            <remarks> This is used to an actor by Id </remarks>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.Controllers.v1_1.ActorsController.GetActor(System.Int32,System.String)">
+            <summary>
+            Get a single Actor by the actorId
+            </summary>
+            <param name="actorId"> </param>
+            <param name="fields"></param>
+            <returns> IActionResult - https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-5.0#iactionresult-type </returns>
+            <remarks> This is used to get and actor by Id </remarks>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.Controllers.v1_1.ActorsController.GetActors(DVDStore.Common.ResourceParameters.v1_1.ActorResourceParameters)">
+            <summary>
+            Get Actors using Actor resource Parameters - handles paging,
+            searching, orderby sorting and data shaping.
+            </summary>
+            <param name="actorResourceParameters"> </param>
+            <returns> </returns>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.Controllers.v1_1.ActorsController.GetActorsOptions">
+            <summary>
+            Get the Options allowed for Actors controller
+            </summary>
+            <returns> </returns>
+            <remarks>
+            Returns a response telling user the type of actions allowed on this controller
+            </remarks>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.Controllers.v1_1.ActorsController.PostActor(DVDStore.Common.Models.v1_1.Dto.ActorForCreationDto)">
+            <summary>
+            Post a new Actor to the DB.
+            </summary>
+            <param name="actor"> </param>
+            <returns> </returns>
+            <remarks> This is used to ADD a new Actor </remarks>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.Controllers.v1_1.ActorsController.PutUpdateActor(System.Int32,DVDStore.Common.Models.v1_1.Dto.ActorForUpdateDto)">
+            <summary>
+            Put/Update a specific Actor by actorId using and Actor Object
+            </summary>
+            <param name="actorId"> </param>
+            <param name="actorForUpdate"> </param>
+            <returns> </returns>
+            <remarks>
+            This is to update an actor or add as new if doesn't exist.
+            </remarks>
+        </member>
+        <member name="T:DVDStore.API.Areas.Catalog.Controllers.v1_1.FilmsController">
+            <summary>
+            FilmsController
+            </summary>
+            <remarks>
+            I've sprinkled "Notes for Training" through this controller with links to MSDN documentation
+            and other sources. =================================================================== Notes
+            for Training: Routing to controller actions in ASP.NET Core -
+            https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.apicontrollerattribute?view=aspnetcore-5.0
+            Attribute routing for REST APIs -
+            https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0#ar
+            Controller action return types in ASP.NET Core web API -
+            https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-5.0
+            Started Adding HttpHead Verb to all Get methods. My reasoning is this. Making API requests
+            with HEAD methods is actually an effective way of simply verifying that a resource is
+            available. It is good practice to have a test for HEAD requests everywhere you have a test
+            for GET requests (as long as the API supports it). HttpVerbs - Important Reading:
+            https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0#http-verb-templates
+            Route Names https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0#route-name
+            </remarks>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.Controllers.v1_1.FilmsController.#ctor(DVDStore.DAL.Repositories.v1_1.IDvdStoreRepository,AutoMapper.IMapper)">
+            <summary>
+            FilmsController Constructor
+            </summary>
+            <param name="dvdStoreRepository"> </param>
+            <param name="mapper"> </param>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.Controllers.v1_1.FilmsController.GetFilm(System.Int32,System.Int32)">
+            <summary>
+            Get a specific Film for and Actor by actorId and filmId
+            </summary>
+            <param name="actorId"> </param>
+            <param name="filmId"> </param>
+            <returns> FilmDto object </returns>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.Controllers.v1_1.FilmsController.GetFilms">
+            <summary>
+            Get all the Films
+            </summary>
+            <returns> IEnumerable List of FilmDto </returns>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.Controllers.v1_1.FilmsController.GetFilms(System.Int32)">
+            <summary>
+            Get all the Films for a specific Actor by actorId
+            </summary>
+            <param name="actorId"> </param>
+            <returns> IEnumerable List of FilmDto </returns>
+        </member>
+        <member name="M:DVDStore.API.Areas.Catalog.Controllers.v1_1.FilmsController.GetFilmsOptions">
+            <summary>
+            Get the Options allowed for the Films controller
+            </summary>
+            <returns> </returns>
+            <remarks> Returns a response telling user the type of actions allowed on this controller </remarks>
+        </member>
+        <member name="T:DVDStore.API.ConfigureSwaggerOptions">
+            <summary>
+                Configures the Swagger generation options.
+            </summary>
+            <remarks>
+                <para>
+                    This allows API versioning to define a Swagger document per
+                    API version after the
+                    <see cref="T:Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider" /> service has
+                    been resolved from the service container.
+                </para>
+                <para>
+                    Taken from
+                    https://github.com/microsoft/aspnet-api-versioning.
+                </para>
+            </remarks>
+        </member>
+        <member name="M:DVDStore.API.ConfigureSwaggerOptions.#ctor(Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+                Initializes a new instance of the
+                <see cref="T:DVDStore.API.ConfigureSwaggerOptions" /> class.
+            </summary>
+            <param name="provider">
+                The <see cref="T:Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider">provider</see>
+                used to generate Swagger
+                documents.
+            </param>
+        </member>
+        <member name="M:DVDStore.API.ConfigureSwaggerOptions.Configure(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)">
+            <inheritdoc />
+        </member>
+        <member name="M:DVDStore.API.ConfigureSwaggerOptions.CreateInfoForApiVersion(Microsoft.AspNetCore.Mvc.ApiExplorer.ApiVersionDescription)">
+            <summary>
+                Internal implementation for building the Swagger basic config.
+            </summary>
+            <param name="description">The description object containing the.</param>
+            <returns>The generated Open API info.</returns>
+        </member>
+        <member name="T:DVDStore.API.Controllers.v1_0.RootController">
+            <summary>
+                Root of the DVD Store API
+            </summary>
+        </member>
+        <member name="M:DVDStore.API.Controllers.v1_0.RootController.GetRoot">
+            <summary>
+                Get the Root of the DVD Store API - Provides links to explore areas of the API.
+            </summary>
+            <returns></returns>
+            <remarks>
+                Gets the root navigation information for the API when a user
+                first hits the API Service.  RESTful HATEOAS is in play here.
+            </remarks>
+        </member>
+        <member name="M:DVDStore.API.Controllers.v1_0.RootController.GetRootOptions">
+            <summary>
+                Get Options allowed for the DVD Store API Controller.
+            </summary>
+            <returns></returns>
+            <remarks>
+                Returns a response telling user the type of actions allowed on
+                this controller
+            </remarks>
+        </member>
+        <member name="T:DVDStore.API.Controllers.v1_1.RootController">
+            <summary>
+                Root of the DVD Store API
+            </summary>
+        </member>
+        <member name="M:DVDStore.API.Controllers.v1_1.RootController.GetRoot">
+            <summary>
+                Get the Root of the DVD Store API - Provides links to explore areas of the API.
+            </summary>
+            <returns></returns>
+            <remarks>
+                Gets the root navigation information for the API when a user
+                first hits the API Service.  RESTful HATEOAS is in play here.
+            </remarks>
+        </member>
+        <member name="M:DVDStore.API.Controllers.v1_1.RootController.GetRootOptions">
+            <summary>
+                Get Options allowed for the DVD Store API Controller.
+            </summary>
+            <returns></returns>
+            <remarks>
+                Returns a response telling user the type of actions allowed on
+                this controller
+            </remarks>
+        </member>
+        <member name="T:DVDStore.API.Program">
+            <summary>
+                Program
+            </summary>
+        </member>
+        <member name="F:DVDStore.API.Program.EfNLogLoggerFactory">
+            <summary>
+                EfNLogLoggerFactory
+            </summary>
+            <remarks>
+                Used to tie Entity Framework Core logging into NLog
+            </remarks>
+        </member>
+        <member name="M:DVDStore.API.Program.CreateHostBuilder(System.String[])">
+            <summary>
+                CreateHostBuilder
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DVDStore.API.Program.Main(System.String[])">
+            <summary>
+                Main
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:DVDStore.API.Program.TestDvdRepository">
+            <summary>
+                TestDvdRepository
+            </summary>
+            <remarks>
+                This is used to test my back-end stuff prior to building
+                controllers for API's.  Disable it in main when NOT testing
+                but I'm leaving this here as an example.
+            </remarks>
+        </member>
+        <member name="T:DVDStore.API.Startup">
+            <summary>
+            Startup
+            </summary>
+            <remarks>
+            I've sprinkled "Notes for Training" through this controller with links to MSDN documentation
+            Notes for Training: Start up class in .NET 5
+            </remarks>
+        </member>
+        <member name="F:DVDStore.API.Startup.EfNLogLoggerFactory">
+            <summary>
+            EfNLogLoggerFactory
+            </summary>
+            <remarks> Used to tie Entity Framework Core logging into NLog </remarks>
+        </member>
+        <member name="M:DVDStore.API.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Startup Constructor
+            </summary>
+            <param name="configuration"> </param>
+        </member>
+        <member name="M:DVDStore.API.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+            Configure
+            </summary>
+            <param name="app"> </param>
+            <param name="env"> </param>
+            <param name="provider"> </param>
+            <remarks>
+            This method gets called by the runtime. Use this method to configure the HTTP request
+            pipeline. 2021-01-18 - RG - Added to Configure the IApiVersionDescriptionProvider provider
+            </remarks>
+        </member>
+        <member name="M:DVDStore.API.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            ConfigureServices
+            </summary>
+            <param name="services"> </param>
+            <remarks>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </remarks>
+        </member>
+        <member name="P:DVDStore.API.Startup.XmlCommentsFilePath">
+            <summary>
+            Retrieves the absolute file path of the XML documentation file.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -282,6 +282,9 @@ namespace DVDStore.API
 			services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
 			services.AddSwaggerGen(c =>
 			{
+				// IF YOU GET ERROR HERE!!
+				// Comment this out if you do not want to add XML Documentation Help File.
+				// This is set on the DVDStore.API build property page under the Output section.
 				c.IncludeXmlComments(XmlCommentsFilePath);
 				//c.SwaggerDoc("v1", new OpenApiInfo {Title = "DVDStore.API", Version = "v1"});
 			});
@@ -312,7 +315,6 @@ namespace DVDStore.API
 #endif
 				string connString = Configuration["ConnectionStrings:DVDStoreDb"];
 				options.UseSqlServer(connString);
-
 			}); // END of AddDbCopntext and Options it is configured for.
 		}
 

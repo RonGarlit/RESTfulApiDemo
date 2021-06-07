@@ -28,34 +28,34 @@ using DVDStore.DAL.Models;
 
 namespace DVDStore.API.Areas.Catalog.AutoMapperProfiles.v1_1
 {
-    /// <summary>
-    ///     ActorsProfile
-    /// </summary>
-    public class ActorsProfile : Profile
-    {
-        #region Public Constructors
+	/// <summary>
+	///     ActorsProfile
+	/// </summary>
+	public class ActorsProfile : Profile
+	{
+		#region Public Constructors
 
-        /// <summary>
-        ///     ActorsProfile Constructor
-        /// </summary>
-        /// <remarks>
-        ///     AutoMapper docs - Projection and CreateMap
-        ///     https://docs.automapper.org/en/stable/Projection.html
-        /// </remarks>
-        public ActorsProfile()
-        {
-            CreateMap<Actor, ActorDto>()
-                // Map the FullName property of DTO from Dal Entity Model
-                .ForMember(dest => dest.FullName,
-                    src => src.MapFrom(src => $"{src.Firstname} {src.Lastname}"));
-            CreateMap<ActorForCreationDto, Actor>();
-            CreateMap<ActorForUpdateDto, Actor>();
-            
-            CreateMap<ActorDto, Actor>()
-                // Ignore the FullName on DTO going back to the Entity destination
-                .ForSourceMember(src =>src.FullName, dest => dest.DoNotValidate());
-        }
+		/// <summary>
+		///     ActorsProfile Constructor
+		/// </summary>
+		/// <remarks>
+		///     AutoMapper docs - Projection and CreateMap
+		///     https://docs.automapper.org/en/stable/Projection.html
+		/// </remarks>
+		public ActorsProfile()
+		{
+			CreateMap<Actor, ActorDto>()
+				// Map the FullName property of DTO from Dal Entity Model
+				.ForMember(dest => dest.FullName,
+					src => src.MapFrom(src => $"{src.Firstname} {src.Lastname}"));
+			CreateMap<ActorForCreationDto, Actor>();
+			CreateMap<ActorForUpdateDto, Actor>();
 
-        #endregion Public Constructors
-    }
+			CreateMap<ActorDto, Actor>()
+				// Ignore the FullName on DTO going back to the Entity destination
+				.ForSourceMember(src => src.FullName, dest => dest.DoNotValidate());
+		}
+
+		#endregion Public Constructors
+	}
 }

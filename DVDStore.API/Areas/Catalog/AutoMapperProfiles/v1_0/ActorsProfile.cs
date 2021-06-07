@@ -28,30 +28,30 @@ using DVDStore.DAL.Models;
 
 namespace DVDStore.API.Areas.Catalog.AutoMapperProfiles.v1_0
 {
-    /// <summary>
-    ///     ActorsProfile
-    /// </summary>
-    public class ActorsProfile : Profile
-    {
-        #region Public Constructors
+	/// <summary>
+	///     ActorsProfile
+	/// </summary>
+	public class ActorsProfile : Profile
+	{
+		#region Public Constructors
 
-        /// <summary>
-        ///     ActorsProfile Constructor
-        /// </summary>
-        /// <remarks>
-        ///     AutoMapper docs - Projection and CreateMap
-        ///     https://docs.automapper.org/en/stable/Projection.html
-        /// </remarks>
-        public ActorsProfile()
-        {
-            CreateMap<Actor, ActorDto>()
-                // Map the FullName property of DTO from Dal Entity Model
-                .ForMember(dest => dest.FullName,
-                    src => src.MapFrom(src => $"{src.Firstname} {src.Lastname}"));
-            CreateMap<ActorForCreationDto, Actor>();
-            CreateMap<ActorForUpdateDto, Actor>();
-        }
+		/// <summary>
+		///     ActorsProfile Constructor
+		/// </summary>
+		/// <remarks>
+		///     AutoMapper docs - Projection and CreateMap
+		///     https://docs.automapper.org/en/stable/Projection.html
+		/// </remarks>
+		public ActorsProfile()
+		{
+			CreateMap<Actor, ActorDto>()
+				// Map the FullName property of DTO from Dal Entity Model
+				.ForMember(dest => dest.FullName,
+					src => src.MapFrom(src => $"{src.Firstname} {src.Lastname}"));
+			CreateMap<ActorForCreationDto, Actor>();
+			CreateMap<ActorForUpdateDto, Actor>();
+		}
 
-        #endregion Public Constructors
-    }
+		#endregion Public Constructors
+	}
 }

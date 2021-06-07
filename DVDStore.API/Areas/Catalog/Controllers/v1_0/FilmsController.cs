@@ -52,169 +52,169 @@ using System.Collections.Generic;
 
 namespace DVDStore.API.Areas.Catalog.Controllers.v1_0
 {
-    /// <summary>
-    ///     FilmsController
-    /// </summary>
-    /// <remarks>
-    ///     I've sprinkled "Notes for Training" through this controller with
-    ///     links to MSDN documentation and other sources.
-    ///     ===================================================================
-    ///     Notes for Training:
-    ///     Routing to controller actions in ASP.NET Core -
-    ///     https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.apicontrollerattribute?view=aspnetcore-5.0
-    ///     Attribute routing for REST APIs -
-    ///     https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0#ar
-    ///     Controller action return types in ASP.NET Core web API -
-    ///     https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-5.0
-    ///     Started Adding HttpHead Verb to all Get methods.  My reasoning is
-    ///     this. Making API requests with HEAD methods is actually an
-    ///     effective
-    ///     way of simply verifying that a resource is available. It is good
-    ///     practice to have a test for HEAD requests everywhere you have a
-    ///     test for GET requests (as long as the API supports it).
-    ///     HttpVerbs - Important Reading:
-    ///     https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0#http-verb-templates
-    ///     Route Names
-    ///     https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0#route-name
-    /// </remarks>
-    [ApiVersion("1.0", Deprecated = true)]
-    [ApiController]
-    [Area("Catalog")]
-    [Route("api/v{version:apiVersion}/[controller]")]
-    public class FilmsController : Controller
-    {
-        #region Private Fields
+	/// <summary>
+	///     FilmsController
+	/// </summary>
+	/// <remarks>
+	///     I've sprinkled "Notes for Training" through this controller with
+	///     links to MSDN documentation and other sources.
+	///     ===================================================================
+	///     Notes for Training:
+	///     Routing to controller actions in ASP.NET Core -
+	///     https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.apicontrollerattribute?view=aspnetcore-5.0
+	///     Attribute routing for REST APIs -
+	///     https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0#ar
+	///     Controller action return types in ASP.NET Core web API -
+	///     https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-5.0
+	///     Started Adding HttpHead Verb to all Get methods.  My reasoning is
+	///     this. Making API requests with HEAD methods is actually an
+	///     effective
+	///     way of simply verifying that a resource is available. It is good
+	///     practice to have a test for HEAD requests everywhere you have a
+	///     test for GET requests (as long as the API supports it).
+	///     HttpVerbs - Important Reading:
+	///     https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0#http-verb-templates
+	///     Route Names
+	///     https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0#route-name
+	/// </remarks>
+	[ApiVersion("1.0", Deprecated = true)]
+	[ApiController]
+	[Area("Catalog")]
+	[Route("api/v{version:apiVersion}/[controller]")]
+	public class FilmsController : Controller
+	{
+		#region Private Fields
 
-        private readonly IDvdStoreRepository _dvdStoreRepository; // Hold repository being passed in through constructor
-        private readonly IMapper _mapper; // Hold AutoMapper object being passed in through constructor
+		private readonly IDvdStoreRepository _dvdStoreRepository; // Hold repository being passed in through constructor
+		private readonly IMapper _mapper; // Hold AutoMapper object being passed in through constructor
 
-        #endregion Private Fields
+		#endregion Private Fields
 
-        #region Controller Constructor
+		#region Controller Constructor
 
-        /// <summary>
-        ///     FilmsController Constructor
-        /// </summary>
-        /// <param name="dvdStoreRepository"></param>
-        /// <param name="mapper"></param>
-        public FilmsController(IDvdStoreRepository dvdStoreRepository, IMapper mapper)
-        {
-            // Setup DVDStore Repository being passed in and check for null
-            _dvdStoreRepository = dvdStoreRepository ?? throw new ArgumentNullException(nameof(dvdStoreRepository));
-            // Set up AutoMapper being passed in and check for null
+		/// <summary>
+		///     FilmsController Constructor
+		/// </summary>
+		/// <param name="dvdStoreRepository"></param>
+		/// <param name="mapper"></param>
+		public FilmsController(IDvdStoreRepository dvdStoreRepository, IMapper mapper)
+		{
+			// Setup DVDStore Repository being passed in and check for null
+			_dvdStoreRepository = dvdStoreRepository ?? throw new ArgumentNullException(nameof(dvdStoreRepository));
+			// Set up AutoMapper being passed in and check for null
 #pragma warning disable CA2208 // Instantiate argument exceptions correctly
-            _mapper = mapper
-                ?? throw new ArgumentNullException(nameof(_mapper));
+			_mapper = mapper
+				?? throw new ArgumentNullException(nameof(_mapper));
 #pragma warning restore CA2208 // Instantiate argument exceptions correctly
-        } // END of ActorsController Constructor
+		} // END of ActorsController Constructor
 
-        //=====================================================================
+		//=====================================================================
 
-        #endregion Controller Constructor
+		#endregion Controller Constructor
 
-        #region Controller Methods
+		#region Controller Methods
 
-        /// <summary>
-        ///     Get a specific Film for and Actor by actorId and filmId
-        /// </summary>
-        /// <param name="actorId"></param>
-        /// <param name="filmId"></param>
-        /// <returns>
-        ///     FilmDto object
-        /// </returns>
-        [HttpGet("{actorId}/{filmId}", Name = "GetFilmForActor")]
-        [HttpHead("{actorId}/{filmId}", Name = "GetFilmForActor")]
-        public ActionResult<FilmDto> GetFilm(int actorId, int filmId)
-        {
-            // Check for actor first
-            if (!_dvdStoreRepository.ActorExists(actorId))
-            {
-                return NotFound();
-            }
+		/// <summary>
+		///     Get a specific Film for and Actor by actorId and filmId
+		/// </summary>
+		/// <param name="actorId"></param>
+		/// <param name="filmId"></param>
+		/// <returns>
+		///     FilmDto object
+		/// </returns>
+		[HttpGet("{actorId}/{filmId}", Name = "GetFilmForActor")]
+		[HttpHead("{actorId}/{filmId}", Name = "GetFilmForActor")]
+		public ActionResult<FilmDto> GetFilm(int actorId, int filmId)
+		{
+			// Check for actor first
+			if (!_dvdStoreRepository.ActorExists(actorId))
+			{
+				return NotFound();
+			}
 
-            // Get film data for the actor from the db using the repository
-            var filmFromRepo = _dvdStoreRepository.GetFilm(actorId, filmId);
-            // Check if that film exists for the actor
-            if (filmFromRepo == null)
-            {
-                return NoContent();
-            }
+			// Get film data for the actor from the db using the repository
+			var filmFromRepo = _dvdStoreRepository.GetFilm(actorId, filmId);
+			// Check if that film exists for the actor
+			if (filmFromRepo == null)
+			{
+				return NoContent();
+			}
 
-            // Use auto mapper to map the repo data to the DTO (Front Facing) model
-            return Ok(_mapper.Map<FilmDto>(filmFromRepo));
-            // Notes for Training: Ok Method - https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.ok
-        }
+			// Use auto mapper to map the repo data to the DTO (Front Facing) model
+			return Ok(_mapper.Map<FilmDto>(filmFromRepo));
+			// Notes for Training: Ok Method - https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.ok
+		}
 
-        /// <summary>
-        ///     Get all the Films
-        /// </summary>
-        /// <returns>
-        ///     IEnumerable List of FilmDto
-        /// </returns>
-        [HttpGet(Name = "GetFilms")]
-        [HttpHead(Name = "GetFilms")]
-        public ActionResult<IEnumerable<FilmDto>> GetFilms()
-        {
-            // Get film data from the db using the repository
-            var filmsFromRepo = _dvdStoreRepository.GetFilms();
-            // Use auto mapper to map the repo data to the DTO (Front Facing) model
-            return Ok(_mapper.Map<IEnumerable<FilmDto>>(filmsFromRepo));
-            // Notes for Training: Ok Method - https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.ok
-        } // END of ActionResult<IEnumerable<FilmDto>> GetFilms()
+		/// <summary>
+		///     Get all the Films
+		/// </summary>
+		/// <returns>
+		///     IEnumerable List of FilmDto
+		/// </returns>
+		[HttpGet(Name = "GetFilms")]
+		[HttpHead(Name = "GetFilms")]
+		public ActionResult<IEnumerable<FilmDto>> GetFilms()
+		{
+			// Get film data from the db using the repository
+			var filmsFromRepo = _dvdStoreRepository.GetFilms();
+			// Use auto mapper to map the repo data to the DTO (Front Facing) model
+			return Ok(_mapper.Map<IEnumerable<FilmDto>>(filmsFromRepo));
+			// Notes for Training: Ok Method - https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.ok
+		} // END of ActionResult<IEnumerable<FilmDto>> GetFilms()
 
-        //=====================================================================
+		//=====================================================================
 
-        /// <summary>
-        ///     Get all the Films for a specific Actor by actorId
-        /// </summary>
-        /// <param name="actorId"></param>
-        /// <returns>
-        ///     IEnumerable List of FilmDto
-        /// </returns>
-        [HttpGet("{actorId}", Name = "GetFilmsForActor")]
-        [HttpHead("{actorId}", Name = "GetFilmsForActor")]
-        public ActionResult<IEnumerable<FilmDto>> GetFilms(int actorId)
-        {
-            // Check for actor first
-            if (!_dvdStoreRepository.ActorExists(actorId))
-            {
-                return NotFound();
-            }
+		/// <summary>
+		///     Get all the Films for a specific Actor by actorId
+		/// </summary>
+		/// <param name="actorId"></param>
+		/// <returns>
+		///     IEnumerable List of FilmDto
+		/// </returns>
+		[HttpGet("{actorId}", Name = "GetFilmsForActor")]
+		[HttpHead("{actorId}", Name = "GetFilmsForActor")]
+		public ActionResult<IEnumerable<FilmDto>> GetFilms(int actorId)
+		{
+			// Check for actor first
+			if (!_dvdStoreRepository.ActorExists(actorId))
+			{
+				return NotFound();
+			}
 
-            // Get films for the actor from the db using the repository
-            var filmsFromRepo = _dvdStoreRepository.GetFilms(actorId);
-            // Use auto mapper to map the repo data to the DTO (Front Facing) model
-            return Ok(_mapper.Map<IEnumerable<FilmDto>>(filmsFromRepo));
-            // Notes for Training: Ok Method - https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.ok
-        } // END of ActionResult<IEnumerable<FilmDto>> GetFilms(int actorId)
+			// Get films for the actor from the db using the repository
+			var filmsFromRepo = _dvdStoreRepository.GetFilms(actorId);
+			// Use auto mapper to map the repo data to the DTO (Front Facing) model
+			return Ok(_mapper.Map<IEnumerable<FilmDto>>(filmsFromRepo));
+			// Notes for Training: Ok Method - https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.ok
+		} // END of ActionResult<IEnumerable<FilmDto>> GetFilms(int actorId)
 
-        //=====================================================================
+		//=====================================================================
 
-        // END of ActionResult<FilmDto> GetFilm(int actorId, int filmId)
+		// END of ActionResult<FilmDto> GetFilm(int actorId, int filmId)
 
-        //=====================================================================
+		//=====================================================================
 
-        /// <summary>
-        ///     Get the Options allowed for the Films controller
-        /// </summary>
-        /// <returns></returns>
-        /// <remarks>
-        ///     Returns a response telling user the type of actions allowed on
-        ///     this controller
-        /// </remarks>
-        [HttpOptions]
-        public IActionResult GetFilmsOptions()
-        {
-            Response.Headers.Add("Allow", "GET,HEAD,OPTIONS");
-            return Ok();
-        } // END of GetFilmsOptions
+		/// <summary>
+		///     Get the Options allowed for the Films controller
+		/// </summary>
+		/// <returns></returns>
+		/// <remarks>
+		///     Returns a response telling user the type of actions allowed on
+		///     this controller
+		/// </remarks>
+		[HttpOptions]
+		public IActionResult GetFilmsOptions()
+		{
+			Response.Headers.Add("Allow", "GET,HEAD,OPTIONS");
+			return Ok();
+		} // END of GetFilmsOptions
 
-        //=====================================================================
+		//=====================================================================
 
-        #endregion Controller Methods
-    } // END of class FilmsController
+		#endregion Controller Methods
+	} // END of class FilmsController
 
-    //=========================================================================
+	//=========================================================================
 } // END of namespace DVDStore.API.Controllers
 
 //=============================================================================

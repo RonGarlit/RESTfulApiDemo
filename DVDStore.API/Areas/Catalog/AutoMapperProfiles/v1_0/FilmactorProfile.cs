@@ -4,21 +4,21 @@ using DVDStore.DAL.Models;
 
 namespace DVDStore.API.Areas.Catalog.AutoMapperProfiles.v1_0
 {
-    /// <summary>
-    ///     FilmactorProfile
-    /// </summary>
-    public class FilmactorProfile : Profile
-    {
-        #region Public Constructors
+	/// <summary>
+	///     FilmactorProfile
+	/// </summary>
+	public class FilmactorProfile : Profile
+	{
+		#region Public Constructors
 
-        /// <summary>
-        ///   FilmactorProfile Constructor
-        /// </summary>
-        public FilmactorProfile()
-        {
-            CreateMap<Filmactor, FilmactorDto>();
-        }
+		/// <summary>
+		///   FilmactorProfile Constructor
+		/// </summary>
+		public FilmactorProfile()
+		{
+			CreateMap<Filmactor, FilmactorDto>();
+		}
 
-        #endregion Public Constructors
-    }
+		#endregion Public Constructors
+	}
 }

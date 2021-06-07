@@ -24,7 +24,7 @@
 // **  backward compatibility of a service while adding new features or updating
 // **  existing functionality for new clients **
 // **  Change History **
-// **  WHEN WHO WHAT 
+// **  WHEN WHO WHAT
 // **---------------------------------------------------------------------------------
 // **  2021-01-08 rgarlit STARTED DEVELOPMENT
 // **  2021-01-18 rgarlit Working on RESTful API Level 4 Versioning in place
@@ -36,78 +36,78 @@ using System.Collections.Generic;
 
 namespace DVDStore.API.Controllers.v1_1
 {
-    /// <summary>
-    ///     Root of the DVD Store API
-    /// </summary>
-    [ApiVersion("1.1")]
-    [ApiController]
-    [Route("api/v{version:apiVersion}")]
-    public class RootController : Controller
-    {
-        #region Public Methods
+	/// <summary>
+	///     Root of the DVD Store API
+	/// </summary>
+	[ApiVersion("1.1")]
+	[ApiController]
+	[Route("api/v{version:apiVersion}")]
+	public class RootController : Controller
+	{
+		#region Public Methods
 
-        /// <summary>
-        ///     Get the Root of the DVD Store API - Provides links to explore areas of the API.
-        /// </summary>
-        /// <returns></returns>
-        /// <remarks>
-        ///     Gets the root navigation information for the API when a user
-        ///     first hits the API Service.  RESTful HATEOAS is in play here.
-        /// </remarks>
-        [HttpGet(Name = "GetRoot")]
-        [HttpHead(Name = "GetRoot")]
-        [Produces("application/json")]
-        public IActionResult GetRoot()
-        {
-            // Create links for root of that API that are provided to a caller of this API.
-            var links = new List<LinkDto>();
+		/// <summary>
+		///     Get the Root of the DVD Store API - Provides links to explore areas of the API.
+		/// </summary>
+		/// <returns></returns>
+		/// <remarks>
+		///     Gets the root navigation information for the API when a user
+		///     first hits the API Service.  RESTful HATEOAS is in play here.
+		/// </remarks>
+		[HttpGet(Name = "GetRoot")]
+		[HttpHead(Name = "GetRoot")]
+		[Produces("application/json")]
+		public IActionResult GetRoot()
+		{
+			// Create links for root of that API that are provided to a caller of this API.
+			var links = new List<LinkDto>();
 
-            // Add link to the Root Controller
-            links.Add(
-                new LinkDto(Url.Link("GetRoot", new { }),
-                    "self",
-                    "GET"));
+			// Add link to the Root Controller
+			links.Add(
+				new LinkDto(Url.Link("GetRoot", new { }),
+					"self",
+					"GET"));
 
-            // Add link to the Actors Controller
-            links.Add(
-                new LinkDto(Url.Link("GetActors", new { }),
-                    "actors",
-                    "GET"));
+			// Add link to the Actors Controller
+			links.Add(
+				new LinkDto(Url.Link("GetActors", new { }),
+					"actors",
+					"GET"));
 
-            // Add link to the Films Controller
-            links.Add(
-                new LinkDto(Url.Link("GetFilms", new { }),
-                    "films",
-                    "GET"));
+			// Add link to the Films Controller
+			links.Add(
+				new LinkDto(Url.Link("GetFilms", new { }),
+					"films",
+					"GET"));
 
-            return Ok(links);
-        } // END of GetRoot
+			return Ok(links);
+		} // END of GetRoot
 
-        //=====================================================================
+		//=====================================================================
 
-        /// <summary>
-        ///     Get Options allowed for the DVD Store API Controller.
-        /// </summary>
-        /// <returns></returns>
-        /// <remarks>
-        ///     Returns a response telling user the type of actions allowed on
-        ///     this controller
-        /// </remarks>
-        [HttpOptions]
-        public IActionResult GetRootOptions()
-        {
-            Response.Headers.Add("Allow", "GET,HEAD,OPTIONS");
-            return Ok();
-        }
+		/// <summary>
+		///     Get Options allowed for the DVD Store API Controller.
+		/// </summary>
+		/// <returns></returns>
+		/// <remarks>
+		///     Returns a response telling user the type of actions allowed on
+		///     this controller
+		/// </remarks>
+		[HttpOptions]
+		public IActionResult GetRootOptions()
+		{
+			Response.Headers.Add("Allow", "GET,HEAD,OPTIONS");
+			return Ok();
+		}
 
-        #endregion Public Methods
+		#endregion Public Methods
 
-        // END of GetRootOptions
+		// END of GetRootOptions
 
-        //=====================================================================
-    } // END of class RootController
+		//=====================================================================
+	} // END of class RootController
 
-    //=========================================================================
+	//=========================================================================
 } // END of namespace DVDStore.API.Controllers
 
 //=============================================================================

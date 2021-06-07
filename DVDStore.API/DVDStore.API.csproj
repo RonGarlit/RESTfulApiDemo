@@ -6,7 +6,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>TRACE;EFCoreLogging</DefineConstants>
-    <DocumentationFile>D:\21coDev\ApiPrototypes\RESTfulApiPrototype\DVDStore.API\DVDStore.API.xml</DocumentationFile>
+    <DocumentationFile>C:\SWFL\RESTfulApiDemo\DVDStore.API\DVDStore.API.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
