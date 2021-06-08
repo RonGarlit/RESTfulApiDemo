@@ -5,7 +5,7 @@
 // **  Copyright 2021
 // **  Developed by:  Ronald A. Garlit .
 // **
-// **  This software is the proprietary information of 21st Century Oncology.
+// **  This software was developed for training and instructional purposes.
 // **
 // **  Use is subject to license terms.
 // ***********************************************************************************

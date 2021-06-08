@@ -5,7 +5,7 @@
 // **  Copyright 2020
 // **  Developed by:  Ronald Garlit.
 // **
-// **  This software is the proprietary information of Ronald Garlit.
+// **  This software was developed for training and instructional purposes..
 // **
 // **  Use is subject to license terms.
 // ***********************************************************************************
