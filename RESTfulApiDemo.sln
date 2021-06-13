@@ -16,6 +16,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DVDStoreNotes", "DVDStoreNotes", "{922BA05B-3DA9-48AE-AA98-E070D3F7BBBB}"
 	ProjectSection(SolutionItems) = preProject
 		001-GettingSetUp.pdf = 001-GettingSetUp.pdf
+		002-BuildDVDStoreDatabase.pdf = 002-BuildDVDStoreDatabase.pdf
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DVDStore.DAL.Repositories", "DVDStore.DAL.Repositories\DVDStore.DAL.Repositories.csproj", "{CBA51E28-34F0-4FC0-83EF-AA477ED4E4AA}"
