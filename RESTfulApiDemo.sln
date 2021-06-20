@@ -7,6 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DVDStoreDbScripts", "DVDSto
 	ProjectSection(SolutionItems) = preProject
 		001-Create-DVDStoreDb.sql = 001-Create-DVDStoreDb.sql
 		002-Clean Version of Drop and Create DVDStore Script.sql = 002-Clean Version of Drop and Create DVDStore Script.sql
+		003-DVDStore Query Collection.sql = 003-DVDStore Query Collection.sql
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DVDStore.DAL", "DVDStoreDbLibrary\DVDStore.DAL.csproj", "{12CF6BB4-E2A9-4824-9A9F-B4D06B0AE453}"
