@@ -10,12 +10,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Store\**" />
     <Compile Remove="Helpers\**" />
     <Compile Remove="Services\**" />
+    <Content Remove="Areas\Store\**" />
     <Content Remove="Helpers\**" />
     <Content Remove="Services\**" />
+    <EmbeddedResource Remove="Areas\Store\**" />
     <EmbeddedResource Remove="Helpers\**" />
     <EmbeddedResource Remove="Services\**" />
+    <None Remove="Areas\Store\**" />
     <None Remove="Helpers\**" />
     <None Remove="Services\**" />
   </ItemGroup>
@@ -26,11 +30,6 @@
 
   <ItemGroup>
     <None Remove="C:\Users\rgarlit\.nuget\packages\nlog.config\4.7.5\contentFiles\any\any\NLog.config" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Areas\Store\Controllers\" />
-    <Folder Include="Areas\Store\Models\" />
   </ItemGroup>
 
   <ItemGroup>
