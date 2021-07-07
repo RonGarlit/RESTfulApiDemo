@@ -1,3 +1,3 @@
 # RESTfulApiDemo
 
-Working on initial setup and port from private repo to public. - RG
+Final version of presentation and code. - RG
