@@ -2,6 +2,10 @@
 
 Final verison of presentation and code for SWFLCoders demo. - RG
 
+Completed .NET 5 test in VS2022.
+
+This version is using dotnet-ef v3.1.9
+
 ## To get started.
 
 1. Under DVDStoreNotes folder
