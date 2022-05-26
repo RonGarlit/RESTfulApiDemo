@@ -4,7 +4,7 @@ Final verison of presentation and code for SWFLCoders demo. - RG
 
 UPLIFTED TO .NET 6 AND EF CORE 6
 
-Completed .NET 5 test in VS2022. 2022-05-26 -rg
+Completed .NET 6 test in VS2022. 2022-05-26 -rg
 
 
 ## To get started.
