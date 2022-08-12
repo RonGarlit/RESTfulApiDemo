@@ -1,11 +1,15 @@
 # RESTfulApiDemo
 
-Final verison of presentation and code for SWFLCoders demo. - RG
+![THE HATEOAS WAY](Hateoas%20Way.jpg "RESTful API the HATEOAS Way")
 
-UPLIFTED TO .NET 6 AND EF CORE 6
+# **Here is the link to the presentation on YouTube:**  https://youtu.be/jf1kVomeZ-U
+
+Final verison of presentation and code for SWFLCoders demo. - RG
+This was originally done in .NET 5 for the SWFLCoders Presentaion.
+
+**ALERT THIS HAS BEEN UPLIFTED TO .NET 6 AND EF CORE 6**
 
 Completed .NET 6 test in VS2022. 2022-05-26 -rg
-
 
 ## To get started.
 
@@ -16,5 +20,5 @@ Completed .NET 6 test in VS2022. 2022-05-26 -rg
 3. Review presentation
 4. Study the code reviewing the extensive comments and refrences to various MSDN and Blog links.
 
-Here is the link to the presentation on YouTube:  https://youtu.be/jf1kVomeZ-U
+
 
