@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug RESTful API",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/DVDStore.API/bin/Debug/net8.0/DVDStore.API.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/DVDStore.API",
+            "stopAtEntry": false,
+            "console": "internalConsole",
+            "internalConsoleOptions": "openOnSessionStart",
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "envFile": "${workspaceFolder}/DVDStore.API/.env"
+        }
+    ]
+}
