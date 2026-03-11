@@ -16,7 +16,7 @@
         "**/bin": true,
         "**/obj": true,
         "**/node_modules": true,
-        "**/.vscode": true
+        "**/.vscode": false
     },
     "files.watcherExclude": {
         "**/bin/**": true,
