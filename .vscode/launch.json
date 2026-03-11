@@ -15,7 +15,12 @@
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
             },
-            "envFile": "${workspaceFolder}/DVDStore.API/.env"
+            "envFile": "${workspaceFolder}/DVDStore.API/.env",
+            "launchBrowser": {
+                "enabled": true,
+                "args": "https://localhost:51000/swagger/index.html",
+                "browser": "chrome"
+            }
         }
     ]
 }
