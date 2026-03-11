@@ -289,10 +289,6 @@ namespace DVDStore.API
 				//c.SwaggerDoc("v1", new OpenApiInfo {Title = "DVDStore.API", Version = "v1"});
 			});
 
-			// Register the repository class for the DVD Store V1_0 Repository Class
-			services.AddTransient<Common.PropertyMapping.v1_0.IDvdStorePropertyMapper, Common.PropertyMapping.v1_0.DvdStorePropertyMapper>();
-			services.AddTransient<DAL.Repositories.v1_0.IDvdStoreRepository, DAL.Repositories.v1_0.DvdStoreRepository>();
-
 			//V1_1 Repository Class
 			services.AddTransient<Common.PropertyMapping.v1_1.IDvdStorePropertyMapper, Common.PropertyMapping.v1_1.DvdStorePropertyMapper>();
 			services.AddTransient<DAL.Repositories.v1_1.IDvdStoreRepository, DAL.Repositories.v1_1.DvdStoreRepository>();
@@ -345,7 +341,7 @@ namespace DVDStore.API
 
 		#endregion properties
 	} // END of class Startup
-	  
+
 	//=========================================================================
 } // END of namespace DVDStore.API
 
