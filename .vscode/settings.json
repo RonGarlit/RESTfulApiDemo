@@ -1,0 +1,31 @@
+{
+    "omnisharp.path": "1.37.12",
+    "omnisharp.projectFilesPreferences": {
+        "enablePackageRestore": true,
+        "includeProjects": [
+            "DVDStore.API/DVDStore.API.csproj",
+            "DVDStore.DAL.Repositories/DVDStore.DAL.Repositories.csproj",
+            "DVDStore.Common/DVDStore.Common.csproj",
+            "DVDStoreDbLibrary/DVDStore.DAL.csproj"
+        ]
+    },
+    "csharp.suppressDotnetRestoreInfoBar": true,
+    "csharp.suppressDotnetInstallInfoBar": true,
+    "dotnet.suppressDotnetRestoreNotification": true,
+    "files.exclude": {
+        "**/bin": true,
+        "**/obj": true,
+        "**/node_modules": true,
+        "**/.vscode": false
+    },
+    "files.watcherExclude": {
+        "**/bin/**": true,
+        "**/obj/**": true,
+        "**/node_modules/**": true,
+        "**/.vscode/**": true
+    },
+    "C_Cpp.default.compilerPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.34.31931/bin/Hostx64/x64/cl.exe",
+    "C_Cpp.default.intelliSenseMode": "msvc-x64",
+    "C_Cpp.default.cppStandard": "c17",
+    "C_Cpp.default.cStandard": "c11"
+}

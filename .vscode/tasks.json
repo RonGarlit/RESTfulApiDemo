@@ -1,0 +1,59 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "build",
+                "${workspaceFolder}/DVDStore.API/DVDStore.API.csproj",
+                "/p:Configuration=Debug"
+            ],
+            "group": "build",
+            "presentation": {
+                "echoCommand": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": ["$msCompile"]
+        },
+        {
+            "label": "build-release",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "build",
+                "${workspaceFolder}/DVDStore.API/DVDStore.API.csproj",
+                "/p:Configuration=Release"
+            ],
+            "group": "build",
+            "presentation": {
+                "echoCommand": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": ["$msCompile"]
+        },
+        {
+            "label": "run",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "run",
+                "--project",
+                "${workspaceFolder}/DVDStore.API/DVDStore.API.csproj"
+            ],
+            "group": "build",
+            "presentation": {
+                "echoCommand": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new"
+            },
+            "problemMatcher": ["$msCompile"]
+        }
+    ]
+}
