@@ -22,7 +22,7 @@
 // **  2020-11-06  rgarlit     STARTED DEVELOPMENT
 // ***********************************************************************************/
 
-namespace DVDStore.Common.Models.v1_1
+namespace DVDStore.Common.Models.v2_0
 {
     public class ActorFilmListing
     {

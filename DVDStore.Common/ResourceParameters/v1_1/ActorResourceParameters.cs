@@ -1,4 +1,4 @@
-﻿namespace DVDStore.Common.ResourceParameters.v1_1
+﻿namespace DVDStore.Common.ResourceParameters.v2_0
 {
     public class ActorResourceParameters
     {

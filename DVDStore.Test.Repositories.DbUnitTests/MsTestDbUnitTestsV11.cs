@@ -28,9 +28,9 @@
 // **  2020-11-12   rgarlit     STARTED DEVELOPMENT
 // ***********************************************************************************/
 
-using DVDStore.Common.ResourceParameters.v1_1;
+using DVDStore.Common.ResourceParameters.v2_0;
 using DVDStore.DAL.Context;
-using DVDStore.DAL.Repositories.v1_1;
+using DVDStore.DAL.Repositories.v2_0;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

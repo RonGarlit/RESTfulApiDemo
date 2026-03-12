@@ -1,5 +1,5 @@
 ﻿// /********************************************************************************** **
-// **  RESTfulApiPrototype v1.1 **
+// **  RESTfulApiPrototype v2.0 **
 // **  Copyright 2020
 // **  Developed by: Ronald Garlit. **
 // **  This software was developed for training and instructional purposes.. **
@@ -20,12 +20,12 @@
 // ***********************************************************************************/
 
 using Api.Helpers;
-using DVDStore.Common.Models.v1_1;
-using DVDStore.Common.ResourceParameters.v1_1;
+using DVDStore.Common.Models.v2_0;
+using DVDStore.Common.ResourceParameters.v2_0;
 using DVDStore.DAL.Models;
 using System.Collections.Generic;
 
-namespace DVDStore.DAL.Repositories.v1_1
+namespace DVDStore.DAL.Repositories.v2_0
 {
     /// <summary>
     ///     IDvdStoreRepository

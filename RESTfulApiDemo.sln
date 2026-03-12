@@ -38,7 +38,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{63825570-BEB6-425C-9D85-978398EF8E58}"
 	ProjectSection(SolutionItems) = preProject
 		PostmanCollection\DvdStore.V1.0.postman_collection.json = PostmanCollection\DvdStore.V1.0.postman_collection.json
-		PostmanCollection\DvdStore.V1.1.postman_collection.json = PostmanCollection\DvdStore.V1.1.postman_collection.json
+		PostmanCollection\DvdStore.v2.0.postman_collection.json = PostmanCollection\DvdStore.v2.0.postman_collection.json
 		global.json = global.json
 		README.md = README.md
 	EndProjectSection

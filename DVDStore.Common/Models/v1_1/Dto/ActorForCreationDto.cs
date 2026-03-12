@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DVDStore.Common.Models.v1_1.Dto
+namespace DVDStore.Common.Models.v2_0.Dto
 {
     public class ActorForCreationDto
     {

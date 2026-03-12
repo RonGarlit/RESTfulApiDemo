@@ -23,10 +23,10 @@
 // ***********************************************************************************/
 
 using Api.Helpers;
-using DVDStore.Common.Models.v1_1;
-using DVDStore.Common.ResourceParameters.v1_1;
+using DVDStore.Common.Models.v2_0;
+using DVDStore.Common.ResourceParameters.v2_0;
 using DVDStore.DAL.Models;
-using DVDStore.DAL.Repositories.v1_1;
+using DVDStore.DAL.Repositories.v2_0;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;

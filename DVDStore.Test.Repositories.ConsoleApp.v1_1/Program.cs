@@ -26,19 +26,19 @@
 using System;
 using System.IO;
 using System.Linq;
-using DVDStore.Common.Models.v1_1.Dto;
-using DVDStore.Common.PropertyMapping.v1_1;
-using DVDStore.Common.ResourceParameters.v1_1;
+using DVDStore.Common.Models.v2_0.Dto;
+using DVDStore.Common.PropertyMapping.v2_0;
+using DVDStore.Common.ResourceParameters.v2_0;
 using DVDStore.DAL.Context;
 using DVDStore.DAL.Models;
-using DVDStore.DAL.Repositories.v1_1;
+using DVDStore.DAL.Repositories.v2_0;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
 
-namespace DVDStore.Test.Repositories.ConsoleApp.v1_1
+namespace DVDStore.Test.Repositories.ConsoleApp.v2_0
 {
     internal class Program
     {

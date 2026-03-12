@@ -289,9 +289,9 @@ namespace DVDStore.API
 				//c.SwaggerDoc("v1", new OpenApiInfo {Title = "DVDStore.API", Version = "v1"});
 			});
 
-			//V1_1 Repository Class
-			services.AddTransient<Common.PropertyMapping.v1_1.IDvdStorePropertyMapper, Common.PropertyMapping.v1_1.DvdStorePropertyMapper>();
-			services.AddTransient<DAL.Repositories.v1_1.IDvdStoreRepository, DAL.Repositories.v1_1.DvdStoreRepository>();
+			//v2_0 Repository Class
+			services.AddTransient<Common.PropertyMapping.v2_0.IDvdStorePropertyMapper, Common.PropertyMapping.v2_0.DvdStorePropertyMapper>();
+			services.AddTransient<DAL.Repositories.v2_0.IDvdStoreRepository, DAL.Repositories.v2_0.DvdStoreRepository>();
 
 			// ApiHelpers Used throughout - Helper thus not version dependent
 			services.AddTransient<Api.Helpers.PropMapHelpers.IPropertyCheckerService, Api.Helpers.PropMapHelpers.PropertyCheckerService>();

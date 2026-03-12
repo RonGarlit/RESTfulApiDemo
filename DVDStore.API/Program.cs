@@ -25,9 +25,9 @@
 // **  2020-11-13   rgarlit     Fix EF Core Obsolete stuff and added Swashbuckle/Swagger
 // ***********************************************************************************/
 
-using DVDStore.Common.ResourceParameters.v1_1;
+using DVDStore.Common.ResourceParameters.v2_0;
 using DVDStore.DAL.Context;
-using DVDStore.DAL.Repositories.v1_1;
+using DVDStore.DAL.Repositories.v2_0;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;

@@ -23,10 +23,10 @@
 // ***********************************************************************************/
 
 using AutoMapper;
-using DVDStore.Common.Models.v1_1.Dto;
+using DVDStore.Common.Models.v2_0.Dto;
 using DVDStore.DAL.Models;
 
-namespace DVDStore.API.Areas.Catalog.AutoMapperProfiles.v1_1
+namespace DVDStore.API.Areas.Catalog.AutoMapperProfiles.v2_0
 {
 	/// <summary>
 	///     ActorsProfile

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DVDStore.Common.Models.v1_1.ViewModels
+namespace DVDStore.Common.Models.v2_0.ViewModels
 {
     public class ActorFilmListViewModel
     {

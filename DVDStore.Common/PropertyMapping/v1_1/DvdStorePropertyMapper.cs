@@ -1,12 +1,12 @@
 ﻿using Api.Helpers.PropMapHelpers;
-using DVDStore.Common.Models.v1_1;
-using DVDStore.Common.Models.v1_1.Dto;
+using DVDStore.Common.Models.v2_0;
+using DVDStore.Common.Models.v2_0.Dto;
 using DVDStore.DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DVDStore.Common.PropertyMapping.v1_1
+namespace DVDStore.Common.PropertyMapping.v2_0
 {
     public class DvdStorePropertyMapper : IDvdStorePropertyMapper
     {

@@ -1,5 +1,5 @@
 ﻿// /********************************************************************************** **
-// **  RESTfulApiPrototype v1.1 **
+// **  RESTfulApiPrototype v2.0 **
 // **  Copyright 2021
 // **  Developed by: Ronald A. Garlit . **
 // **  This software was developed for training and instructional purposes. **
@@ -34,7 +34,7 @@ using Api.Helpers;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
-namespace DVDStore.API.Controllers.v1_1
+namespace DVDStore.API.Controllers.v2_0
 {
 	/// <summary>
 	///     Root of the DVD Store API

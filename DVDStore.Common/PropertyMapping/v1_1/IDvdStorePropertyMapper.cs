@@ -1,7 +1,7 @@
 ﻿using Api.Helpers.PropMapHelpers;
 using System.Collections.Generic;
 
-namespace DVDStore.Common.PropertyMapping.v1_1
+namespace DVDStore.Common.PropertyMapping.v2_0
 {
     public interface IDvdStorePropertyMapper
     {

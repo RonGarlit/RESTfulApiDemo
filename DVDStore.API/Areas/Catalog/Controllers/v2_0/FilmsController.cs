@@ -1,5 +1,5 @@
 ﻿// /********************************************************************************** **
-// **  RESTfulApiPrototype v1.1 **
+// **  RESTfulApiPrototype v2.0 **
 // **  Copyright 2020
 // **  Developed by: Ronald A. Garlit . **
 // *********************************************************************************** **
@@ -34,13 +34,13 @@
 // ***********************************************************************************/
 
 using AutoMapper;
-using DVDStore.Common.Models.v1_1.Dto;
-using DVDStore.DAL.Repositories.v1_1;
+using DVDStore.Common.Models.v2_0.Dto;
+using DVDStore.DAL.Repositories.v2_0;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 
-namespace DVDStore.API.Areas.Catalog.Controllers.v1_1
+namespace DVDStore.API.Areas.Catalog.Controllers.v2_0
 {
 	/// <summary>
 	/// FilmsController
