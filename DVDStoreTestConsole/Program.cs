@@ -26,7 +26,7 @@
 using System;
 using System.IO;
 using System.Linq;
-using DVDStore.Common.Models.v1_0;
+using DVDStore.Common.Models.v2_0;
 using DVDStore.DAL.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
