@@ -1,6 +1,6 @@
 ﻿// /**********************************************************************************
 // **
-// **  RESTfulApiPrototype v1.0
+// **  RESTfulApiPrototype v2.0
 // **
 // **  Copyright 2020
 // **  Developed by:  Ronald A. Garlit .
@@ -8,7 +8,7 @@
 // ***********************************************************************************
 // **
 // **  FileName: Program.cs (DVDStore.API)
-// **  Version: 0.1
+// **  Version: 2.0
 // **  Author: Ronald A. Garlit
 // **
 // **  Description:

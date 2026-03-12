@@ -1,6 +1,6 @@
 ﻿// /**********************************************************************************
 // **
-// **  RESTfulApiPrototype v1.0
+// **  RESTfulApiPrototype v2.0
 // **
 // **  Copyright 2021
 // **  Developed by:  Ronald A. Garlit .
@@ -11,7 +11,7 @@
 // ***********************************************************************************
 // **
 // **  FileName: ConfigureSwaggerOptions.cs (DVDStore.API)
-// **  Version: 0.1
+// **  Version: 2.0
 // **  Author: Ronald A. Garlit
 // **
 // **  Description:
@@ -103,7 +103,7 @@ namespace DVDStore.API
 			{
 				Title = "DVDStore.API",
 				Version = description.ApiVersion.ToString(),
-				Description = @"<p>DVDStore.API with versioning setup. Choose API version using the <strong> ""Select a definition"" </strong> selector on the above right.</p>",
+				Description = @"<p>DVDStore.API v2.0 with versioning setup. Choose API version using the <strong> ""Select a definition"" </strong> selector on the above right.</p>",
 				Contact = new OpenApiContact
 				{
 					Name = "Ronald Garlit",

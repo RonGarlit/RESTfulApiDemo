@@ -6,12 +6,18 @@ UPLIFTED TO .NET 8 AND EF CORE 7
 
 Completed .NET 8 test in VS2022. 2026-03-10 -RG
 
+## Version Information
+
+This project is now at version 2.0 with API versioning implemented.
+
+The API is now at version 2.0 with proper versioning support.
+
 ## To get started
 
 1. Under DVDStoreNotes folder
 2. Read the following files.
-    1. 001-GettingSetUp.pdf
-    2. 002-BuildDVDStoreDatabase.pdf
+   1. 001-GettingSetUp.pdf
+   2. 002-BuildDVDStoreDatabase.pdf
 3. Review presentation
 4. Study the code reviewing the extensive comments and references to various MSDN and Blog links.
 
@@ -33,4 +39,4 @@ This solution has been upgraded to .NET 8.0 with the following key components:
 
 To build and run the solution, ensure you have the .NET 8.0 SDK installed. The global.json file in the root directory ensures the correct SDK version is used automatically when building the solution.
 
-Here is the link to the presentation on YouTube:  <https://youtu.be/jf1kVomeZ-U>
+Here is the link to the presentation on YouTube: <https://youtu.be/jf1kVomeZ-U>

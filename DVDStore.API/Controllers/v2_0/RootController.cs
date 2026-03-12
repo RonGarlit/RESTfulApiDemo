@@ -6,7 +6,7 @@
 // **  Use is subject to license terms.
 // *********************************************************************************** **
 // **  FileName: RootController.cs (DVDStore.API)
-// **  Version: 0.1
+// **  Version: 2.0
 // **  Author: Ronald A. Garlit **
 // **  Description: **
 // **  Root Controller used for top level of the API. Also to
@@ -39,7 +39,7 @@ namespace DVDStore.API.Controllers.v2_0
 	/// <summary>
 	///     Root of the DVD Store API
 	/// </summary>
-	[ApiVersion("1.1")]
+	[ApiVersion("2.0")]
 	[ApiController]
 	[Route("api/v{version:apiVersion}")]
 	public class RootController : Controller

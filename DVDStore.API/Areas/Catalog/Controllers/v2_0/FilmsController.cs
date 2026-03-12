@@ -61,7 +61,7 @@ namespace DVDStore.API.Areas.Catalog.Controllers.v2_0
 	/// https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0#http-verb-templates
 	/// Route Names https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0#route-name
 	/// </remarks>
-	[ApiVersion("1.1")]
+	[ApiVersion("2.0")]
 	[ApiController]
 	[Area("Catalog")]
 	[Route("api/v{version:apiVersion}/[controller]")]
