@@ -42,7 +42,7 @@ using System.Linq;
 namespace DVDStore.Test.Repositories.DbUnitTests
 {
     [TestClass]
-    public class MsTestDbUnitTestsV11
+    public class MsTestDbUnitTestsV20
     {
         #region Private Fields
 

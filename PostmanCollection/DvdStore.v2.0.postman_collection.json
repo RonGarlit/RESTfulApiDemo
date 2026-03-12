@@ -1,6 +1,6 @@
 {
   "info": {
-    "_postman_id": "19f29e9f-4404-47ab-983c-f87fba2753d7",
+    "_postman_id": "d3de4d98-6fe1-4929-a719-97bb2bd262fc",
     "name": "DvdStore v2.0",
     "description": "DvdStore Api Collection",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -20,9 +20,9 @@
         "url": {
           "raw": "http://localhost:51000/api/v2.0",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [ "localhost" ],
           "port": "51000",
-          "path": ["api", "v2.0"]
+          "path": [ "api", "v2.0" ]
         },
         "description": "Get Root of API - HttpHead Verb Test"
       },
@@ -42,9 +42,9 @@
         "url": {
           "raw": "http://localhost:51000/api/v2.0",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [ "localhost" ],
           "port": "51000",
-          "path": ["api", "v2.0"]
+          "path": [ "api", "v2.0" ]
         }
       },
       "response": []
@@ -63,9 +63,9 @@
         "url": {
           "raw": "http://localhost:51000/api/v2.0",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [ "localhost" ],
           "port": "51000",
-          "path": ["api", "v2.0"]
+          "path": [ "api", "v2.0" ]
         },
         "description": "Get the Root of the API"
       },
@@ -83,11 +83,11 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:51000/api/v2.0/actors",
+          "raw": "http://localhost:51000/api/v2/actors",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [ "localhost" ],
           "port": "51000",
-          "path": ["api", "v2.0", "actors"]
+          "path": [ "api", "v2", "actors" ]
         },
         "description": "Get Actors - HttpHead Test"
       },
@@ -105,11 +105,11 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:51000/api/v2.0/actors",
+          "raw": "http://localhost:51000/api/v2/actors",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [ "localhost" ],
           "port": "51000",
-          "path": ["api", "v2.0", "actors"]
+          "path": [ "api", "v2", "actors" ]
         },
         "description": "Get Actors - HttpOptions Verb Test"
       },
@@ -127,11 +127,11 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:51000/api/v1/actors",
+          "raw": "http://localhost:51000/api/v2/actors",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [ "localhost" ],
           "port": "51000",
-          "path": ["api", "v1", "actors"]
+          "path": [ "api", "v2", "actors" ]
         },
         "description": "\r\n\r\n\r\nhttp://localhost:51000/api/actors"
       },
@@ -149,11 +149,11 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:51000/api/v1/actors",
+          "raw": "http://localhost:51000/api/v2/actors",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [ "localhost" ],
           "port": "51000",
-          "path": ["api", "v1", "actors"],
+          "path": [ "api", "v2", "actors" ],
           "query": [
             {
               "key": "",
@@ -178,11 +178,11 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:51000/api/v1/actors",
+          "raw": "http://localhost:51000/api/v2/actors",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [ "localhost" ],
           "port": "51000",
-          "path": ["api", "v1", "actors"],
+          "path": [ "api", "v2", "actors" ],
           "query": [
             {
               "key": "",
@@ -201,11 +201,11 @@
         "method": "HEAD",
         "header": [],
         "url": {
-          "raw": "http://localhost:51000/api/v1/actors/150",
+          "raw": "http://localhost:51000/api/v2/actors/150",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [ "localhost" ],
           "port": "51000",
-          "path": ["api", "v1", "actors", "150"]
+          "path": [ "api", "v2", "actors", "150" ]
         },
         "description": "Get Actor by actorId 150 - HEAD \r\nNote that the test db has actor id's from 1 to 200"
       },
@@ -223,11 +223,11 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:51000/api/v1/actors/150",
+          "raw": "http://localhost:51000/api/v2/actors/150",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [ "localhost" ],
           "port": "51000",
-          "path": ["api", "v1", "actors", "150"]
+          "path": [ "api", "v2", "actors", "150" ]
         },
         "description": "Get Actor by actorId 150 - Note that the test db has actor id's from 1 to 200"
       },
@@ -245,11 +245,11 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:51000/api/v1/actors/900",
+          "raw": "http://localhost:51000/api/v2/actors/900",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [ "localhost" ],
           "port": "51000",
-          "path": ["api", "v1", "actors", "900"]
+          "path": [ "api", "v2", "actors", "900" ]
         },
         "description": "Get Actor by actorId 900 (Not Existing 404 check)"
       },
@@ -281,11 +281,11 @@
           }
         },
         "url": {
-          "raw": "http://localhost:51000/api/v1/actors",
+          "raw": "http://localhost:51000/api/v2/actors",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [ "localhost" ],
           "port": "51000",
-          "path": ["api", "v1", "actors"]
+          "path": [ "api", "v2", "actors" ]
         },
         "description": "Create Actor call (POST) - PostActor Method on Controller"
       },
@@ -317,11 +317,11 @@
           }
         },
         "url": {
-          "raw": "http://localhost:51000/api/v1/actors",
+          "raw": "http://localhost:51000/api/v2/actors",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [ "localhost" ],
           "port": "51000",
-          "path": ["api", "v1", "actors"]
+          "path": [ "api", "v2", "actors" ]
         },
         "description": "Create Actor call (POST) - No Body - PostActor Method on Controller\r\nSend with no body to test error"
       },
@@ -342,11 +342,11 @@
           }
         },
         "url": {
-          "raw": "http://localhost:51000/api/v1/actors?actorId=2205",
+          "raw": "http://localhost:51000/api/v2/actors?actorId=2205",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [ "localhost" ],
           "port": "51000",
-          "path": ["api", "v1", "actors"],
+          "path": [ "api", "v2", "actors" ],
           "query": [
             {
               "key": "actorId",
@@ -364,11 +364,11 @@
         "method": "DELETE",
         "header": [],
         "url": {
-          "raw": "http://localhost:51000/api/v1/actors/2205",
+          "raw": "http://localhost:51000/api/v2/actors/2205",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [ "localhost" ],
           "port": "51000",
-          "path": ["api", "v1", "actors", "2205"]
+          "path": [ "api", "v2", "actors", "2205" ]
         },
         "description": "Delete Actor by actorId\r\nUsing the DeleteActor controler method\r\n"
       },
@@ -386,11 +386,11 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:51000/api/v1/films",
+          "raw": "http://localhost:51000/api/v2/films",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [ "localhost" ],
           "port": "51000",
-          "path": ["api", "v1", "films"]
+          "path": [ "api", "v2", "films" ]
         },
         "description": "Get Films - HttpHead Verb Test"
       },
@@ -408,11 +408,11 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:51000/api/v1/Films",
+          "raw": "http://localhost:51000/api/v2/Films",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [ "localhost" ],
           "port": "51000",
-          "path": ["api", "v1", "Films"]
+          "path": [ "api", "v2", "Films" ]
         },
         "description": "Get Films - HttpOptions Verb Test"
       },
@@ -430,11 +430,11 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:51000/api/v1/Films",
+          "raw": "http://localhost:51000/api/v2/Films",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [ "localhost" ],
           "port": "51000",
-          "path": ["api", "v1", "Films"]
+          "path": [ "api", "v2", "Films" ]
         },
         "description": "Get all the Films for a specific Actor by actorId"
       },
@@ -452,11 +452,11 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:51000/api/v1/films",
+          "raw": "http://localhost:51000/api/v2/films",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [ "localhost" ],
           "port": "51000",
-          "path": ["api", "v1", "films"]
+          "path": [ "api", "v2", "films" ]
         }
       },
       "response": []
@@ -473,11 +473,11 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:51000/api/v1/Films/150",
+          "raw": "http://localhost:51000/api/v2/Films/150",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [ "localhost" ],
           "port": "51000",
-          "path": ["api", "v1", "Films", "150"]
+          "path": [ "api", "v2", "Films", "150" ]
         },
         "description": "Get a specific Film for and Actor by actorId and filmId"
       },
@@ -495,11 +495,11 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:51000/api/v1/Films/150",
+          "raw": "http://localhost:51000/api/v2/Films/150",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [ "localhost" ],
           "port": "51000",
-          "path": ["api", "v1", "Films", "150"]
+          "path": [ "api", "v2", "Films", "150" ]
         },
         "description": "Get all the Films for a specific Actor by actorId"
       },
@@ -517,11 +517,11 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:51000/api/v1/Films/150/23",
+          "raw": "http://localhost:51000/api/v2/Films/150/23",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [ "localhost" ],
           "port": "51000",
-          "path": ["api", "v1", "Films", "150", "23"]
+          "path": [ "api", "v2", "Films", "150", "23" ]
         },
         "description": "Get a specific Film for and Actor by actorId and filmId"
       },
@@ -539,11 +539,11 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:51000/api/v1/Films/150/23",
+          "raw": "http://localhost:51000/api/v2/Films/150/23",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [ "localhost" ],
           "port": "51000",
-          "path": ["api", "v1", "Films", "150", "23"]
+          "path": [ "api", "v2", "Films", "150", "23" ]
         },
         "description": "Get a specific Film for and Actor by actorId and filmId"
       },

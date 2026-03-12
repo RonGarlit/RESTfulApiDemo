@@ -9,9 +9,9 @@
 // **
 // **  FileName: Program.cs (DVDStoreTestConsole)
 // **  Version: 0.1
-// **  Author: Ronald A. Garlit 
+// **  Author: Ronald A. Garlit
 // **
-// **  Description: 
+// **  Description:
 // **
 // **  Console app to test the manual addition of Stored Procedures and
 // **  the DVDStoreDBContextRevised.
@@ -93,7 +93,7 @@ namespace DVDStore.Test.ConsoleApp
 
             TestUsingDvdDbRevisedDbContext(dvdDbRevised);
 
-           
+
             // Restore the original console colors.
             Console.ResetColor();
         }
@@ -272,6 +272,8 @@ namespace DVDStore.Test.ConsoleApp
 
                 Console.WriteLine(
                     "========================================================================================================");
+                Console.WriteLine("\n\n\n Press Enter to Exit...");
+                Console.ReadLine();
             } // END of using (dvdDbRevised)
         }
         // END of static void Main(string[] args)
@@ -280,7 +282,7 @@ namespace DVDStore.Test.ConsoleApp
     } // END of class Program
     //=========================================================================
 
-} // END of namespace DVDStoreTestConsole 
+} // END of namespace DVDStoreTestConsole
   //=============================================================================
 
 /*

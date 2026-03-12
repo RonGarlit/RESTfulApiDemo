@@ -36,7 +36,7 @@ using System.Linq;
 namespace DVDStore.Test.Repositories.MockedUnitTests
 {
     [TestClass]
-    public class MsTestMoqUnitTestsV11
+    public class MsTestMoqUnitTestsV20
     {
         #region Private Fields
 
